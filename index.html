@@ -2,253 +2,205 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>りっちゃん歴史</title>
-<style>
-*{box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;margin:0;background:linear-gradient(135deg,#fff7fb,#f5fbff 55%,#fffbea);color:#40363a}
-header{background:linear-gradient(135deg,#ffd8e8,#dff4ff);padding:18px 15px 15px;position:sticky;top:0;z-index:2;border-bottom:3px solid #fff}
-h1{font-size:21px;line-height:1.35;margin:0 0 5px;color:#55454d}.sub{font-size:12px;color:#766a70}
-.mascot{font-size:25px;float:right;margin-top:-3px}
-nav{display:flex;gap:6px;overflow:auto;padding:10px;background:#fff;border-bottom:1px solid #eee}
-nav button{white-space:nowrap;border:0;background:#f4edf1;border-radius:20px;padding:9px 13px;color:#5f555a}
-nav button.active{background:#ff9fc1;color:white;box-shadow:0 3px 8px #ff9fc155}
-main{max-width:760px;margin:auto;padding:14px}
-.card{background:#fff;border:2px solid #f5e8ee;border-radius:20px;padding:17px;margin:12px 0;box-shadow:0 4px 14px #8b718b16}
-h2{font-size:20px;margin:4px 0 12px}.era{font-size:13px;color:#9a7282;font-weight:bold}
-.flow{display:flex;flex-direction:column;gap:8px}.node{border:2px solid #f0dce5;border-radius:15px;padding:12px;background:#fffafd}.arrow{text-align:center;color:#e9a2bd;font-size:20px}
-.answer{background:#fff6fa;border-radius:14px;padding:13px;margin-top:10px}.hidden{display:none}
-.choice{display:block;width:100%;text-align:left;margin:8px 0;padding:13px;border:2px solid #eadfe4;border-radius:13px;background:white;font-size:16px;color:#40363a}
-.choice.correct{border-color:#7fc9a4;background:#effbf4}.choice.wrong{border-color:#f2a1a1;background:#fff0f0}
-.primary{border:0;border-radius:14px;padding:12px 18px;background:#ff9fc1;color:white;font-size:16px;box-shadow:0 3px 7px #ff9fc155}
-.small{font-size:13px;color:#81757a}.tag{display:inline-block;background:#fff0f6;padding:5px 9px;border-radius:14px;margin:3px;font-size:12px;color:#a05e79}
-.progress{height:9px;background:#eee7eb;border-radius:10px;overflow:hidden}.bar{height:100%;background:#ff9fc1;width:0;transition:.3s}
-.stamps{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.stamp{width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f4edf1;font-size:20px;filter:grayscale(1);opacity:.45}.stamp.on{background:#fff0a8;filter:none;opacity:1;box-shadow:0 2px 6px #d5b84c55}
-.hero{background:linear-gradient(135deg,#fff1f7,#eefaff);border-color:#f7d6e5}
-.big{font-size:25px;font-weight:bold}
-.next{margin-top:10px}
-.badge{display:inline-block;background:#dff7eb;color:#3e8b64;border-radius:14px;padding:4px 9px;font-size:12px;font-weight:bold}
-</style>
-
-<link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#ff9fc1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffb7d4">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
-<meta name="application-name" content="りっちゃん歴史">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
-}
-</script>
+<title>りっちゃん歴史</title>
+<link rel="manifest" href="./manifest.webmanifest?v=22">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=22">
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
+button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
+.logo{font-weight:900;font-size:clamp(34px,9vw,64px);letter-spacing:.02em;color:#fff;text-shadow:0 3px 0 #e07ba6,0 5px 12px #6fc7df}
+.sub{font-weight:800;color:#725d69;margin-top:8px}.panel{background:rgba(255,255,255,.88);border:2px solid rgba(255,255,255,.9);border-radius:32px;padding:22px;box-shadow:0 10px 28px #a17f9a2b;margin:14px 0}
+.mascots{font-size:54px;text-align:center}.prompt{text-align:center;font-size:25px;font-weight:900;margin:8px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.stat{background:#fff;border-radius:25px;padding:16px;text-align:center;font-weight:800;box-shadow:0 4px 14px #9a829424}
+.stat b{display:block;font-size:30px;margin-top:4px}.section-title{font-size:25px;font-weight:900;margin:25px 4px 12px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.era{border:0;border-radius:25px;background:#fff;padding:12px;box-shadow:0 8px 16px #8c718b35;text-align:left;color:#594651;min-height:155px;position:relative;overflow:hidden}
+.era:active{transform:scale(.98)}.era .art{height:82px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:42px;background:linear-gradient(135deg,#ffe5ef,#dff8ff)}
+.era h3{margin:9px 2px 2px;font-size:18px}.progress{font-size:13px;font-weight:800;color:#8e7582}.bar{height:8px;background:#f2edf0;border-radius:8px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff9dc5,#8fe4d4);width:0}
+.locked{opacity:.55}.locked .art{filter:grayscale(1)}.locked:after{content:"🔒";position:absolute;right:12px;top:12px}
+.screen{display:none}.screen.active{display:block}.top{display:flex;align-items:center;gap:10px;margin:6px 0 14px}.back{border:0;border-radius:50%;width:46px;height:46px;background:#806887;color:white;font-size:24px}
+.pill{margin-left:auto;background:#fff;border-radius:999px;padding:10px 14px;font-weight:900}
+.quiz-card{background:#fff;border-radius:30px;padding:24px;box-shadow:0 10px 30px #7e657d30}.tag{display:inline-block;background:#ffe5ef;border-radius:999px;padding:7px 12px;font-weight:800;color:#a55d7a}.qnum{font-size:14px;color:#987f8c;font-weight:800;margin:12px 0}.question{font-size:23px;line-height:1.65;font-weight:900;margin:12px 0 18px}
+.choices{display:grid;gap:12px}.choice{border:2px solid #f1dbe5;background:#fff8fb;border-radius:18px;padding:15px;text-align:left;font-weight:800;color:#594651}.choice.correct{background:#e4fff2;border-color:#66c998}.choice.wrong{background:#ffe8e8;border-color:#ee8b8b}
+.feedback{display:none;margin-top:18px;border-radius:20px;padding:16px;background:#fff3d9;font-weight:800;line-height:1.55}.next{display:none;width:100%;margin-top:14px;border:0;border-radius:18px;padding:15px;background:linear-gradient(90deg,#ff8fbd,#9fdff4);color:#fff;font-weight:900;font-size:18px}
+.complete{text-align:center}.card-reward{margin:18px auto;max-width:300px;aspect-ratio:3/4;border-radius:28px;padding:15px;background:linear-gradient(135deg,#ffe0ef,#fff7c9,#d8f6ff);border:7px solid #fff;box-shadow:0 0 0 3px #eab665,0 12px 30px #806a7a55;display:flex;flex-direction:column;align-items:center;justify-content:center}.card-reward .big{font-size:70px}.card-reward h2{margin:8px}.small{font-size:13px;color:#907785}
+ruby rt{font-size:.5em}.reset{border:0;background:transparent;color:#9c8792;text-decoration:underline;margin-top:25px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
 
+.chiikawa-banner{position:relative;overflow:hidden;border-radius:30px;background:#fff;padding:10px;box-shadow:0 8px 24px #a17f9a2b;margin:12px 0 16px}
+.chiikawa-banner img{display:block;width:100%;height:190px;object-fit:cover;object-position:center;border-radius:23px}
+.chiikawa-banner .bubble{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);width:max-content;max-width:86%;background:rgba(255,255,255,.94);border:3px solid #ffd0e2;border-radius:999px;padding:10px 18px;font-size:20px;font-weight:900;box-shadow:0 4px 12px #745c6d22}
+.era .art{overflow:hidden}.era .art img{width:100%;height:100%;object-fit:cover}
+.quiz-friend{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#fff1f7,#f1fbff);border-radius:22px;padding:10px 12px;margin-bottom:14px}
+.quiz-friend img{width:66px;height:66px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 3px 10px #8c718b30}
+.quiz-friend b{font-size:15px;line-height:1.45}
+.reward-photo{width:150px;height:150px;border-radius:26px;object-fit:cover;border:5px solid white;box-shadow:0 6px 18px #8c718b40;margin-bottom:10px}
+
+</style>
 </head>
-<body>
-<header><span class="mascot">🐰🐱</span><h1>ちいかわと学ぶ、りっちゃん歴史マスターへの道！</h1><div class="sub">飛鳥編｜つなげて覚えて、何周もして、スタンプを集めよう♪</div></header>
-<nav>
-<button class="active" onclick="show('flow',this)">飛鳥の流れ</button>
-<button onclick="show('quiz',this)">つながり</button>
-<button onclick="show('kanji',this)">漢字</button>
-<button onclick="show('years',this)">年号</button>
-<button onclick="show('trace',this)">穴埋め</button>
-<button onclick="show('mistakes',this)">まちがい</button>
-</nav>
-<main id="app"></main>
+<body><main class="app">
+<section id="home" class="screen active">
+<div class="hero"><div class="logo">りっちゃん歴史</div><div class="sub">つなげて覚える 日本史タイムトラベル ✨</div></div>
+<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=22" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
+<div class="panel"><div class="prompt">ちいかわたちと歴史マスターをめざそう！</div><div class="small" style="text-align:center">テキストの流れを「人物→できごと→理由→結果」でつなごう</div></div>
+<div class="stats"><div class="stat">今日の正解<b id="todayCorrect">0</b></div><div class="stat">集めたカード<b id="cardCount">0</b></div></div>
+<div class="section-title">時代問題</div><div id="eraGrid" class="grid"></div>
+<button class="reset" onclick="resetProgress()">進み具合をリセット</button>
+</section>
+
+<section id="quiz" class="screen">
+<div class="top"><button class="back" onclick="goHome()">←</button><div id="quizEra" style="font-weight:900;font-size:21px"></div><div class="pill"><span id="qNow">1</span>/<span id="qTotal">50</span></div></div>
+<div class="quiz-card"><div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=22" alt=""><b id="quizFriendText">よく考えて！本文のつながりを思い出そう♪</b></div><span class="tag" id="qType">つながり</span><div class="qnum">今回の問題</div><div class="question" id="question"></div><div id="choices" class="choices"></div><div id="feedback" class="feedback"></div><button id="nextBtn" class="next" onclick="nextQuestion()">次の問題へ →</button></div>
+</section>
+
+<section id="complete" class="screen">
+<div class="top"><button class="back" onclick="goHome()">←</button></div>
+<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=22" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
+</section>
+</main>
 <script>
-const scope="飛鳥";
-const flow=[
-["大和政権","大王を中心に、有力な豪族が支える政治勢力"],
-["渡来人","朝鮮半島などから来た人々。土木・機織りなどの技術を伝えた"],
-["仏教伝来","朝鮮半島を通して仏教が伝わり、のちの飛鳥文化につながった"],
-["聖徳太子（厩戸皇子）","推古天皇を助け、天皇中心の国づくりを進めた"],
-["冠位十二階","家柄ではなく個人の能力や功績を重視しようとした制度"],
-["十七条の憲法","役人の心がまえを示したもの"],
-["遣隋使","隋の制度や文化を学ぶため、小野妹子らを派遣"],
-["乙巳の変","蘇我入鹿が中大兄皇子らによって倒された"],
-["大化の改新","乙巳の変の翌年から、天皇中心の国づくりを目指す改革が進んだ"],
-["白村江の戦い","百済再興を助けるため出兵したが、唐・新羅連合軍に敗れた"],
-["壬申の乱","天智天皇の死後、大海人皇子と大友皇子が皇位をめぐって争った"],
-["天武天皇","壬申の乱に勝利した大海人皇子が即位"],
-["藤原京","持統天皇のころにつくられた、初めての本格的な都"],
-["大宝律令","701年、文武天皇のときに完成。律令国家の仕組みが整う"]
+
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=22","./chiikawa-usagi.jpg?v=22","./chiikawa-friends.jpg?v=22"];
+function setQuizFriend(){
+  const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
+  if(img) img.src=chiikawaFriends[(currentIndex||0)%chiikawaFriends.length];
+  if(txt) txt.textContent="よく考えて！前後のつながりを思い出そう♪";
+}
+
+const eras=[
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=22",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=22",unlocked:true},
+{id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
+{id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
+{id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
+{id:"edo",name:"江戸時代",art:"🌉🗻",unlocked:false},
+{id:"meiji",name:"明治時代",art:"🚂🏛️",unlocked:false},
+{id:"taisho",name:"大正時代",art:"🎩🌹",unlocked:false},
+{id:"showa",name:"昭和時代",art:"📻🗼",unlocked:false}
 ];
+const Q={
+asukaNara:[
+["つながり","710年、都が藤原京から移された先は？",["平城京","平安京","長岡京","大津宮"],0,"710年に都は<ruby>平城京<rt>へいじょうきょう</rt></ruby>へ。奈良時代の中心になるよ。"],
+["年号","平城京に都が移された年は？",["708年","710年","723年","743年"],1,"710年。『なんと（710）きれいな平城京』で覚えよう。"],
+["年号","「和同開珎」が発行された年は？",["701年","708年","710年","712年"],1,"708年に<ruby>和同開珎<rt>わどうかいちん</rt></ruby>が発行されたよ。"],
+["つながり","平城京は、中国のどの都をまねてつくられた？",["洛陽","長安","南京","北京"],1,"唐の都・<ruby>長安<rt>ちょうあん</rt></ruby>を参考にした。"],
+["税","6歳以上の人に口分田を与え、収穫高のおよそ3％を納めた税は？",["租","調","庸","雑徭"],0,"稲の収穫高のおよそ3％を納めるのが「租」。"],
+["税","布や地方の特産物を納める税は？",["租","調","庸","出挙"],1,"地方の特産物などを納めるのが「調」。"],
+["税","都で働く代わりに布を納める税は？",["租","調","庸","租庸調"],2,"都での労役の代わりに布を納めるのが「庸」。"],
+["人物","北九州で3年間、守りにつく兵士を何という？",["衛士","防人","武士","兵衛"],1,"北九州の守りにつく兵士は<ruby>防人<rt>さきもり</rt></ruby>。"],
+["用語","税の荷札や役所の文書などに使われた木の札は？",["竹簡","木簡","石碑","勘合"],1,"奈良時代には<ruby>木簡<rt>もっかん</rt></ruby>が使われた。"],
+["年号","三世一身の法が出された年は？",["718年","723年","729年","743年"],1,"723年に三世一身の法。"],
+["制度","新しく開墾した土地を3代にわたり私有できるとした法は？",["班田収授法","三世一身の法","墾田永年私財法","大宝律令"],1,"723年の<ruby>三世一身<rt>さんぜいっしん</rt></ruby>の法。"],
+["年号","墾田永年私財法が出された年は？",["723年","733年","743年","753年"],2,"743年。開墾した土地の永久私有を認めた。"],
+["制度","新しく開墾した土地の永久私有を認めた法は？",["三世一身の法","墾田永年私財法","班田収授法","御成敗式目"],1,"<ruby>墾田永年私財法<rt>こんでんえいねんしざいほう</rt></ruby>で荘園が増えていった。"],
+["つながり","墾田永年私財法の後、貴族や寺社の私有地として増えたものは？",["口分田","荘園","屯田","御料所"],1,"私有地である「荘園」が増え、公地公民がくずれていく。"],
+["人物","仏教の力で国を治めようとし、国分寺・国分尼寺をつくらせた天皇は？",["天武天皇","聖武天皇","桓武天皇","嵯峨天皇"],1,"<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>は仏教で国を守ろうとした。"],
+["つながり","全国の国分寺の中心として建てられた寺は？",["法隆寺","東大寺","唐招提寺","平等院"],1,"奈良の<ruby>東大寺<rt>とうだいじ</rt></ruby>が全国の国分寺の中心。"],
+["文化","東大寺大仏の造立に協力した、民衆に人気の僧は？",["行基","鑑真","最澄","空海"],0,"<ruby>行基<rt>ぎょうき</rt></ruby>が大仏づくりに協力した。"],
+["外交","唐へ派遣された使節を何という？",["遣隋使","遣唐使","遣明使","勘合使"],1,"唐の制度や文化を学ぶため<ruby>遣唐使<rt>けんとうし</rt></ruby>を送った。"],
+["人物","唐の朝廷に仕え、帰国できず長安で一生を終えた日本人は？",["小野妹子","阿倍仲麻呂","吉備真備","菅原道真"],1,"<ruby>阿倍仲麻呂<rt>あべのなかまろ</rt></ruby>は唐で一生を終えた。"],
+["人物","6回目の渡航で日本に着き、戒律を伝えた唐の僧は？",["玄奘","鑑真","最澄","道元"],1,"<ruby>鑑真<rt>がんじん</rt></ruby>は何度も失敗しながら来日した。"],
+["文化","鑑真が建てた寺は？",["東大寺","唐招提寺","法隆寺","薬師寺"],1,"鑑真は<ruby>唐招提寺<rt>とうしょうだいじ</rt></ruby>を建てた。"],
+["文化","聖武天皇のころ、唐の影響を受けて栄えた文化は？",["飛鳥文化","白鳳文化","天平文化","国風文化"],2,"聖武天皇のころの文化を<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>という。"],
+["文化","東大寺にあり、聖武天皇の愛用品などを納めた建物は？",["正倉院","金堂","夢殿","鳳凰堂"],0,"<ruby>正倉院<rt>しょうそういん</rt></ruby>には国際色豊かな品々も残る。"],
+["建築","正倉院に見られる、三角形の角材を組み合わせるつくりは？",["寝殿造","校倉造","書院造","数寄屋造"],1,"<ruby>校倉造<rt>あぜくらづくり</rt></ruby>。"],
+["文化","皇室や貴族の神話・伝承をまとめた歴史書は？",["古事記","風土記","万葉集","枕草子"],0,"『<ruby>古事記<rt>こじき</rt></ruby>』は神話や伝承をまとめた。"],
+["文化","中国の歴史書を参考にした奈良時代の歴史書は？",["日本書紀","古今和歌集","源氏物語","方丈記"],0,"『<ruby>日本書紀<rt>にほんしょき</rt></ruby>』。"],
+["文化","国ごとの産物・伝説・地名の由来などをまとめたものは？",["風土記","日本書紀","万葉集","古事記"],0,"『<ruby>風土記<rt>ふどき</rt></ruby>』。"],
+["文化","約4500首の和歌を集めた日本最古の歌集は？",["古今和歌集","新古今和歌集","万葉集","小倉百人一首"],2,"『<ruby>万葉集<rt>まんようしゅう</rt></ruby>』には幅広い身分の人の歌が収められた。"],
+["順番","古い順に正しいものは？",["和同開珎→平城京→三世一身の法→墾田永年私財法","平城京→和同開珎→墾田永年私財法→三世一身の法","三世一身の法→平城京→和同開珎→墾田永年私財法","和同開珎→三世一身の法→平城京→墾田永年私財法"],0,"708→710→723→743の順。"],
+["つながり","公地公民がくずれていく大きなきっかけとなった法は？",["十七条の憲法","墾田永年私財法","御成敗式目","武家諸法度"],1,"土地の永久私有を認めたことで荘園が広がった。"]
+,
+["年号", "仏教が日本に伝わった年として覚える年は？", ["538年", "548年", "593年", "603年"], 0, "538年。仏教伝来の重要年号。"],
+["年号", "聖徳太子（厩戸皇子）が政治を助け始めた年は？", ["583年", "593年", "603年", "607年"], 1, "593年。推古天皇の政治を助けた。"],
+["年号", "冠位十二階が定められた年は？", ["593年", "603年", "604年", "607年"], 1, "603年。翌604年の十七条の憲法と混同注意。"],
+["年号", "十七条の憲法が定められた年は？", ["603年", "604年", "607年", "645年"], 1, "604年。603年＝冠位十二階、604年＝十七条の憲法。"],
+["年号", "小野妹子が遣隋使として派遣された年は？", ["604年", "607年", "610年", "618年"], 1, "607年。"],
+["年号", "大化の改新が始まった年は？", ["645年", "646年", "653年", "663年"], 0, "645年。中大兄皇子と中臣鎌足もセットで。"],
+["年号", "白村江の戦いが起こった年は？", ["653年", "663年", "672年", "694年"], 1, "663年。"],
+["年号", "壬申の乱が起こった年は？", ["663年", "668年", "672年", "701年"], 2, "672年。大海人皇子が勝ち、のちの天武天皇となる。"],
+["年号", "藤原京に都が移された年は？", ["684年", "694年", "701年", "710年"], 1, "694年。"],
+["年号", "大宝律令が完成した年は？", ["694年", "700年", "701年", "710年"], 2, "701年。"],
+["漢字", "正しい漢字はどれ？ 唐へ送った使節。", ["遣唐使", "遺唐使", "遣唐史", "遣唐師"], 0, "正しくは「遣唐使」。遣＝つかわす、使＝使者。"],
+["漢字", "正しい漢字はどれ？ 奈良の宝物を納めた建物。", ["正倉院", "正蔵院", "正倉苑", "正創院"], 0, "正しくは「正倉院」。"],
+["漢字", "正しい漢字はどれ？ 三角形の角材を組む建築様式。", ["校倉造", "高倉造", "校蔵造", "交倉造"], 0, "正しくは「校倉造」。"],
+["漢字", "正しい漢字はどれ？ 開墾地の永久私有を認めた法。", ["墾田永年私財法", "懇田永年私財法", "墾田永年私材法", "墾田永年私才法"], 0, "「墾田」「私財」の漢字に注意。"],
+["漢字", "正しい漢字はどれ？ 北九州の守りについた兵士。", ["防人", "坊人", "防士", "訪人"], 0, "正しくは「防人（さきもり）」。"],
+["漢字", "正しい漢字はどれ？ 唐から来日し戒律を伝えた僧。", ["鑑真", "監真", "鑑心", "鑑進"], 0, "正しくは「鑑真」。"],
+["漢字", "正しい漢字はどれ？ 聖武天皇のころの文化。", ["天平文化", "天坪文化", "天兵文化", "天評文化"], 0, "正しくは「天平文化」。"],
+["組合せ", "正しい組み合わせはどれ？", ["行基―東大寺大仏の造立に協力", "鑑真―遣隋使", "阿倍仲麻呂―征夷大将軍", "聖武天皇―遣唐使停止を提案"], 0, "行基は東大寺大仏の造立に協力した。"],
+["順番", "古い順に正しいものは？", ["大化の改新→白村江の戦い→壬申の乱→大宝律令", "白村江の戦い→大化の改新→壬申の乱→大宝律令", "大化の改新→壬申の乱→白村江の戦い→大宝律令", "壬申の乱→大化の改新→白村江の戦い→大宝律令"], 0, "645→663→672→701。"],
+["年号", "710・723・743の組み合わせで正しいものは？", ["710平城京・723三世一身の法・743墾田永年私財法", "710藤原京・723墾田永年私財法・743三世一身の法", "710平城京・723大宝律令・743墾田永年私財法", "710長岡京・723三世一身の法・743墾田永年私財法"], 0, "710→723→743をセットで覚えよう。"]
+],
+heian:[
+["人物","奈良の貴族や寺院の力から離れて政治を立て直そうとした天皇は？",["桓武天皇","聖武天皇","天武天皇","後醍醐天皇"],0,"<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>が都を移し政治改革を進めた。"],
+["年号","都が長岡京へ移された年は？",["774年","784年","794年","804年"],1,"784年に長岡京へ。"],
+["年号","都が平安京へ移された年は？",["784年","794年","804年","894年"],1,"794年。『なくよ（794）うぐいす平安京』。"],
+["順番","都の移動の順番として正しいものは？",["平城京→長岡京→平安京","長岡京→平城京→平安京","平城京→平安京→長岡京","藤原京→平安京→長岡京"],0,"奈良の平城京から長岡京、そして794年に平安京。"],
+["都市","平安京は中国のどの都をまねてつくられた？",["長安","洛陽","開封","南京"],0,"道路を碁盤の目のように区切った長安にならった。"],
+["人物","征夷大将軍となり、東北地方で朝廷に従わない蝦夷を征討した人物は？",["坂上田村麻呂","源頼朝","平清盛","藤原道長"],0,"<ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby>。"],
+["人物","唐で仏教を学び、比叡山延暦寺で天台宗を広めた人物は？",["最澄","空海","鑑真","法然"],0,"<ruby>最澄<rt>さいちょう</rt></ruby>は天台宗。"],
+["宗教","最澄が広めた宗派は？",["真言宗","天台宗","浄土宗","禅宗"],1,"最澄＝天台宗＝比叡山延暦寺、とつなげよう。"],
+["人物","唐で仏教を学び、高野山金剛峯寺で真言宗を広めた人物は？",["最澄","空海","親鸞","日蓮"],1,"<ruby>空海<rt>くうかい</rt></ruby>＝真言宗＝高野山金剛峯寺。"],
+["宗教","空海が広めた宗派は？",["天台宗","真言宗","時宗","浄土真宗"],1,"空海は真言宗を広めた。"],
+["政治","藤原氏が娘を天皇や皇太子と結婚させ、外祖父として権力を握った政治は？",["院政","摂関政治","執権政治","幕藩体制"],1,"<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>。"],
+["人物","894年、遣唐使の停止を提案した人物は？",["菅原道真","藤原道長","坂上田村麻呂","平清盛"],0,"<ruby>菅原道真<rt>すがわらのみちざね</rt></ruby>が遣唐使停止を提案。"],
+["年号","遣唐使の停止が提案された年は？",["794年","804年","894年","904年"],2,"894年。『白紙（894）に戻そう遣唐使』。"],
+["つながり","遣唐使の停止後、日本独自の文化が発達した。この文化は？",["天平文化","国風文化","北山文化","東山文化"],1,"唐との交流が弱まり、日本風の<ruby>国風文化<rt>こくふうぶんか</rt></ruby>が発達。"],
+["文化","漢字の一部を取り出すなどして発達した文字は？",["かな文字","甲骨文字","楔形文字","梵字"],0,"国風文化では<ruby>かな文字<rt>かなもじ</rt></ruby>が発達した。"],
+["宗教","現世の苦しみから逃れ、死後に極楽浄土へ行くことを願う信仰は？",["浄土教","神道","禅宗","修験道"],0,"平安時代には<ruby>浄土教<rt>じょうどきょう</rt></ruby>が流行。"],
+["人物","極楽を表そうとして宇治に平等院鳳凰堂を建てた人物は？",["藤原頼通","藤原道長","藤原良房","藤原基経"],0,"<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が平等院鳳凰堂を建てた。"],
+["文化","藤原頼通が宇治に建てた建物は？",["中尊寺金色堂","平等院鳳凰堂","銀閣","金閣"],1,"<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>。"],
+["政治","9世紀、天皇の家臣として初めて摂政となった藤原氏の人物は？",["藤原良房","藤原基経","藤原道長","藤原頼通"],0,"<ruby>藤原良房<rt>ふじわらのよしふさ</rt></ruby>は臣下として初の摂政。"],
+["政治","藤原良房の子・基経が最初に就いた役職は？",["執権","関白","太政大臣","征夷大将軍"],1,"<ruby>藤原基経<rt>ふじわらのもとつね</rt></ruby>は最初の関白。"],
+["人物","4人の娘を天皇や天皇の子と結婚させ、1016年に摂政となった人物は？",["藤原道長","藤原頼通","藤原良房","菅原道真"],0,"<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby>の時代に藤原氏は全盛へ。"],
+["年号","藤原道長が摂政となった年は？",["996年","1006年","1016年","1026年"],2,"1016年に摂政となった。"],
+["政治","天皇が幼い間、天皇に代わって政治を行う役職は？",["関白","摂政","執権","管領"],1,"幼い天皇を補佐するのが<ruby>摂政<rt>せっしょう</rt></ruby>。"],
+["政治","成人した天皇を補佐して政治の実権を握る役職は？",["関白","摂政","老中","執権"],0,"成人した天皇を補佐するのが<ruby>関白<rt>かんぱく</rt></ruby>。"],
+["土地","貴族や寺社の私有地を何という？",["口分田","荘園","公領","屯田"],1,"平安時代、貴族たちは<ruby>荘園<rt>しょうえん</rt></ruby>を持った。"],
+["土地","荘園が税を納めなくてもよい権利は？",["不入の権","不輸の権","守護不入","地頭請"],1,"税を納めなくてよい＝<ruby>不輸の権<rt>ふゆのけん</rt></ruby>。"],
+["土地","国司を荘園に立ち入らせない権利は？",["不輸の権","不入の権","永代私有権","自治権"],1,"立ち入りを拒む＝<ruby>不入の権<rt>ふにゅうのけん</rt></ruby>。"],
+["政治","尾張国の国司・藤原元命の不正を郡司や農民が訴えた文書は？",["御成敗式目","尾張国郡司百姓等解文","十七条の憲法","建武式目"],1,"<ruby>尾張国郡司百姓等解文<rt>おわりのくにぐんじひゃくしょうらのげぶみ</rt></ruby>。"],
+["順番","古い順に正しいものは？",["長岡京→平安京→遣唐使停止→藤原道長が摂政","平安京→長岡京→遣唐使停止→藤原道長が摂政","長岡京→遣唐使停止→平安京→藤原道長が摂政","遣唐使停止→長岡京→平安京→藤原道長が摂政"],0,"784→794→894→1016の順。"],
+["つながり","平安時代、地方政治を国司に任せる傾向が強まった結果として起きたことは？",["地方で国司が勝手な政治をする例が増えた","班田収授法が復活した","遣唐使が増えた","公地公民が強まった"],0,"中央の監督が弱まり、国司の不正を農民らが訴えることもあった。"],
+["年号", "最澄・空海らが遣唐使とともに唐へ渡った年は？", ["794年", "804年", "814年", "894年"], 1, "804年。794年平安京、894年遣唐使停止との混同注意。"],
+["年号", "平安京遷都と遣唐使停止の年の組み合わせは？", ["794年・894年", "784年・894年", "794年・884年", "804年・894年"], 0, "794年＝平安京、894年＝遣唐使停止。"],
+["年号", "藤原道長が摂政となった年は？", ["1006年", "1016年", "1026年", "1061年"], 1, "1016年。"],
+["漢字", "正しい漢字はどれ？ 東北地方の蝦夷を征討した役職。", ["征夷大将軍", "征異大将軍", "征夷大将郡", "征威大将軍"], 0, "正しくは「征夷大将軍」。"],
+["漢字", "正しい漢字はどれ？ 幼い天皇に代わって政治を行う役職。", ["摂政", "接政", "摂正", "摂征"], 0, "正しくは「摂政」。"],
+["漢字", "正しい漢字はどれ？ 成人した天皇を補佐する役職。", ["関白", "間白", "関伯", "官白"], 0, "正しくは「関白」。"],
+["漢字", "正しい漢字はどれ？ 藤原氏が行った政治。", ["摂関政治", "接関政治", "摂官政治", "摂間政治"], 0, "正しくは「摂関政治」。"],
+["漢字", "正しい漢字はどれ？ 最澄が開いた寺。", ["延暦寺", "延歴寺", "延暦時", "延歴時"], 0, "正しくは「延暦寺」。"],
+["漢字", "正しい漢字はどれ？ 空海が開いた寺。", ["金剛峯寺", "金剛峰寺", "金剛峯時", "金剛蜂寺"], 0, "正しくは「金剛峯寺」。"],
+["漢字", "正しい漢字はどれ？ 宇治にある阿弥陀堂。", ["平等院鳳凰堂", "平等院鳳皇堂", "平等院凰鳳堂", "平等院鳳凰殿"], 0, "正しくは「平等院鳳凰堂」。"],
+["漢字", "正しい漢字はどれ？ 税を納めなくてよい権利。", ["不輸の権", "不輪の権", "不愉の権", "不輸の券"], 0, "正しくは「不輸の権」。"],
+["漢字", "正しい漢字はどれ？ 国司の立ち入りを拒む権利。", ["不入の権", "不人の権", "不納の権", "不輸の権"], 0, "正しくは「不入の権」。不輸との混同注意。"],
+["漢字", "正しい漢字はどれ？ 遣唐使停止を提案した人物。", ["菅原道真", "管原道真", "菅原通真", "菅原道直"], 0, "正しくは「菅原道真」。"],
+["漢字", "正しい漢字はどれ？ 藤原氏全盛期の人物。", ["藤原道長", "藤原道永", "藤原通長", "藤原道良"], 0, "正しくは「藤原道長」。"],
+["組合せ", "正しい組み合わせはどれ？", ["最澄―天台宗―比叡山延暦寺", "空海―天台宗―高野山金剛峯寺", "最澄―真言宗―比叡山延暦寺", "鑑真―真言宗―高野山金剛峯寺"], 0, "最澄＝天台宗＝比叡山延暦寺。"],
+["組合せ", "正しい組み合わせはどれ？", ["藤原良房―臣下として初の摂政", "藤原基経―初の征夷大将軍", "藤原道長―遣唐使停止を提案", "藤原頼通―大宝律令"], 0, "藤原良房は臣下として初の摂政。"],
+["順番", "古い順に正しいものは？", ["長岡京→平安京→遣唐使停止→道長が摂政", "平安京→長岡京→遣唐使停止→道長が摂政", "長岡京→遣唐使停止→平安京→道長が摂政", "遣唐使停止→平安京→長岡京→道長が摂政"], 0, "784→794→894→1016。"],
+["年号", "784・794・894の組み合わせで正しいものは？", ["784長岡京・794平安京・894遣唐使停止", "784平安京・794長岡京・894遣唐使停止", "784長岡京・794遣唐使停止・894平安京", "784平城京・794平安京・894遣隋使停止"], 0, "784→794→894。"],
+["文化", "『源氏物語』を書いた人物は？", ["紫式部", "清少納言", "小野小町", "和泉式部"], 0, "『源氏物語』＝紫式部。"],
+["文化", "『枕草子』を書いた人物は？", ["紫式部", "清少納言", "紀貫之", "菅原道真"], 1, "『枕草子』＝清少納言。"]
+]};
 
-const links=[
-["聖徳太子","推古天皇","聖徳太子は推古天皇を助けて政治を行った"],
-["聖徳太子","冠位十二階","家柄ではなく能力や功績を重視しようとした制度"],
-["聖徳太子","十七条の憲法","役人の心がまえを示した"],
-["聖徳太子","遣隋使","隋の制度や文化を学ぶために派遣した"],
-["遣隋使","小野妹子","小野妹子が遣隋使として派遣された"],
-["蘇我馬子","蘇我入鹿","蘇我氏の力が強まり、のちに蘇我入鹿が倒される"],
-["中大兄皇子","中臣鎌足","ともに蘇我入鹿を倒し、改革を進めた"],
-["乙巳の変","大化の改新","乙巳の変の翌年から政治改革が始まった"],
-["白村江の戦い","百済","百済再興を助けるために日本が出兵した"],
-["白村江の戦い","唐・新羅","唐・新羅連合軍に敗れた"],
-["壬申の乱","大海人皇子","大海人皇子と大友皇子が皇位をめぐって争った"],
-["大海人皇子","天武天皇","壬申の乱の後、大海人皇子が天武天皇として即位した"],
-["持統天皇","藤原京","持統天皇のころ、藤原京がつくられた"],
-["藤原京","大宝律令","藤原京の時代を経て、701年に大宝律令が完成した"]
-];
-
-const kanji=[
-["しょうとくたいし","人名","聖徳太子",["聖徳太子","聖得太子","聖徳大子","聖德太子"]],
-["うまやどのおうじ","人名","厩戸皇子",["厩戸皇子","駅戸皇子","厩戸皇子","厩戸皇児"]],
-["すいこてんのう","人名","推古天皇",["推古天皇","推古天皇","推古天皇","推占天皇"]],
-["そがのうまこ","人名","蘇我馬子",["蘇我馬子","蘇我馬児","蘇我馬古","蘇我馬仔"]],
-["おののいもこ","人名","小野妹子",["小野妹子","小野姉子","小野伊子","小野妹児"]],
-["なかとみのかまたり","人名","中臣鎌足",["中臣鎌足","中臣釜足","中臣鎌芦","中臣鎌達"]],
-["そがのいるか","人名","蘇我入鹿",["蘇我入鹿","蘇我入馬","蘇我入香","蘇我入麓"]],
-["なかのおおえのおうじ","人名","中大兄皇子",["中大兄皇子","中大兄皇児","中大兄皇字","中大兄皇事"]],
-["たいかのかいしん","出来事","大化の改新",["大化の改新","大化の改心","大華の改新","大化の改善"]],
-["いっしのへん","出来事","乙巳の変",["乙巳の変","乙已の変","乙巳の邉","乙己の変"]],
-["はくすきのえのたたかい","出来事","白村江の戦い",["白村江の戦い","白村江の戦","白村江の戦い","白村江の闘い"]],
-["じんしんのらん","出来事","壬申の乱",["壬申の乱","壬申の覧","壬申の蘭","壬神の乱"]],
-["かんいじゅうにかい","制度","冠位十二階",["冠位十二階","冠位十二階","冠位十ニ階","冠位十二皆"]],
-["じゅうしちじょうのけんぽう","制度","十七条の憲法",["十七条の憲法","十七条の建法","十七條の憲法","十七条の憲方"]],
-["たいほうりつりょう","法律","大宝律令",["大宝律令","大宝率令","大宝律領","大寶律令"]],
-["ひじょうきょう","都","藤原京",["藤原京","藤原鏡","藤原経","藤原境"]],
-["てんむてんのう","人名","天武天皇",["天武天皇","天文天皇","天武天皇","天無天皇"]],
-["じとうてんのう","人名","持統天皇",["持統天皇","持東天皇","持統天皇","持頭天皇"]],
-["ほうりゅうじ","建造物","法隆寺",["法隆寺","法竜寺","法隆持","法立寺"]],
-["しitennoji","建造物","四天王寺",["四天王寺","四天王時","四天王持","四天王侍"]],
-["asuka_bunka","文化","飛鳥文化",["飛鳥文化","飛鳥文花","飛鳥分化","飛鳥文化"]]
-];
-
-const years=[
-["538","仏教伝来","ご参拝（538）で仏教伝来","朝鮮半島を通して仏教が伝わったとされる年。"],
-["593","聖徳太子が政治を助ける","国（593）がまとまり聖徳太子","推古天皇の摂政になったとされる年。"],
-["603","冠位十二階","む（6）れ（0）み（3）ず冠位十二階","冠位十二階を定めたとされる年。"],
-["604","十七条の憲法","群れよ（604）十七条の憲法","十七条の憲法を定めたとされる年。"],
-["607","遣隋使","群れな（607）して遣隋使","小野妹子らを隋へ送った年。"],
-["645","大化の改新","無事故（645）で大化の改新","中大兄皇子・中臣鎌足らが蘇我氏を倒し、改革が始まった年。"],
-["663","白村江の戦い","む（6）む（6）さん（3）白村江","唐・新羅連合軍に敗れた年。"],
-["672","壬申の乱","む（6）な（7）に（2）壬申の乱","大海人皇子と大友皇子が争った年。"],
-["694","藤原京","む（6）く（9）よ（4）藤原京","持統天皇のころ藤原京がつくられた年。"],
-["701","大宝律令","な（7）お（0）いい（1）国づくり","大宝律令が完成した年。"]
-];
-
-let qi=0,ki=0,yi=0,ti=0;
-let mistakes=JSON.parse(localStorage.getItem("asukaMistakes")||"[]");
-let stamps=Number(localStorage.getItem("asukaStamps")||0);
-
-function addStamp(){
-  stamps++;
-  localStorage.setItem("asukaStamps",stamps);
-}
-function stampHTML(){
-  const n=Math.min(stamps,20);
-  let s="";
-  for(let i=0;i<20;i++) s+=`<span class="stamp ${i<n?'on':''}">${i<n?'⭐':'☆'}</span>`;
-  return s;
-}
-function show(mode,btn){
- document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
- btn.classList.add('active');
- if(mode==="flow")renderFlow();
- if(mode==="quiz")renderQuiz();
- if(mode==="kanji")renderKanji();
- if(mode==="years")renderYears();
- if(mode==="trace")renderTrace();
- if(mode==="mistakes")renderMistakes();
-}
-function topCard(title,desc){
- return `<div class="card hero"><div class="era">飛鳥編</div><h2>${title}</h2><p>${desc}</p><div class="tag">全${links.length}問のつながり</div><div class="tag">全${kanji.length}問の漢字</div><div class="tag">全${years.length}問の年号</div><div class="tag">スタンプ ${stamps}個</div><div class="stamps">${stampHTML()}</div></div>`;
-}
-function renderFlow(){
- let h=topCard("まずは「流れ」を1本つなごう","このページの内容を、バラバラの暗記ではなく「前→次」でなぞります。");
- flow.forEach((x,i)=>{h+=`<div class="card"><div class="era">${i+1} / ${flow.length}</div><h2>${x[0]}</h2><div class="node">${x[1]}</div>${i<flow.length-1?'<div class="arrow">↓</div>':''}</div>`});
- app.innerHTML=h;
-}
-function renderQuiz(){
- const q=links[qi%links.length];
- let opts=[q[1]];
- while(opts.length<4){
-  const x=links[Math.floor(Math.random()*links.length)][1];
-  if(!opts.includes(x))opts.push(x);
- }
- opts.sort(()=>Math.random()-.5);
- app.innerHTML=`${topCard("つながり問題","「誰と誰？」「何と何？」をセットで覚えよう。")}
- <div class="card"><div class="era">つながり問題　${qi%links.length+1}問目 / 全${links.length}問</div>
- <div class="progress"><div class="bar" style="width:${Math.round(((qi%links.length)+1)/links.length*100)}%"></div></div>
- <h2>「${q[0]}」と特に関係が深いのは？</h2><p>${q[2]}</p>
- ${opts.map(o=>`<button class="choice" onclick="quizAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[1])})">${o}</button>`).join("")}
- <div id="result"></div></div>`;
-}
-function quizAnswer(el,got,correct){
- document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
- if(got===correct){
-  el.classList.add('correct'); addStamp();
-  result.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b> 「なぜつながるか」まで言えたらさらに強い。</p><button class="primary next" onclick="qi++;renderQuiz()">次へ</button></div>`;
- }else{
-  el.classList.add('wrong');
-  mistakes.push({type:"つながり",q:links[qi%links.length],got});
-  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
-  result.innerHTML=`<div class="answer"><b>ここはもう1周！</b><br>正解は「${correct}」。<p class="small">次に同じ問題が出たら、今度は自力で答えよう。</p><button class="primary" onclick="qi++;renderQuiz()">次へ</button></div>`;
- }
-}
-function renderKanji(){
- const q=kanji[ki%kanji.length];
- let opts=[...new Set(q[3])].sort(()=>Math.random()-.5);
- app.innerHTML=`${topCard("漢字は「見た目」で区別！","人名・出来事・制度・建造物など、入試で書けるようにする重要語だけ。")}
- <div class="card"><div class="era">漢字問題　${ki+1}問目 / 全${kanji.length}問</div>
- <div class="progress"><div class="bar" style="width:${Math.round(((ki%kanji.length)+1)/kanji.length*100)}%"></div></div>
- <span class="tag">${q[1]}</span><h2>「${q[0]}」の正しい漢字は？</h2>
- ${opts.map(o=>`<button class="choice" onclick="kanjiAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[2])})">${o}</button>`).join("")}
- <div id="kresult"></div></div>`;
-}
-function kanjiAnswer(el,got,correct){
- document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
- if(got===correct){
-  el.classList.add('correct'); addStamp();
-  kresult.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b> 形までしっかり覚えたね。</p><button class="primary" onclick="ki++;renderKanji()">次の漢字</button></div>`;
- }else{
-  el.classList.add('wrong');
-  mistakes.push({type:"漢字",q:[correct],got});
-  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
-  kresult.innerHTML=`<div class="answer">惜しい！ 正解は <b>「${correct}」</b>。<br><span class="small">まちがえた字と正しい字を見比べて、もう一度。</span><br><br><button class="primary" onclick="ki++;renderKanji()">次へ</button></div>`;
- }
-}
-function renderYears(){
- const idx=yi%years.length,q=years[idx];
- let opts=[q[0]];
- const neighbors=[idx-1,idx+1,idx-2,idx+2,idx-3].filter(i=>i>=0&&i<years.length);
- for(const i of neighbors){if(!opts.includes(years[i][0])&&opts.length<4)opts.push(years[i][0])}
- opts.sort(()=>Math.random()-.5);
- app.innerHTML=`${topCard("年号は「近い数字」で鍛える！","正解と遠すぎる年を並べず、前後の年代を混ぜて本当に覚えているか確認します。")}
- <div class="card"><div class="era">年号問題　${idx+1}問目 / 全${years.length}問</div>
- <div class="progress"><div class="bar" style="width:${Math.round(((idx+1)/years.length)*100)}%"></div></div>
- <h2>${q[1]}</h2><p>${q[3]}</p><p class="big">何年？</p>
- ${opts.map(o=>`<button class="choice" onclick="yearAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[0])})">${o}年</button>`).join("")}
- <div id="yresult"></div></div>`;
-}
-function yearAnswer(el,got,correct){
- document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
- const q=years[yi%years.length];
- if(got===correct){
-  el.classList.add('correct'); addStamp();
-  yresult.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b></p><p>覚え方：<b>${q[2]}</b></p><button class="primary" onclick="yi++;renderYears()">次の年号</button></div>`;
- }else{
-  el.classList.add('wrong');
-  mistakes.push({type:"年号",q,got});
-  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
-  yresult.innerHTML=`<div class="answer"><b>ここはもう1周！</b><br>正解は <b>${q[0]}年</b>「${q[1]}」<p>🧠 覚え方：<b>${q[2]}</b></p><button class="primary" onclick="yi++;renderYears()">覚えた！ 次へ</button></div>`;
- }
-}
-function renderTrace(){
- const x=flow[ti%flow.length];
- app.innerHTML=`${topCard("穴埋めで思い出す","答えを見る前に、前後のつながりから思い出してみよう。")}
- <div class="card"><div class="era">穴埋め問題　${ti+1}問目 / 全${flow.length}問</div>
- <h2>${x[0]}</h2><p>この用語について正しい説明は？</p>
- <button class="primary" onclick="document.getElementById('a').classList.remove('hidden')">答えを見る</button>
- <div id="a" class="answer hidden">${x[1]}<br><br><button class="primary" onclick="ti++;renderTrace()">次へ</button></div></div>`;
-}
-function renderMistakes(){
- if(!mistakes.length){app.innerHTML=topCard("まちがいゼロ！","今はまだありません。間違えた問題はここに自動でたまります。");return}
- app.innerHTML=`${topCard("まちがいをもう1周！",`${mistakes.length}件。ここをつぶすと、次の周回がラクになるよ。`)}
- ${mistakes.slice(-20).reverse().map(m=>`<div class="card"><span class="tag">${m.type}</span><b>${Array.isArray(m.q)?m.q.join(" → "):m.q}</b><p class="small">あなたの答え：${m.got}</p></div>`).join("")}`;
-}
-renderFlow();
-</script>
-</body>
-</html>
+let state={era:null,queue:[],pos:0,locked:false};
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV22")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV22",JSON.stringify(s));
+function renderHome(){let s=store();document.getElementById("todayCorrect").textContent=s.today||0;document.getElementById("cardCount").textContent=Object.keys(s.cards||{}).length;
+document.getElementById("eraGrid").innerHTML=eras.map(e=>{let p=(s.progress&&s.progress[e.id])||0;let pct=Math.min(100,p/50*100);return `<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}><div class="art">${e.art}</div><h3>${e.name}</h3><div class="progress">${e.unlocked?Math.min(p,50)+"問 / 50問":"これから追加"}</div><div class="bar"><i style="width:${pct}%"></i></div></button>`}).join("")}
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
+function startEra(id){state.era=id;let pool=Q[id];state.queue=[];for(let i=0;i<Math.min(50,pool.length);i++)state.queue.push(i);for(let i=state.queue.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.queue[i],state.queue[j]]=[state.queue[j],state.queue[i]]}state.pos=0;document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;document.getElementById("qTotal").textContent=50;show("quiz");renderQuestion()}
+function renderQuestion(){
+setQuizFriend();
+state.locked=false;let q=Q[state.era][state.queue[state.pos]];document.getElementById("qNow").textContent=state.pos+1;document.getElementById("qType").textContent=q[0];document.getElementById("question").innerHTML=q[1];let c=document.getElementById("choices");c.innerHTML="";q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.innerHTML=x;b.addEventListener("click",()=>answer(i,b));c.appendChild(b)});document.getElementById("feedback").style.display="none";document.getElementById("nextBtn").style.display="none"}
+function answer(i,btn){if(state.locked)return;state.locked=true;let q=Q[state.era][state.queue[state.pos]],buttons=[...document.querySelectorAll(".choice")];buttons[q[3]].classList.add("correct");let ok=i===q[3];if(!ok)btn.classList.add("wrong");let f=document.getElementById("feedback");f.innerHTML=(ok?"⭕ 正解！":"❌ ここを覚えよう")+"<br>"+q[4];f.style.display="block";document.getElementById("nextBtn").style.display="block";let s=store();if(ok)s.today=(s.today||0)+1;save(s)}
+function nextQuestion(){let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;if(state.pos>=50){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスター";show("complete")}else renderQuestion()}
+function goHome(){show("home");renderHome()}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV22");renderHome()}}
+renderHome();
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=20").catch(()=>{}))}
+</script></body></html>
