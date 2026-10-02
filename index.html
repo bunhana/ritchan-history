@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=25">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=25">
+<link rel="manifest" href="./manifest.webmanifest?v=26">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=26">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -70,30 +70,100 @@ body{background:linear-gradient(#dff4ff 0%,#fff7f2 47%,#efffcf 100%);color:var(-
 .complete h2{font-size:37px;color:#ff456f;text-shadow:0 2px #fff}
 img.hero-art,img.character{border-radius:22px}
 </style>
-</head>
+
+<style id="photo-faithful-v26">
+body{background:
+radial-gradient(circle at 10% 9%,#fff 0 4px,transparent 5px),
+linear-gradient(180deg,#d9f4ff 0 31%,#fff4f6 31% 70%,#eefbcf 70%);min-height:100vh}
+.hero{position:relative;background:linear-gradient(#c9efff,#ffe8f3 58%,#effac9);padding-top:20px}
+.hero:after{content:"🌸　🌸　🏯　🌸　🌸";display:block;font-size:25px;margin-top:8px}
+.chiikawa-banner{background:#fff7db;border:3px solid white;border-radius:24px;padding:8px;box-shadow:0 7px 20px #6d83962b}
+.chiikawa-banner img{width:100%;max-height:185px;object-fit:cover;border-radius:18px}
+.era{padding:7px;border-radius:22px}.era h3{margin:7px 0 4px}.era .art img{height:130px!important}
+.stage-card{background:linear-gradient(#dff7ff,#fff0f5 55%,#efffcf);padding:12px}
+.stage-art{width:100%;height:245px;object-fit:cover;border-radius:24px;border:4px solid #fff}
+.scroll{margin-top:-22px;position:relative;background:#fff4cd!important;border:4px solid #c58c46!important;box-shadow:inset 0 0 0 4px #ffe9a9}
+.scroll h2{font-size:20px!important;background:transparent!important;padding:0!important;margin:0 0 8px}
+.intro-lead{background:#fffdf1;border-radius:15px;padding:11px;font-weight:800;line-height:1.65;margin-bottom:9px}
+.intro-topics{font-weight:850;line-height:1.7}
+.start-btn,.next-btn{width:80%;display:block;margin:14px auto 0;padding:13px;border:0;color:white}
+.progress-big{height:12px;background:#fff;border-radius:99px;margin:0 10px 10px;overflow:hidden;box-shadow:inset 0 0 0 1px #d6d6d6}
+.progress-big i{display:block;height:100%;background:linear-gradient(90deg,#6ccf7c,#a8e66f);border-radius:99px}
+.quiz-card{padding:12px;background:linear-gradient(#fff7d7,#fffdf4)}
+.quiz-friend{display:flex;align-items:center;gap:10px;background:#eaf8ff;border-radius:18px;padding:7px;margin-bottom:8px}
+.quiz-friend img{width:74px;height:74px;object-fit:cover;border-radius:50%;border:3px solid white}
+.quiz-friend b{font-size:15px}
+.question{font-weight:900}
+.choice{position:relative;text-align:left;background:linear-gradient(#fff,#eaf6ff);border:2.5px solid #72aeda!important;box-shadow:0 2px 0 #c7ddec;padding-left:18px!important}
+.choice:before{content:attr(data-num);display:inline-grid;place-items:center;width:25px;height:25px;border:2px solid #70a9d2;border-radius:50%;margin-right:9px;background:white;color:#3977a6}
+.photo-wrap{background:white;border:4px solid white;border-radius:19px;box-shadow:0 4px 14px #74808a30;margin:8px 0 12px;overflow:hidden}
+.photo-wrap img{display:block;width:100%;max-height:245px;object-fit:cover}
+.photo-wrap small{display:block;font-size:9px;padding:4px 7px;color:#667}
+.result-card{min-height:80vh;border:4px solid white;border-radius:28px;padding:16px;text-align:center;box-shadow:0 8px 24px #70809033}
+.result-card.correct{background:linear-gradient(#fff7d7,#fff0f4 60%,#f0ffcf)}
+.result-card.wrong{background:linear-gradient(#d9efff,#e7e7ff 65%,#edf8ff)}
+.result-era{font-weight:1000;font-size:18px}.result-title{font-size:48px;font-weight:1000;margin:7px 0 0}
+.result-card.correct .result-title{color:#ff4776;text-shadow:2px 2px white}
+.result-card.wrong .result-title{color:#285ea5;text-shadow:2px 2px white}
+.sparkles{font-size:26px}.result-art{width:100%;height:220px;object-fit:cover;border-radius:22px;border:4px solid white;margin:8px 0}
+.answer-compare{display:grid;gap:8px;text-align:left;margin:8px 0;font-weight:900}
+.answer-compare .mine{background:#ffe4e8;border:2px solid #ff8ca0;border-radius:15px;padding:10px}
+.answer-compare .right{background:#e5f9e5;border:2px solid #6bc87b;border-radius:15px;padding:10px}
+.result-explain{background:#fffdf1;border:2px solid #ead7a0;border-radius:17px;padding:12px;text-align:left;font-weight:800;line-height:1.7}
+.mnemonic-box{margin-top:9px;background:#fff1a9;border:3px dashed #f1a43c;border-radius:18px;padding:11px;text-align:left;font-weight:900;line-height:1.6}
+ruby rt{font-size:.55em;color:#566}
+</style></head>
 <body><main class="app">
 <section id="home" class="screen active">
 <div class="hero"><div class="logo">りっちゃん<br>歴史ドリル 📖</div><div class="sub">～かかわりをえながら 日本の歴史を～</div></div>
-<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=25" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
+<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=26" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
 <div class="panel"><div class="prompt">ちいかわたちと歴史マスターをめざそう！</div><div class="small" style="text-align:center">テキストの流れを「人物→できごと→理由→結果」でつなごう</div></div>
 <div class="stats"><div class="stat">今日の正解<b id="todayCorrect">0</b></div><div class="stat">集めたカード<b id="cardCount">0</b></div></div>
 <div class="section-title">時代問題</div><div id="eraGrid" class="grid"></div>
 <button class="reset" onclick="resetProgress()">進み具合をリセット</button>
 </section>
 
+<section id="intro" class="screen">
+<div class="top"><button class="back" onclick="goHome()">←</button><div id="introEra" style="font-weight:1000;font-size:23px"></div></div>
+<div class="intro stage-card">
+  <img id="introArt" class="stage-art" src="" alt="">
+  <div class="scroll"><h2>📜 この時代で出てくる内容</h2><div id="introLead" class="intro-lead"></div><div id="introTopics" class="intro-topics"></div></div>
+  <button class="start-btn" onclick="beginEra()">はじめる　›</button>
+</div>
+</section>
+
 <section id="quiz" class="screen">
-<div class="top"><button class="back" onclick="goHome()">←</button><div id="quizEra" style="font-weight:900;font-size:21px"></div><div class="pill"><span id="qNow">1</span>/<span id="qTotal">50</span></div></div>
-<div class="quiz-card"><div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=25" alt=""><b id="quizFriendText">よく考えて！本文のつながりを思い出そう♪</b></div><span class="tag" id="qType">つながり</span><div class="qnum">今回の問題</div><div class="question" id="question"></div><div id="choices" class="choices"></div><div id="feedback" class="feedback"></div><button id="nextBtn" class="next" onclick="nextQuestion()">次の問題へ →</button></div>
+<div class="top"><button class="back" onclick="goHome()">←</button><div id="quizEra" style="font-weight:1000;font-size:21px"></div><div class="pill"><span id="qNow">1</span>/<span id="qTotal">50</span></div></div>
+<div class="progress-big"><i id="quizProgress"></i></div>
+<div class="quiz-card">
+ <div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=26" alt=""><b id="quizFriendText">うーん…だれかな？</b></div>
+ <span class="tag" id="qType">つながり</span><div class="qnum">問題</div>
+ <div id="photoWrap" class="photo-wrap" style="display:none"><img id="questionPhoto" alt="歴史資料"><small id="photoCredit"></small></div>
+ <div class="question" id="question"></div><div id="choices" class="choices"></div>
+</div>
+</section>
+
+<section id="result" class="screen">
+<div id="resultCard" class="result-card">
+  <div id="resultEra" class="result-era"></div>
+  <div id="resultTitle" class="result-title"></div>
+  <div class="sparkles">✦ 🌸 ✨ 🌸 ✦</div>
+  <img id="resultArt" class="result-art" src="./chiikawa-friends.jpg?v=26" alt="">
+  <div id="answerCompare" class="answer-compare"></div>
+  <div id="resultExplain" class="result-explain"></div>
+  <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
+  <button class="next-btn" onclick="nextQuestion()">つぎの問題へ　›</button>
+</div>
 </section>
 
 <section id="complete" class="screen">
 <div class="top"><button class="back" onclick="goHome()">←</button></div>
-<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=25" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
+<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=26" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
 </section>
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=25","./chiikawa-usagi.jpg?v=25","./chiikawa-friends.jpg?v=25"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=26","./chiikawa-usagi.jpg?v=26","./chiikawa-friends.jpg?v=26"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
@@ -101,8 +171,8 @@ function setQuizFriend(){
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=25",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=25",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=26",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=26",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -111,6 +181,38 @@ const eras=[
 {id:"taisho",name:"大正時代",art:"🎩🌹",unlocked:false},
 {id:"showa",name:"昭和時代",art:"📻🗼",unlocked:false}
 ];
+const INTRO={
+asukaNara:{
+ lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
+ topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
+ art:"./chiikawa-usagi.jpg?v=26"},
+heian:{
+ lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
+ topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
+ art:"./chiikawa-hachiware.jpg?v=26"}
+};
+const MNEMONIC={
+"538年":"🌸 ご参拝（538）しよう、仏教伝来！",
+"593年":"🌸 国民（593）まとめる聖徳太子！",
+"603年":"🌸 むれみ（603）んなを冠位で分ける、冠位十二階！",
+"604年":"🌸 群れよ（604）みんな、十七条の憲法！",
+"607年":"🌸 群れな（607）して海へ、遣隋使！",
+"645年":"🌸 むしご（645）ろし…で覚える大化の改新！",
+"663年":"🌸 むむ、惨（663）敗…白村江の戦い！",
+"672年":"🌸 むなに（672）残る壬申の乱！",
+"694年":"🌸 むくよ（694）新しい都、藤原京！",
+"701年":"🌸 なれい（701）い国へ、大宝律令！",
+"708年":"🌸 なれや（708）お金に、和同開珎！",
+"710年":"🌸 なんと（710）きれいな平城京！",
+"723年":"🌸 なにさ（723）、三世一身の法！",
+"743年":"🌸 なしさ（743）私有の期限、墾田永年私財法！",
+"784年":"🌸 なやし（784）い長岡京！",
+"794年":"🌸 なくよ（794）うぐいす平安京！",
+"804年":"🌸 やれよ（804）、唐で学ぼう最澄・空海！",
+"894年":"🌸 白紙（894）に戻そう遣唐使！",
+"1016年":"🌸 遠い昔（1016）、道長が摂政！"
+};
+
 const Q={
 asukaNara:[
 ["つながり","710年、都が藤原京から移された先は？",["平城京","平安京","長岡京","大津宮"],0,"710年に都は<ruby>平城京<rt>へいじょうきょう</rt></ruby>へ。奈良時代の中心になるよ。"],
@@ -137,7 +239,7 @@ asukaNara:[
 ["文化","聖武天皇のころ、唐の影響を受けて栄えた文化は？",["飛鳥文化","白鳳文化","天平文化","国風文化"],2,"聖武天皇のころの文化を<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>という。"],
 ["文化","東大寺にあり、聖武天皇の愛用品などを納めた建物は？",["正倉院","金堂","夢殿","鳳凰堂"],0,"<ruby>正倉院<rt>しょうそういん</rt></ruby>には国際色豊かな品々も残る。"],
 ["建築","正倉院に見られる、三角形の角材を組み合わせるつくりは？",["寝殿造","校倉造","書院造","数寄屋造"],1,"<ruby>校倉造<rt>あぜくらづくり</rt></ruby>。"],
-["文化","皇室や貴族の神話・伝承をまとめた歴史書は？",["古事記","風土記","万葉集","枕草子"],0,"『<ruby>古事記<rt>こじき</rt></ruby>』は神話や伝承をまとめた。"],
+["写真","この写真の五重塔で知られる寺は？",["法隆寺","東大寺","唐招提寺","平等院"],0,"これは<ruby>法隆寺<rt>ほうりゅうじ</rt></ruby>の五重塔。飛鳥時代の文化を代表する建築として、写真でも見分けられるようにしよう。","https://commons.wikimedia.org/wiki/Special:Redirect/file/Horyu-ji%20Kondo%20and%20Five-story%20Pagoda%202022.jpg","写真：Wikimedia Commons（CC0）"],
 ["文化","中国の歴史書を参考にした奈良時代の歴史書は？",["日本書紀","古今和歌集","源氏物語","方丈記"],0,"『<ruby>日本書紀<rt>にほんしょき</rt></ruby>』。"],
 ["文化","国ごとの産物・伝説・地名の由来などをまとめたものは？",["風土記","日本書紀","万葉集","古事記"],0,"『<ruby>風土記<rt>ふどき</rt></ruby>』。"],
 ["文化","約4500首の和歌を集めた日本最古の歌集は？",["古今和歌集","新古今和歌集","万葉集","小倉百人一首"],2,"『<ruby>万葉集<rt>まんようしゅう</rt></ruby>』には幅広い身分の人の歌が収められた。"],
@@ -183,7 +285,7 @@ heian:[
 ["文化","漢字の一部を取り出すなどして発達した文字は？",["かな文字","甲骨文字","楔形文字","梵字"],0,"国風文化では<ruby>かな文字<rt>かなもじ</rt></ruby>が発達した。"],
 ["宗教","現世の苦しみから逃れ、死後に極楽浄土へ行くことを願う信仰は？",["浄土教","神道","禅宗","修験道"],0,"平安時代には<ruby>浄土教<rt>じょうどきょう</rt></ruby>が流行。"],
 ["人物","極楽を表そうとして宇治に平等院鳳凰堂を建てた人物は？",["藤原頼通","藤原道長","藤原良房","藤原基経"],0,"<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が平等院鳳凰堂を建てた。"],
-["文化","藤原頼通が宇治に建てた建物は？",["中尊寺金色堂","平等院鳳凰堂","銀閣","金閣"],1,"<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>。"],
+["写真","この建物は何？",["東大寺大仏殿","平等院鳳凰堂","金閣","唐招提寺"],1,"これは<ruby>宇治<rt>うじ</rt></ruby>の<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>。<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が建て、<ruby>浄土教<rt>じょうどきょう</rt></ruby>の広がりとも深く関係するよ。","https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/By%C5%8Dd%C5%8D-in%2C_Phoenix_Hall.jpg/330px-By%C5%8Dd%C5%8D-in%2C_Phoenix_Hall.jpg","写真：Marco Almbauer / Wikimedia Commons（CC0）"],
 ["政治","9世紀、天皇の家臣として初めて摂政となった藤原氏の人物は？",["藤原良房","藤原基経","藤原道長","藤原頼通"],0,"<ruby>藤原良房<rt>ふじわらのよしふさ</rt></ruby>は臣下として初の摂政。"],
 ["政治","藤原良房の子・基経が最初に就いた役職は？",["執権","関白","太政大臣","征夷大将軍"],1,"<ruby>藤原基経<rt>ふじわらのもとつね</rt></ruby>は最初の関白。"],
 ["人物","4人の娘を天皇や天皇の子と結婚させ、1016年に摂政となった人物は？",["藤原道長","藤原頼通","藤原良房","菅原道真"],0,"<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby>の時代に藤原氏は全盛へ。"],
@@ -214,24 +316,87 @@ heian:[
 ["組合せ", "正しい組み合わせはどれ？", ["藤原良房―臣下として初の摂政", "藤原基経―初の征夷大将軍", "藤原道長―遣唐使停止を提案", "藤原頼通―大宝律令"], 0, "藤原良房は臣下として初の摂政。"],
 ["順番", "古い順に正しいものは？", ["長岡京→平安京→遣唐使停止→道長が摂政", "平安京→長岡京→遣唐使停止→道長が摂政", "長岡京→遣唐使停止→平安京→道長が摂政", "遣唐使停止→平安京→長岡京→道長が摂政"], 0, "784→794→894→1016。"],
 ["年号", "784・794・894の組み合わせで正しいものは？", ["784長岡京・794平安京・894遣唐使停止", "784平安京・794長岡京・894遣唐使停止", "784長岡京・794遣唐使停止・894平安京", "784平城京・794平安京・894遣隋使停止"], 0, "784→794→894。"],
-["文化", "『源氏物語』を書いた人物は？", ["紫式部", "清少納言", "小野小町", "和泉式部"], 0, "『源氏物語』＝紫式部。"],
+["写真","この肖像で表されている、『源氏物語』を書いた人物は？",["紫式部","清少納言","小野小町","和泉式部"],0,"『<ruby>源氏物語<rt>げんじものがたり</rt></ruby>』を書いたのは<ruby>紫式部<rt>むらさきしきぶ</rt></ruby>。<ruby>国風文化<rt>こくふうぶんか</rt></ruby>を代表する文学とセットで覚えよう。","https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portrait_of_Murasaki_Shikibu_04_02.jpg/500px-Portrait_of_Murasaki_Shikibu_04_02.jpg","肖像：狩野孝信 / Wikimedia Commons（Public Domain）"],
 ["文化", "『枕草子』を書いた人物は？", ["紫式部", "清少納言", "紀貫之", "菅原道真"], 1, "『枕草子』＝清少納言。"]
 ]};
 
 let state={era:null,queue:[],pos:0,locked:false};
-const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV25")||'{"progress":{},"cards":{},"today":0}');
-const save=s=>localStorage.setItem("ritchanHistoryV25",JSON.stringify(s));
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV26")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV26",JSON.stringify(s));
 function renderHome(){let s=store();document.getElementById("todayCorrect").textContent=s.today||0;document.getElementById("cardCount").textContent=Object.keys(s.cards||{}).length;
 document.getElementById("eraGrid").innerHTML=eras.map(e=>{let p=(s.progress&&s.progress[e.id])||0;let pct=Math.min(100,p/50*100);return `<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}><div class="art">${e.unlocked?`<img src="${e.art}" alt="" style="width:100%;height:115px;object-fit:cover;border-radius:18px">`:e.art}</div><h3>${e.name}</h3><div class="progress">${e.unlocked?Math.min(p,50)+"問 / 50問":"これから追加"}</div><div class="bar"><i style="width:${pct}%"></i></div></button>`}).join("")}
 function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
-function startEra(id){state.era=id;let pool=Q[id];state.queue=[];for(let i=0;i<Math.min(50,pool.length);i++)state.queue.push(i);for(let i=state.queue.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.queue[i],state.queue[j]]=[state.queue[j],state.queue[i]]}state.pos=0;document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;document.getElementById("qTotal").textContent=state.queue.length;show("quiz");renderQuestion()}
+function startEra(id){
+ state.era=id;
+ const e=eras.find(x=>x.id===id), intro=INTRO[id];
+ document.getElementById("introEra").textContent=e.name;
+ document.getElementById("introArt").src=intro.art;
+ document.getElementById("introLead").innerHTML=intro.lead;
+ document.getElementById("introTopics").innerHTML=intro.topics;
+ show("intro");
+}
+function beginEra(){
+ let id=state.era,pool=Q[id];state.queue=[];
+ for(let i=0;i<Math.min(50,pool.length);i++)state.queue.push(i);
+ for(let i=state.queue.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.queue[i],state.queue[j]]=[state.queue[j],state.queue[i]]}
+ state.pos=0;
+ document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;
+ document.getElementById("qTotal").textContent=state.queue.length;
+ show("quiz");renderQuestion();
+}
+function addRuby(s){
+ const d=[
+ ["平城京","へいじょうきょう"],["平安京","へいあんきょう"],["長岡京","ながおかきょう"],["藤原京","ふじわらきょう"],
+ ["聖徳太子","しょうとくたいし"],["聖武天皇","しょうむてんのう"],["桓武天皇","かんむてんのう"],
+ ["大化の改新","たいかのかいしん"],["白村江","はくすきのえ"],["壬申の乱","じんしんのらん"],
+ ["大宝律令","たいほうりつりょう"],["三世一身の法","さんぜいっしんのほう"],["墾田永年私財法","こんでんえいねんしざいほう"],
+ ["遣唐使","けんとうし"],["遣隋使","けんずいし"],["鑑真","がんじん"],["正倉院","しょうそういん"],["校倉造","あぜくらづくり"],
+ ["天平文化","てんぴょうぶんか"],["国風文化","こくふうぶんか"],["藤原道長","ふじわらのみちなが"],["藤原頼通","ふじわらのよりみち"],
+ ["摂関政治","せっかんせいじ"],["摂政","せっしょう"],["関白","かんぱく"],["平等院鳳凰堂","びょうどういんほうおうどう"],
+ ["紫式部","むらさきしきぶ"],["源氏物語","げんじものがたり"],["清少納言","せいしょうなごん"],["枕草子","まくらのそうし"],
+ ["最澄","さいちょう"],["空海","くうかい"],["延暦寺","えんりゃくじ"],["金剛峯寺","こんごうぶじ"],["菅原道真","すがわらのみちざね"],
+ ["荘園","しょうえん"],["不輸の権","ふゆのけん"],["不入の権","ふにゅうのけん"],["防人","さきもり"],["木簡","もっかん"]
+ ];
+ if(/<ruby/.test(s)) return s;
+ d.forEach(([w,r])=>{s=s.split(w).join(`<ruby>${w}<rt>${r}</rt></ruby>`)});
+ return s;
+}
 function renderQuestion(){
-setQuizFriend();
-state.locked=false;let q=Q[state.era][state.queue[state.pos]];document.getElementById("qNow").textContent=state.pos+1;document.getElementById("qType").textContent=q[0];document.getElementById("question").innerHTML=q[1];let c=document.getElementById("choices");c.innerHTML="";q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.innerHTML=x;b.addEventListener("click",()=>answer(i,b));c.appendChild(b)});document.getElementById("feedback").style.display="none";document.getElementById("nextBtn").style.display="none"}
-function answer(i,btn){if(state.locked)return;state.locked=true;let q=Q[state.era][state.queue[state.pos]],buttons=[...document.querySelectorAll(".choice")];buttons[q[3]].classList.add("correct");let ok=i===q[3];if(!ok)btn.classList.add("wrong");let f=document.getElementById("feedback");f.innerHTML=(ok?"⭕ 正解！":"❌ ここを覚えよう")+"<br>"+q[4];f.style.display="block";document.getElementById("nextBtn").style.display="block";let s=store();if(ok)s.today=(s.today||0)+1;save(s)}
-function nextQuestion(){let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスター";show("complete")}else renderQuestion()}
+ setQuizFriend();state.locked=false;
+ let q=Q[state.era][state.queue[state.pos]];
+ document.getElementById("qNow").textContent=state.pos+1;
+ document.getElementById("quizProgress").style.width=((state.pos+1)/state.queue.length*100)+"%";
+ document.getElementById("qType").textContent=q[0];
+ document.getElementById("question").innerHTML=addRuby(q[1]);
+ let pw=document.getElementById("photoWrap");
+ if(q[5]){pw.style.display="block";document.getElementById("questionPhoto").src=q[5];document.getElementById("photoCredit").textContent=q[6]||""}
+ else{pw.style.display="none";document.getElementById("questionPhoto").removeAttribute("src")}
+ let c=document.getElementById("choices");c.innerHTML="";
+ q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.dataset.num=["①","②","③","④"][i];b.innerHTML=addRuby(x);b.addEventListener("click",()=>answer(i));c.appendChild(b)});
+}
+function answer(i){
+ if(state.locked)return;state.locked=true;
+ let q=Q[state.era][state.queue[state.pos]],ok=i===q[3],card=document.getElementById("resultCard");
+ card.className="result-card "+(ok?"correct":"wrong");
+ document.getElementById("resultEra").textContent=eras.find(e=>e.id===state.era).name+"　"+(state.pos+1)+" / "+state.queue.length;
+ document.getElementById("resultTitle").textContent=ok?"正解！":"ざんねん…";
+ document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=26":"./chiikawa-hachiware.jpg?v=26";
+ let compare=document.getElementById("answerCompare");
+ if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
+ else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
+ document.getElementById("resultExplain").innerHTML="📖 <b>解説</b><br>"+addRuby(q[4]);
+ let mb=document.getElementById("mnemonicBox"),correct=q[2][q[3]],mn="";
+ if(q[0]==="年号"){for(const [yr,m] of Object.entries(MNEMONIC)){if(correct.includes(yr)||q[1].includes(yr)){mn=m;break}}}
+ if(mn){mb.style.display="block";mb.innerHTML="🌸 <b>年号おぼえよう！</b><br>"+mn}else mb.style.display="none";
+ let s=store();if(ok)s.today=(s.today||0)+1;save(s);show("result");
+}
+function nextQuestion(){
+ let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;
+ if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成おめでとう！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスターカード GET！";show("complete")}
+ else{show("quiz");renderQuestion()}
+}
 function goHome(){show("home");renderHome()}
-function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV25");renderHome()}}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV26");renderHome()}}
 renderHome();
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25").catch(()=>{}))}
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=26").catch(()=>{}))}
 </script></body></html>
