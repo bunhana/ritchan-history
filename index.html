@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=27">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=27">
+<link rel="manifest" href="./manifest.webmanifest?v=28">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=28">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -146,13 +146,30 @@ ruby rt{font-size:.55em;color:#566}
 .ref-complete{text-align:center;background:linear-gradient(#fff7dc,#fff0cf 60%,#e9f6c9)}.ref-complete h1{font-size:29px;margin:14px 0 4px}.ref-complete h1 strong{color:#e72f44;font-size:39px}.complete-cast{width:100%;height:245px;object-fit:cover;border-radius:22px}.master-card{margin:-24px 20px 0;position:relative;background:#fff0bd;border:4px solid #a87332;border-radius:13px;padding:17px 8px 10px;display:grid;gap:4px}.master-card b{font-size:20px}.master-card span{font-weight:900}.ref-complete p{font-weight:900}
 .complete-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.complete-buttons button{border:0;border-radius:25px;padding:13px 5px;color:white;font-size:17px;font-weight:1000}.complete-buttons button:first-child{background:#14b8e8}.complete-buttons button:last-child{background:#ff4b7b}
 ruby rt{font-size:.55em}
+</style><style id="v28-compact-approved">
+/* Approved reference design: only vertical compression, no redesign */
+.ref-home,.ref-intro,.ref-quiz,.ref-complete{padding-top:6px;padding-bottom:8px}
+.home-title{padding:5px 7px 7px}.home-title small{font-size:18px}.home-title strong{font-size:42px}.home-title span{margin-top:2px}
+.home-cast{height:190px;margin:4px 0}.ref-era-grid{gap:6px}.ref-era-grid .era{min-height:105px!important}.ref-era-grid .era .art img{height:62px!important}
+.intro-cast{height:190px}.ref-scroll{padding-top:22px;padding-bottom:7px}.ref-scroll .intro-lead{font-size:12px;line-height:1.35;padding:5px;margin-bottom:4px}.ref-scroll .intro-topics{font-size:15px;line-height:1.42}
+.ref-start{margin-top:7px;padding:10px;font-size:22px}
+.ref-quiz{padding:5px 10px}.quiz-head img{width:31px;height:31px}.quiz-head{font-size:15px}.ref-progress{height:9px;margin-bottom:5px}
+.question-sheet{padding:7px}.question-label{padding:2px 9px;margin-bottom:2px}.question{font-size:17px!important;line-height:1.38!important;margin:2px 0 5px}
+.choices{gap:4px}.choice{font-size:15px!important;min-height:38px!important;padding:4px 8px!important}.choice:before{width:23px;height:23px}
+.quiz-bottom{margin-top:3px}.quiz-bottom img{width:110px;height:82px}.speech{padding:10px;font-size:13px}
+.photo-wrap img{max-height:170px!important}
+.ref-result{padding:5px 10px 7px;min-height:100vh}.result-title{font-size:45px!important;margin:3px 0 0!important}.result-stars{font-size:20px}
+.result-cast{height:155px;margin:1px 0 4px}.answer-compare{padding:6px!important;gap:3px}.answer-compare .mine,.answer-compare .right{padding:5px}
+.result-explain{padding:7px!important;line-height:1.4!important;font-size:14px}.mnemonic-box{padding:6px!important;line-height:1.35!important;font-size:13px;margin-top:4px!important}
+.result-next{margin-top:5px;padding:9px;font-size:20px}
+.complete-cast{height:185px}.ref-complete h1{font-size:25px;margin:5px}.ref-complete h1 strong{font-size:34px}.master-card{padding:10px 5px 6px}.ref-complete p{margin:5px}
 </style></head>
 <body><main class="app">
 <section id="home" class="screen active">
   <div class="ref-home">
     <div class="sakura-row">🌸　🌸　🌸</div>
     <div class="home-title"><small>りっちゃん</small><strong>歴史ドリル📖</strong><span>～ちいかわたちと学ぶ 日本の歴史～</span></div>
-    <div class="home-cast"><img src="./chiikawa-friends.jpg?v=27" alt=""></div>
+    <div class="home-cast"><img src="./chiikawa-friends.jpg?v=28" alt=""></div>
     <div id="eraGrid" class="ref-era-grid"></div>
   </div>
 </section>
@@ -172,7 +189,7 @@ ruby rt{font-size:.55em}
 
 <section id="quiz" class="screen">
   <div class="ref-quiz">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">50</b></span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=28" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">50</b></span></div>
     <div class="ref-progress"><i id="quizProgress"></i></div>
     <div class="question-sheet">
       <div class="question-label">問題</div>
@@ -180,17 +197,17 @@ ruby rt{font-size:.55em}
       <div class="question" id="question"></div>
       <div id="choices" class="choices"></div>
     </div>
-    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=27" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=28" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
     <span id="qType" style="display:none"></span>
   </div>
 </section>
 
 <section id="result" class="screen">
   <div id="resultCard" class="ref-result">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="resultEra"></b></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=28" alt=""><b id="resultEra"></b></div>
     <div id="resultTitle" class="result-title"></div>
     <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
-    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=27" alt="">
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=28" alt="">
     <div id="answerCompare" class="answer-compare"></div>
     <div id="resultExplain" class="result-explain"></div>
     <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
@@ -200,10 +217,10 @@ ruby rt{font-size:.55em}
 
 <section id="complete" class="screen">
   <div class="ref-complete">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>50 / 50</span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=28" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>50 / 50</span></div>
     <div class="ref-progress"><i style="width:100%"></i></div>
     <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
-    <img class="complete-cast" src="./chiikawa-reward.jpg?v=27" alt="">
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=28" alt="">
     <div class="master-card"><b id="rewardTitle"></b><span>よくがんばったね！</span></div>
     <p id="completeText"></p>
     <div class="complete-buttons"><button onclick="goHome()">ホームにもどる</button><button onclick="goNextEra()">つぎの時代へ</button></div>
@@ -212,7 +229,7 @@ ruby rt{font-size:.55em}
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=27","./chiikawa-usagi.jpg?v=27","./chiikawa-friends.jpg?v=27"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=28","./chiikawa-usagi.jpg?v=28","./chiikawa-friends.jpg?v=28"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
@@ -220,8 +237,8 @@ function setQuizFriend(){
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=27",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=27",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=28",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=28",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -234,11 +251,11 @@ const INTRO={
 asukaNara:{
  lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
  topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
- art:"./chiikawa-usagi.jpg?v=27"},
+ art:"./chiikawa-usagi.jpg?v=28"},
 heian:{
  lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
  topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
- art:"./chiikawa-hachiware.jpg?v=27"}
+ art:"./chiikawa-hachiware.jpg?v=28"}
 };
 const MNEMONIC={
 "538年":"🌸 ご参拝（538）しよう、仏教伝来！",
@@ -314,7 +331,7 @@ asukaNara:[
 ["漢字", "正しい漢字はどれ？ 聖武天皇のころの文化。", ["天平文化", "天坪文化", "天兵文化", "天評文化"], 0, "正しくは「天平文化」。"],
 ["組合せ", "正しい組み合わせはどれ？", ["行基―東大寺大仏の造立に協力", "鑑真―遣隋使", "阿倍仲麻呂―征夷大将軍", "聖武天皇―遣唐使停止を提案"], 0, "行基は東大寺大仏の造立に協力した。"],
 ["順番", "古い順に正しいものは？", ["大化の改新→白村江の戦い→壬申の乱→大宝律令", "白村江の戦い→大化の改新→壬申の乱→大宝律令", "大化の改新→壬申の乱→白村江の戦い→大宝律令", "壬申の乱→大化の改新→白村江の戦い→大宝律令"], 0, "645→663→672→701。"],
-["年号", "710・723・743の組み合わせで正しいものは？", ["710平城京・723三世一身の法・743墾田永年私財法", "710藤原京・723墾田永年私財法・743三世一身の法", "710平城京・723大宝律令・743墾田永年私財法", "710長岡京・723三世一身の法・743墾田永年私財法"], 0, "710→723→743をセットで覚えよう。"]
+["年号","仏教が伝わったとされる年は？",["538年","593年","645年","710年"],0,"538年に仏教が伝わったとされます。"]
 ],
 heian:[
 ["人物","奈良の貴族や寺院の力から離れて政治を立て直そうとした天皇は？",["桓武天皇","聖武天皇","天武天皇","後醍醐天皇"],0,"<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>が都を移し政治改革を進めた。"],
@@ -348,7 +365,7 @@ heian:[
 ["順番","古い順に正しいものは？",["長岡京→平安京→遣唐使停止→藤原道長が摂政","平安京→長岡京→遣唐使停止→藤原道長が摂政","長岡京→遣唐使停止→平安京→藤原道長が摂政","遣唐使停止→長岡京→平安京→藤原道長が摂政"],0,"784→794→894→1016の順。"],
 ["つながり","平安時代、地方政治を国司に任せる傾向が強まった結果として起きたことは？",["地方で国司が勝手な政治をする例が増えた","班田収授法が復活した","遣唐使が増えた","公地公民が強まった"],0,"中央の監督が弱まり、国司の不正を農民らが訴えることもあった。"],
 ["年号", "最澄・空海らが遣唐使とともに唐へ渡った年は？", ["794年", "804年", "814年", "894年"], 1, "804年。794年平安京、894年遣唐使停止との混同注意。"],
-["年号", "平安京遷都と遣唐使停止の年の組み合わせは？", ["794年・894年", "784年・894年", "794年・884年", "804年・894年"], 0, "794年＝平安京、894年＝遣唐使停止。"],
+["年号","冠位十二階が定められた年は？",["593年","603年","604年","607年"],1,"603年に冠位十二階が定められました。"],
 ["年号", "藤原道長が摂政となった年は？", ["1006年", "1016年", "1026年", "1061年"], 1, "1016年。"],
 ["漢字", "正しい漢字はどれ？ 東北地方の蝦夷を征討した役職。", ["征夷大将軍", "征異大将軍", "征夷大将郡", "征威大将軍"], 0, "正しくは「征夷大将軍」。"],
 ["漢字", "正しい漢字はどれ？ 幼い天皇に代わって政治を行う役職。", ["摂政", "接政", "摂正", "摂征"], 0, "正しくは「摂政」。"],
@@ -364,19 +381,47 @@ heian:[
 ["組合せ", "正しい組み合わせはどれ？", ["最澄―天台宗―比叡山延暦寺", "空海―天台宗―高野山金剛峯寺", "最澄―真言宗―比叡山延暦寺", "鑑真―真言宗―高野山金剛峯寺"], 0, "最澄＝天台宗＝比叡山延暦寺。"],
 ["組合せ", "正しい組み合わせはどれ？", ["藤原良房―臣下として初の摂政", "藤原基経―初の征夷大将軍", "藤原道長―遣唐使停止を提案", "藤原頼通―大宝律令"], 0, "藤原良房は臣下として初の摂政。"],
 ["順番", "古い順に正しいものは？", ["長岡京→平安京→遣唐使停止→道長が摂政", "平安京→長岡京→遣唐使停止→道長が摂政", "長岡京→遣唐使停止→平安京→道長が摂政", "遣唐使停止→平安京→長岡京→道長が摂政"], 0, "784→794→894→1016。"],
-["年号", "784・794・894の組み合わせで正しいものは？", ["784長岡京・794平安京・894遣唐使停止", "784平安京・794長岡京・894遣唐使停止", "784長岡京・794遣唐使停止・894平安京", "784平城京・794平安京・894遣隋使停止"], 0, "784→794→894。"],
+["年号","十七条の憲法が定められた年は？",["603年","604年","607年","645年"],1,"604年に十七条の憲法が定められました。"],
 ["写真","この肖像で表されている、『源氏物語』を書いた人物は？",["紫式部","清少納言","小野小町","和泉式部"],0,"『<ruby>源氏物語<rt>げんじものがたり</rt></ruby>』を書いたのは<ruby>紫式部<rt>むらさきしきぶ</rt></ruby>。<ruby>国風文化<rt>こくふうぶんか</rt></ruby>を代表する文学とセットで覚えよう。","https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portrait_of_Murasaki_Shikibu_04_02.jpg/500px-Portrait_of_Murasaki_Shikibu_04_02.jpg","肖像：狩野孝信 / Wikimedia Commons（Public Domain）"],
 ["文化", "『枕草子』を書いた人物は？", ["紫式部", "清少納言", "紀貫之", "菅原道真"], 1, "『枕草子』＝清少納言。"]
 ]};
 
+
+function normalizeYearQuestions(){
+ const fallback={
+ asukaNara:[
+ ["年号","仏教が伝わったとされる年は？",["538年","593年","645年","710年"],0,"538年に仏教が伝わったとされます。"],
+ ["年号","冠位十二階が定められた年は？",["593年","603年","604年","607年"],1,"603年に冠位十二階が定められました。"],
+ ["年号","十七条の憲法が定められた年は？",["603年","604年","607年","645年"],1,"604年に十七条の憲法が定められました。"],
+ ["年号","大化の改新が始まった年は？",["604年","645年","663年","672年"],1,"645年に大化の改新が始まりました。"],
+ ["年号","平城京に都が移された年は？",["694年","701年","710年","743年"],2,"710年に平城京へ都が移されました。"],
+ ["年号","墾田永年私財法が出された年は？",["723年","733年","743年","753年"],2,"743年に墾田永年私財法が出されました。"]],
+ heian:[
+ ["年号","長岡京に都が移された年は？",["774年","784年","794年","804年"],1,"784年に長岡京へ都が移されました。"],
+ ["年号","平安京に都が移された年は？",["784年","794年","804年","894年"],1,"794年に平安京へ都が移されました。"],
+ ["年号","遣唐使の停止が決まった年は？",["804年","864年","894年","904年"],2,"894年に遣唐使の停止が決まりました。"],
+ ["年号","藤原道長が摂政になった年は？",["996年","1006年","1016年","1026年"],2,"1016年に藤原道長が摂政になりました。"]]
+ };
+ for(const id of Object.keys(Q)){
+   let n=0;
+   Q[id]=Q[id].map(q=>{
+     if(q[0]!=="年号") return q;
+     const pair=q[1].includes("組み合わせ")||q[1].includes("組合せ")||q[1].includes("それぞれ")||q[2].some(x=>(x.match(/年/g)||[]).length>1);
+     if(!pair) return q;
+     const a=fallback[id]||fallback.asukaNara; return a[(n++)%a.length];
+   });
+ }
+}
+normalizeYearQuestions();
+
 let state={era:null,queue:[],pos:0,locked:false};
-const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV27")||'{"progress":{},"cards":{},"today":0}');
-const save=s=>localStorage.setItem("ritchanHistoryV27",JSON.stringify(s));
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV28")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV28",JSON.stringify(s));
 function renderHome(){
  let s=store();
  const shown=[
-  {id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=27",unlocked:true},
-  {id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=27",unlocked:true},
+  {id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=28",unlocked:true},
+  {id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=28",unlocked:true},
   {id:"kamakura",name:"鎌倉時代",unlocked:false},
   {id:"muromachi",name:"室町時代",unlocked:false},
   {id:"sengoku",name:"戦国時代",unlocked:false},
@@ -439,7 +484,7 @@ function answer(i){
  card.className="result-card "+(ok?"correct":"wrong");
  document.getElementById("resultEra").textContent=eras.find(e=>e.id===state.era).name+"　"+(state.pos+1)+" / "+state.queue.length;
  document.getElementById("resultTitle").textContent=ok?"正解！":"ざんねん…";
- document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=27":"./chiikawa-hachiware.jpg?v=27";
+ document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=28":"./chiikawa-hachiware.jpg?v=28";
  let compare=document.getElementById("answerCompare");
  if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
  else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
@@ -461,7 +506,7 @@ show("complete")}
 }
 function goNextEra(){if(state.era==="asukaNara")startEra("heian");else goHome()}
 function goHome(){show("home");renderHome()}
-function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV27");renderHome()}}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV28");renderHome()}}
 renderHome();
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=27").catch(()=>{}))}
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=28").catch(()=>{}))}
 </script></body></html>
