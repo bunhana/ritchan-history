@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=23">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=23">
+<link rel="manifest" href="./manifest.webmanifest?v=25">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=25">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -39,11 +39,42 @@ ruby rt{font-size:.5em}.reset{border:0;background:transparent;color:#9c8792;text
 .reward-photo{width:150px;height:150px;border-radius:26px;object-fit:cover;border:5px solid white;box-shadow:0 6px 18px #8c718b40;margin-bottom:10px}
 
 </style>
+
+<style id="approved-ui-v25">
+:root{--pink:#ff5b87;--purple:#8567e8;--sky:#dff4ff;--cream:#fff7d8;--ink:#1e2a38}
+body{background:linear-gradient(#dff4ff 0%,#fff7f2 47%,#efffcf 100%);color:var(--ink)}
+.wrap{max-width:520px}
+.hero{background:linear-gradient(180deg,#cceeff 0%,#ffeaf4 55%,#efffcf 100%);border:4px solid #fff;border-radius:28px;padding:18px 16px 14px;box-shadow:0 8px 24px #7992a52e;overflow:hidden}
+.logo{font-size:34px;line-height:1.05;font-weight:1000;color:#222a49;text-shadow:0 3px #fff}
+.sub{font-weight:900;color:#34445a;margin-top:7px}
+.eras{gap:10px}
+.era{border:3px solid #fff;border-radius:22px;background:linear-gradient(#fff,#fff5e6);box-shadow:0 7px 16px #9a9a9a25;padding:9px}
+.era:nth-child(2){background:linear-gradient(#fff,#ecffe2)}
+.era.locked{background:linear-gradient(#e8f5fa,#d9e7ed);filter:saturate(.7)}
+.era h3{font-size:19px}
+.era .progress{height:9px}
+.intro,.quiz-card,.feedback,.complete{border:4px solid #fff;border-radius:26px;background:linear-gradient(#fffdf0,#fff7d8);box-shadow:0 8px 22px #73839429}
+.intro h2{font-size:30px;background:#ffd7e6;border-radius:24px;padding:8px}
+.intro .scroll{background:#fff8dc;border:3px solid #d99b43;border-radius:20px;padding:16px}
+.start-btn,.next-btn{background:linear-gradient(#ff7198,#ff4777);border:3px solid #fff;box-shadow:0 4px 0 #d43868;border-radius:999px;font-size:24px;font-weight:1000}
+.quiz-head{background:#fff8d9;border-radius:20px;padding:9px 12px}
+.quiz-head .bar{height:12px}
+.question{font-size:21px;line-height:1.55;background:#fffdf2;border-radius:18px;padding:15px}
+.choice{font-size:19px;font-weight:850;border:2.5px solid #5ba2dc;background:linear-gradient(#fff,#eef7ff);border-radius:999px;padding:12px 15px;margin:9px 0}
+.feedback.correct{background:linear-gradient(#fff9e8,#fff0f4)}
+.feedback.wrong{background:linear-gradient(#e7f5ff,#dbe9ff)}
+.feedback .big{font-size:46px;font-weight:1000}
+.feedback.correct .big{color:#ff426f}
+.feedback.wrong .big{color:#174b9b}
+.complete{background:linear-gradient(#fff8df,#f2ffcc);text-align:center}
+.complete h2{font-size:37px;color:#ff456f;text-shadow:0 2px #fff}
+img.hero-art,img.character{border-radius:22px}
+</style>
 </head>
 <body><main class="app">
 <section id="home" class="screen active">
-<div class="hero"><div class="logo">りっちゃん歴史</div><div class="sub">つなげて覚える 日本史タイムトラベル ✨</div></div>
-<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=23" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
+<div class="hero"><div class="logo">りっちゃん<br>歴史ドリル 📖</div><div class="sub">～かかわりをえながら 日本の歴史を～</div></div>
+<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=25" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
 <div class="panel"><div class="prompt">ちいかわたちと歴史マスターをめざそう！</div><div class="small" style="text-align:center">テキストの流れを「人物→できごと→理由→結果」でつなごう</div></div>
 <div class="stats"><div class="stat">今日の正解<b id="todayCorrect">0</b></div><div class="stat">集めたカード<b id="cardCount">0</b></div></div>
 <div class="section-title">時代問題</div><div id="eraGrid" class="grid"></div>
@@ -52,26 +83,26 @@ ruby rt{font-size:.5em}.reset{border:0;background:transparent;color:#9c8792;text
 
 <section id="quiz" class="screen">
 <div class="top"><button class="back" onclick="goHome()">←</button><div id="quizEra" style="font-weight:900;font-size:21px"></div><div class="pill"><span id="qNow">1</span>/<span id="qTotal">50</span></div></div>
-<div class="quiz-card"><div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=23" alt=""><b id="quizFriendText">よく考えて！本文のつながりを思い出そう♪</b></div><span class="tag" id="qType">つながり</span><div class="qnum">今回の問題</div><div class="question" id="question"></div><div id="choices" class="choices"></div><div id="feedback" class="feedback"></div><button id="nextBtn" class="next" onclick="nextQuestion()">次の問題へ →</button></div>
+<div class="quiz-card"><div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=25" alt=""><b id="quizFriendText">よく考えて！本文のつながりを思い出そう♪</b></div><span class="tag" id="qType">つながり</span><div class="qnum">今回の問題</div><div class="question" id="question"></div><div id="choices" class="choices"></div><div id="feedback" class="feedback"></div><button id="nextBtn" class="next" onclick="nextQuestion()">次の問題へ →</button></div>
 </section>
 
 <section id="complete" class="screen">
 <div class="top"><button class="back" onclick="goHome()">←</button></div>
-<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=23" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
+<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=25" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
 </section>
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=23","./chiikawa-usagi.jpg?v=23","./chiikawa-friends.jpg?v=23"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=25","./chiikawa-usagi.jpg?v=25","./chiikawa-friends.jpg?v=25"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
-  if(img) img.src=chiikawaFriends[(currentIndex||0)%chiikawaFriends.length];
+  if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
   if(txt) txt.textContent="よく考えて！前後のつながりを思い出そう♪";
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=23",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=23",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=25",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=25",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -188,19 +219,19 @@ heian:[
 ]};
 
 let state={era:null,queue:[],pos:0,locked:false};
-const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV23")||'{"progress":{},"cards":{},"today":0}');
-const save=s=>localStorage.setItem("ritchanHistoryV23",JSON.stringify(s));
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV25")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV25",JSON.stringify(s));
 function renderHome(){let s=store();document.getElementById("todayCorrect").textContent=s.today||0;document.getElementById("cardCount").textContent=Object.keys(s.cards||{}).length;
-document.getElementById("eraGrid").innerHTML=eras.map(e=>{let p=(s.progress&&s.progress[e.id])||0;let pct=Math.min(100,p/50*100);return `<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}><div class="art">${e.art}</div><h3>${e.name}</h3><div class="progress">${e.unlocked?Math.min(p,50)+"問 / 50問":"これから追加"}</div><div class="bar"><i style="width:${pct}%"></i></div></button>`}).join("")}
+document.getElementById("eraGrid").innerHTML=eras.map(e=>{let p=(s.progress&&s.progress[e.id])||0;let pct=Math.min(100,p/50*100);return `<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}><div class="art">${e.unlocked?`<img src="${e.art}" alt="" style="width:100%;height:115px;object-fit:cover;border-radius:18px">`:e.art}</div><h3>${e.name}</h3><div class="progress">${e.unlocked?Math.min(p,50)+"問 / 50問":"これから追加"}</div><div class="bar"><i style="width:${pct}%"></i></div></button>`}).join("")}
 function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
-function startEra(id){state.era=id;let pool=Q[id];state.queue=[];for(let i=0;i<Math.min(50,pool.length);i++)state.queue.push(i);for(let i=state.queue.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.queue[i],state.queue[j]]=[state.queue[j],state.queue[i]]}state.pos=0;document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;document.getElementById("qTotal").textContent=50;show("quiz");renderQuestion()}
+function startEra(id){state.era=id;let pool=Q[id];state.queue=[];for(let i=0;i<Math.min(50,pool.length);i++)state.queue.push(i);for(let i=state.queue.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[state.queue[i],state.queue[j]]=[state.queue[j],state.queue[i]]}state.pos=0;document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;document.getElementById("qTotal").textContent=state.queue.length;show("quiz");renderQuestion()}
 function renderQuestion(){
 setQuizFriend();
 state.locked=false;let q=Q[state.era][state.queue[state.pos]];document.getElementById("qNow").textContent=state.pos+1;document.getElementById("qType").textContent=q[0];document.getElementById("question").innerHTML=q[1];let c=document.getElementById("choices");c.innerHTML="";q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.innerHTML=x;b.addEventListener("click",()=>answer(i,b));c.appendChild(b)});document.getElementById("feedback").style.display="none";document.getElementById("nextBtn").style.display="none"}
 function answer(i,btn){if(state.locked)return;state.locked=true;let q=Q[state.era][state.queue[state.pos]],buttons=[...document.querySelectorAll(".choice")];buttons[q[3]].classList.add("correct");let ok=i===q[3];if(!ok)btn.classList.add("wrong");let f=document.getElementById("feedback");f.innerHTML=(ok?"⭕ 正解！":"❌ ここを覚えよう")+"<br>"+q[4];f.style.display="block";document.getElementById("nextBtn").style.display="block";let s=store();if(ok)s.today=(s.today||0)+1;save(s)}
-function nextQuestion(){let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;if(state.pos>=50){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスター";show("complete")}else renderQuestion()}
+function nextQuestion(){let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスター";show("complete")}else renderQuestion()}
 function goHome(){show("home");renderHome()}
-function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV23");renderHome()}}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV25");renderHome()}}
 renderHome();
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=20").catch(()=>{}))}
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=25").catch(()=>{}))}
 </script></body></html>
