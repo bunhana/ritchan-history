@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ちいかわと学ぶ、りっちゃん歴史マスターへの道！｜飛鳥</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;margin:0;background:linear-gradient(135deg,#fff7fb,#f5fbff 55%,#fffbea);color:#40363a}
+header{background:linear-gradient(135deg,#ffd8e8,#dff4ff);padding:18px 15px 15px;position:sticky;top:0;z-index:2;border-bottom:3px solid #fff}
+h1{font-size:21px;line-height:1.35;margin:0 0 5px;color:#55454d}.sub{font-size:12px;color:#766a70}
+.mascot{font-size:25px;float:right;margin-top:-3px}
+nav{display:flex;gap:6px;overflow:auto;padding:10px;background:#fff;border-bottom:1px solid #eee}
+nav button{white-space:nowrap;border:0;background:#f4edf1;border-radius:20px;padding:9px 13px;color:#5f555a}
+nav button.active{background:#ff9fc1;color:white;box-shadow:0 3px 8px #ff9fc155}
+main{max-width:760px;margin:auto;padding:14px}
+.card{background:#fff;border:2px solid #f5e8ee;border-radius:20px;padding:17px;margin:12px 0;box-shadow:0 4px 14px #8b718b16}
+h2{font-size:20px;margin:4px 0 12px}.era{font-size:13px;color:#9a7282;font-weight:bold}
+.flow{display:flex;flex-direction:column;gap:8px}.node{border:2px solid #f0dce5;border-radius:15px;padding:12px;background:#fffafd}.arrow{text-align:center;color:#e9a2bd;font-size:20px}
+.answer{background:#fff6fa;border-radius:14px;padding:13px;margin-top:10px}.hidden{display:none}
+.choice{display:block;width:100%;text-align:left;margin:8px 0;padding:13px;border:2px solid #eadfe4;border-radius:13px;background:white;font-size:16px;color:#40363a}
+.choice.correct{border-color:#7fc9a4;background:#effbf4}.choice.wrong{border-color:#f2a1a1;background:#fff0f0}
+.primary{border:0;border-radius:14px;padding:12px 18px;background:#ff9fc1;color:white;font-size:16px;box-shadow:0 3px 7px #ff9fc155}
+.small{font-size:13px;color:#81757a}.tag{display:inline-block;background:#fff0f6;padding:5px 9px;border-radius:14px;margin:3px;font-size:12px;color:#a05e79}
+.progress{height:9px;background:#eee7eb;border-radius:10px;overflow:hidden}.bar{height:100%;background:#ff9fc1;width:0;transition:.3s}
+.stamps{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.stamp{width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f4edf1;font-size:20px;filter:grayscale(1);opacity:.45}.stamp.on{background:#fff0a8;filter:none;opacity:1;box-shadow:0 2px 6px #d5b84c55}
+.hero{background:linear-gradient(135deg,#fff1f7,#eefaff);border-color:#f7d6e5}
+.big{font-size:25px;font-weight:bold}
+.next{margin-top:10px}
+.badge{display:inline-block;background:#dff7eb;color:#3e8b64;border-radius:14px;padding:4px 9px;font-size:12px;font-weight:bold}
+</style>
+
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#ff9fc1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+}
+</script>
+
+</head>
+<body>
+<header><span class="mascot">🐰🐱</span><h1>ちいかわと学ぶ、りっちゃん歴史マスターへの道！</h1><div class="sub">飛鳥編｜つなげて覚えて、何周もして、スタンプを集めよう♪</div></header>
+<nav>
+<button class="active" onclick="show('flow',this)">飛鳥の流れ</button>
+<button onclick="show('quiz',this)">つながり</button>
+<button onclick="show('kanji',this)">漢字</button>
+<button onclick="show('years',this)">年号</button>
+<button onclick="show('trace',this)">穴埋め</button>
+<button onclick="show('mistakes',this)">まちがい</button>
+</nav>
+<main id="app"></main>
+<script>
+const scope="飛鳥";
+const flow=[
+["大和政権","大王を中心に、有力な豪族が支える政治勢力"],
+["渡来人","朝鮮半島などから来た人々。土木・機織りなどの技術を伝えた"],
+["仏教伝来","朝鮮半島を通して仏教が伝わり、のちの飛鳥文化につながった"],
+["聖徳太子（厩戸皇子）","推古天皇を助け、天皇中心の国づくりを進めた"],
+["冠位十二階","家柄ではなく個人の能力や功績を重視しようとした制度"],
+["十七条の憲法","役人の心がまえを示したもの"],
+["遣隋使","隋の制度や文化を学ぶため、小野妹子らを派遣"],
+["乙巳の変","蘇我入鹿が中大兄皇子らによって倒された"],
+["大化の改新","乙巳の変の翌年から、天皇中心の国づくりを目指す改革が進んだ"],
+["白村江の戦い","百済再興を助けるため出兵したが、唐・新羅連合軍に敗れた"],
+["壬申の乱","天智天皇の死後、大海人皇子と大友皇子が皇位をめぐって争った"],
+["天武天皇","壬申の乱に勝利した大海人皇子が即位"],
+["藤原京","持統天皇のころにつくられた、初めての本格的な都"],
+["大宝律令","701年、文武天皇のときに完成。律令国家の仕組みが整う"]
+];
+
+const links=[
+["聖徳太子","推古天皇","聖徳太子は推古天皇を助けて政治を行った"],
+["聖徳太子","冠位十二階","家柄ではなく能力や功績を重視しようとした制度"],
+["聖徳太子","十七条の憲法","役人の心がまえを示した"],
+["聖徳太子","遣隋使","隋の制度や文化を学ぶために派遣した"],
+["遣隋使","小野妹子","小野妹子が遣隋使として派遣された"],
+["蘇我馬子","蘇我入鹿","蘇我氏の力が強まり、のちに蘇我入鹿が倒される"],
+["中大兄皇子","中臣鎌足","ともに蘇我入鹿を倒し、改革を進めた"],
+["乙巳の変","大化の改新","乙巳の変の翌年から政治改革が始まった"],
+["白村江の戦い","百済","百済再興を助けるために日本が出兵した"],
+["白村江の戦い","唐・新羅","唐・新羅連合軍に敗れた"],
+["壬申の乱","大海人皇子","大海人皇子と大友皇子が皇位をめぐって争った"],
+["大海人皇子","天武天皇","壬申の乱の後、大海人皇子が天武天皇として即位した"],
+["持統天皇","藤原京","持統天皇のころ、藤原京がつくられた"],
+["藤原京","大宝律令","藤原京の時代を経て、701年に大宝律令が完成した"]
+];
+
+const kanji=[
+["しょうとくたいし","人名","聖徳太子",["聖徳太子","聖得太子","聖徳大子","聖德太子"]],
+["うまやどのおうじ","人名","厩戸皇子",["厩戸皇子","駅戸皇子","厩戸皇子","厩戸皇児"]],
+["すいこてんのう","人名","推古天皇",["推古天皇","推古天皇","推古天皇","推占天皇"]],
+["そがのうまこ","人名","蘇我馬子",["蘇我馬子","蘇我馬児","蘇我馬古","蘇我馬仔"]],
+["おののいもこ","人名","小野妹子",["小野妹子","小野姉子","小野伊子","小野妹児"]],
+["なかとみのかまたり","人名","中臣鎌足",["中臣鎌足","中臣釜足","中臣鎌芦","中臣鎌達"]],
+["そがのいるか","人名","蘇我入鹿",["蘇我入鹿","蘇我入馬","蘇我入香","蘇我入麓"]],
+["なかのおおえのおうじ","人名","中大兄皇子",["中大兄皇子","中大兄皇児","中大兄皇字","中大兄皇事"]],
+["たいかのかいしん","出来事","大化の改新",["大化の改新","大化の改心","大華の改新","大化の改善"]],
+["いっしのへん","出来事","乙巳の変",["乙巳の変","乙已の変","乙巳の邉","乙己の変"]],
+["はくすきのえのたたかい","出来事","白村江の戦い",["白村江の戦い","白村江の戦","白村江の戦い","白村江の闘い"]],
+["じんしんのらん","出来事","壬申の乱",["壬申の乱","壬申の覧","壬申の蘭","壬神の乱"]],
+["かんいじゅうにかい","制度","冠位十二階",["冠位十二階","冠位十二階","冠位十ニ階","冠位十二皆"]],
+["じゅうしちじょうのけんぽう","制度","十七条の憲法",["十七条の憲法","十七条の建法","十七條の憲法","十七条の憲方"]],
+["たいほうりつりょう","法律","大宝律令",["大宝律令","大宝率令","大宝律領","大寶律令"]],
+["ひじょうきょう","都","藤原京",["藤原京","藤原鏡","藤原経","藤原境"]],
+["てんむてんのう","人名","天武天皇",["天武天皇","天文天皇","天武天皇","天無天皇"]],
+["じとうてんのう","人名","持統天皇",["持統天皇","持東天皇","持統天皇","持頭天皇"]],
+["ほうりゅうじ","建造物","法隆寺",["法隆寺","法竜寺","法隆持","法立寺"]],
+["しitennoji","建造物","四天王寺",["四天王寺","四天王時","四天王持","四天王侍"]],
+["asuka_bunka","文化","飛鳥文化",["飛鳥文化","飛鳥文花","飛鳥分化","飛鳥文化"]]
+];
+
+const years=[
+["538","仏教伝来","ご参拝（538）で仏教伝来","朝鮮半島を通して仏教が伝わったとされる年。"],
+["593","聖徳太子が政治を助ける","国（593）がまとまり聖徳太子","推古天皇の摂政になったとされる年。"],
+["603","冠位十二階","む（6）れ（0）み（3）ず冠位十二階","冠位十二階を定めたとされる年。"],
+["604","十七条の憲法","群れよ（604）十七条の憲法","十七条の憲法を定めたとされる年。"],
+["607","遣隋使","群れな（607）して遣隋使","小野妹子らを隋へ送った年。"],
+["645","大化の改新","無事故（645）で大化の改新","中大兄皇子・中臣鎌足らが蘇我氏を倒し、改革が始まった年。"],
+["663","白村江の戦い","む（6）む（6）さん（3）白村江","唐・新羅連合軍に敗れた年。"],
+["672","壬申の乱","む（6）な（7）に（2）壬申の乱","大海人皇子と大友皇子が争った年。"],
+["694","藤原京","む（6）く（9）よ（4）藤原京","持統天皇のころ藤原京がつくられた年。"],
+["701","大宝律令","な（7）お（0）いい（1）国づくり","大宝律令が完成した年。"]
+];
+
+let qi=0,ki=0,yi=0,ti=0;
+let mistakes=JSON.parse(localStorage.getItem("asukaMistakes")||"[]");
+let stamps=Number(localStorage.getItem("asukaStamps")||0);
+
+function addStamp(){
+  stamps++;
+  localStorage.setItem("asukaStamps",stamps);
+}
+function stampHTML(){
+  const n=Math.min(stamps,20);
+  let s="";
+  for(let i=0;i<20;i++) s+=`<span class="stamp ${i<n?'on':''}">${i<n?'⭐':'☆'}</span>`;
+  return s;
+}
+function show(mode,btn){
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');
+ if(mode==="flow")renderFlow();
+ if(mode==="quiz")renderQuiz();
+ if(mode==="kanji")renderKanji();
+ if(mode==="years")renderYears();
+ if(mode==="trace")renderTrace();
+ if(mode==="mistakes")renderMistakes();
+}
+function topCard(title,desc){
+ return `<div class="card hero"><div class="era">飛鳥編</div><h2>${title}</h2><p>${desc}</p><div class="tag">全${links.length}問のつながり</div><div class="tag">全${kanji.length}問の漢字</div><div class="tag">全${years.length}問の年号</div><div class="tag">スタンプ ${stamps}個</div><div class="stamps">${stampHTML()}</div></div>`;
+}
+function renderFlow(){
+ let h=topCard("まずは「流れ」を1本つなごう","このページの内容を、バラバラの暗記ではなく「前→次」でなぞります。");
+ flow.forEach((x,i)=>{h+=`<div class="card"><div class="era">${i+1} / ${flow.length}</div><h2>${x[0]}</h2><div class="node">${x[1]}</div>${i<flow.length-1?'<div class="arrow">↓</div>':''}</div>`});
+ app.innerHTML=h;
+}
+function renderQuiz(){
+ const q=links[qi%links.length];
+ let opts=[q[1]];
+ while(opts.length<4){
+  const x=links[Math.floor(Math.random()*links.length)][1];
+  if(!opts.includes(x))opts.push(x);
+ }
+ opts.sort(()=>Math.random()-.5);
+ app.innerHTML=`${topCard("つながり問題","「誰と誰？」「何と何？」をセットで覚えよう。")}
+ <div class="card"><div class="era">つながり問題　${qi%links.length+1}問目 / 全${links.length}問</div>
+ <div class="progress"><div class="bar" style="width:${Math.round(((qi%links.length)+1)/links.length*100)}%"></div></div>
+ <h2>「${q[0]}」と特に関係が深いのは？</h2><p>${q[2]}</p>
+ ${opts.map(o=>`<button class="choice" onclick="quizAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[1])})">${o}</button>`).join("")}
+ <div id="result"></div></div>`;
+}
+function quizAnswer(el,got,correct){
+ document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+ if(got===correct){
+  el.classList.add('correct'); addStamp();
+  result.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b> 「なぜつながるか」まで言えたらさらに強い。</p><button class="primary next" onclick="qi++;renderQuiz()">次へ</button></div>`;
+ }else{
+  el.classList.add('wrong');
+  mistakes.push({type:"つながり",q:links[qi%links.length],got});
+  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
+  result.innerHTML=`<div class="answer"><b>ここはもう1周！</b><br>正解は「${correct}」。<p class="small">次に同じ問題が出たら、今度は自力で答えよう。</p><button class="primary" onclick="qi++;renderQuiz()">次へ</button></div>`;
+ }
+}
+function renderKanji(){
+ const q=kanji[ki%kanji.length];
+ let opts=[...new Set(q[3])].sort(()=>Math.random()-.5);
+ app.innerHTML=`${topCard("漢字は「見た目」で区別！","人名・出来事・制度・建造物など、入試で書けるようにする重要語だけ。")}
+ <div class="card"><div class="era">漢字問題　${ki+1}問目 / 全${kanji.length}問</div>
+ <div class="progress"><div class="bar" style="width:${Math.round(((ki%kanji.length)+1)/kanji.length*100)}%"></div></div>
+ <span class="tag">${q[1]}</span><h2>「${q[0]}」の正しい漢字は？</h2>
+ ${opts.map(o=>`<button class="choice" onclick="kanjiAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[2])})">${o}</button>`).join("")}
+ <div id="kresult"></div></div>`;
+}
+function kanjiAnswer(el,got,correct){
+ document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+ if(got===correct){
+  el.classList.add('correct'); addStamp();
+  kresult.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b> 形までしっかり覚えたね。</p><button class="primary" onclick="ki++;renderKanji()">次の漢字</button></div>`;
+ }else{
+  el.classList.add('wrong');
+  mistakes.push({type:"漢字",q:[correct],got});
+  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
+  kresult.innerHTML=`<div class="answer">惜しい！ 正解は <b>「${correct}」</b>。<br><span class="small">まちがえた字と正しい字を見比べて、もう一度。</span><br><br><button class="primary" onclick="ki++;renderKanji()">次へ</button></div>`;
+ }
+}
+function renderYears(){
+ const idx=yi%years.length,q=years[idx];
+ let opts=[q[0]];
+ const neighbors=[idx-1,idx+1,idx-2,idx+2,idx-3].filter(i=>i>=0&&i<years.length);
+ for(const i of neighbors){if(!opts.includes(years[i][0])&&opts.length<4)opts.push(years[i][0])}
+ opts.sort(()=>Math.random()-.5);
+ app.innerHTML=`${topCard("年号は「近い数字」で鍛える！","正解と遠すぎる年を並べず、前後の年代を混ぜて本当に覚えているか確認します。")}
+ <div class="card"><div class="era">年号問題　${idx+1}問目 / 全${years.length}問</div>
+ <div class="progress"><div class="bar" style="width:${Math.round(((idx+1)/years.length)*100)}%"></div></div>
+ <h2>${q[1]}</h2><p>${q[3]}</p><p class="big">何年？</p>
+ ${opts.map(o=>`<button class="choice" onclick="yearAnswer(this,${JSON.stringify(o)},${JSON.stringify(q[0])})">${o}年</button>`).join("")}
+ <div id="yresult"></div></div>`;
+}
+function yearAnswer(el,got,correct){
+ document.querySelectorAll('.choice').forEach(b=>b.disabled=true);
+ const q=years[yi%years.length];
+ if(got===correct){
+  el.classList.add('correct'); addStamp();
+  yresult.innerHTML=`<div class="answer"><span class="badge">⭐ スタンプ1こ！</span><p><b>正解！</b></p><p>覚え方：<b>${q[2]}</b></p><button class="primary" onclick="yi++;renderYears()">次の年号</button></div>`;
+ }else{
+  el.classList.add('wrong');
+  mistakes.push({type:"年号",q,got});
+  localStorage.setItem("asukaMistakes",JSON.stringify(mistakes.slice(-80)));
+  yresult.innerHTML=`<div class="answer"><b>ここはもう1周！</b><br>正解は <b>${q[0]}年</b>「${q[1]}」<p>🧠 覚え方：<b>${q[2]}</b></p><button class="primary" onclick="yi++;renderYears()">覚えた！ 次へ</button></div>`;
+ }
+}
+function renderTrace(){
+ const x=flow[ti%flow.length];
+ app.innerHTML=`${topCard("穴埋めで思い出す","答えを見る前に、前後のつながりから思い出してみよう。")}
+ <div class="card"><div class="era">穴埋め問題　${ti+1}問目 / 全${flow.length}問</div>
+ <h2>${x[0]}</h2><p>この用語について正しい説明は？</p>
+ <button class="primary" onclick="document.getElementById('a').classList.remove('hidden')">答えを見る</button>
+ <div id="a" class="answer hidden">${x[1]}<br><br><button class="primary" onclick="ti++;renderTrace()">次へ</button></div></div>`;
+}
+function renderMistakes(){
+ if(!mistakes.length){app.innerHTML=topCard("まちがいゼロ！","今はまだありません。間違えた問題はここに自動でたまります。");return}
+ app.innerHTML=`${topCard("まちがいをもう1周！",`${mistakes.length}件。ここをつぶすと、次の周回がラクになるよ。`)}
+ ${mistakes.slice(-20).reverse().map(m=>`<div class="card"><span class="tag">${m.type}</span><b>${Array.isArray(m.q)?m.q.join(" → "):m.q}</b><p class="small">あなたの答え：${m.got}</p></div>`).join("")}`;
+}
+renderFlow();
+</script>
+</body>
+</html>
