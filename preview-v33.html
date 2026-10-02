@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffb7d4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
+<title>【プレビュー】りっちゃん歴史</title>
+<link rel="manifest" href="./manifest.webmanifest?v=33">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=33">
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
+button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
+.logo{font-weight:900;font-size:clamp(34px,9vw,64px);letter-spacing:.02em;color:#fff;text-shadow:0 3px 0 #e07ba6,0 5px 12px #6fc7df}
+.sub{font-weight:800;color:#725d69;margin-top:8px}.panel{background:rgba(255,255,255,.88);border:2px solid rgba(255,255,255,.9);border-radius:32px;padding:22px;box-shadow:0 10px 28px #a17f9a2b;margin:14px 0}
+.mascots{font-size:54px;text-align:center}.prompt{text-align:center;font-size:25px;font-weight:900;margin:8px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.stat{background:#fff;border-radius:25px;padding:16px;text-align:center;font-weight:800;box-shadow:0 4px 14px #9a829424}
+.stat b{display:block;font-size:30px;margin-top:4px}.section-title{font-size:25px;font-weight:900;margin:25px 4px 12px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.era{border:0;border-radius:25px;background:#fff;padding:12px;box-shadow:0 8px 16px #8c718b35;text-align:left;color:#594651;min-height:155px;position:relative;overflow:hidden}
+.era:active{transform:scale(.98)}.era .art{height:82px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:42px;background:linear-gradient(135deg,#ffe5ef,#dff8ff)}
+.era h3{margin:9px 2px 2px;font-size:18px}.progress{font-size:13px;font-weight:800;color:#8e7582}.bar{height:8px;background:#f2edf0;border-radius:8px;margin-top:7px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff9dc5,#8fe4d4);width:0}
+.locked{opacity:.55}.locked .art{filter:grayscale(1)}.locked:after{content:"🔒";position:absolute;right:12px;top:12px}
+.screen{display:none}.screen.active{display:block}.top{display:flex;align-items:center;gap:10px;margin:6px 0 14px}.back{border:0;border-radius:50%;width:46px;height:46px;background:#806887;color:white;font-size:24px}
+.pill{margin-left:auto;background:#fff;border-radius:999px;padding:10px 14px;font-weight:900}
+.quiz-card{background:#fff;border-radius:30px;padding:24px;box-shadow:0 10px 30px #7e657d30}.tag{display:inline-block;background:#ffe5ef;border-radius:999px;padding:7px 12px;font-weight:800;color:#a55d7a}.qnum{font-size:14px;color:#987f8c;font-weight:800;margin:12px 0}.question{font-size:23px;line-height:1.65;font-weight:900;margin:12px 0 18px}
+.choices{display:grid;gap:12px}.choice{border:2px solid #f1dbe5;background:#fff8fb;border-radius:18px;padding:15px;text-align:left;font-weight:800;color:#594651}.choice.correct{background:#e4fff2;border-color:#66c998}.choice.wrong{background:#ffe8e8;border-color:#ee8b8b}
+.feedback{display:none;margin-top:18px;border-radius:20px;padding:16px;background:#fff3d9;font-weight:800;line-height:1.55}.next{display:none;width:100%;margin-top:14px;border:0;border-radius:18px;padding:15px;background:linear-gradient(90deg,#ff8fbd,#9fdff4);color:#fff;font-weight:900;font-size:18px}
+.complete{text-align:center}.card-reward{margin:18px auto;max-width:300px;aspect-ratio:3/4;border-radius:28px;padding:15px;background:linear-gradient(135deg,#ffe0ef,#fff7c9,#d8f6ff);border:7px solid #fff;box-shadow:0 0 0 3px #eab665,0 12px 30px #806a7a55;display:flex;flex-direction:column;align-items:center;justify-content:center}.card-reward .big{font-size:70px}.card-reward h2{margin:8px}.small{font-size:13px;color:#907785}
+ruby rt{font-size:.5em}.reset{border:0;background:transparent;color:#9c8792;text-decoration:underline;margin-top:25px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+.chiikawa-banner{position:relative;overflow:hidden;border-radius:30px;background:#fff;padding:10px;box-shadow:0 8px 24px #a17f9a2b;margin:12px 0 16px}
+.chiikawa-banner img{display:block;width:100%;height:190px;object-fit:cover;object-position:center;border-radius:23px}
+.chiikawa-banner .bubble{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);width:max-content;max-width:86%;background:rgba(255,255,255,.94);border:3px solid #ffd0e2;border-radius:999px;padding:10px 18px;font-size:20px;font-weight:900;box-shadow:0 4px 12px #745c6d22}
+.era .art{overflow:hidden}.era .art img{width:100%;height:100%;object-fit:cover}
+.quiz-friend{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#fff1f7,#f1fbff);border-radius:22px;padding:10px 12px;margin-bottom:14px}
+.quiz-friend img{width:66px;height:66px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 3px 10px #8c718b30}
+.quiz-friend b{font-size:15px;line-height:1.45}
+.reward-photo{width:150px;height:150px;border-radius:26px;object-fit:cover;border:5px solid white;box-shadow:0 6px 18px #8c718b40;margin-bottom:10px}
+
+</style>
+
+<style id="approved-ui-v25">
+:root{--pink:#ff5b87;--purple:#8567e8;--sky:#dff4ff;--cream:#fff7d8;--ink:#1e2a38}
+body{background:linear-gradient(#dff4ff 0%,#fff7f2 47%,#efffcf 100%);color:var(--ink)}
+.wrap{max-width:520px}
+.hero{background:linear-gradient(180deg,#cceeff 0%,#ffeaf4 55%,#efffcf 100%);border:4px solid #fff;border-radius:28px;padding:18px 16px 14px;box-shadow:0 8px 24px #7992a52e;overflow:hidden}
+.logo{font-size:34px;line-height:1.05;font-weight:1000;color:#222a49;text-shadow:0 3px #fff}
+.sub{font-weight:900;color:#34445a;margin-top:7px}
+.eras{gap:10px}
+.era{border:3px solid #fff;border-radius:22px;background:linear-gradient(#fff,#fff5e6);box-shadow:0 7px 16px #9a9a9a25;padding:9px}
+.era:nth-child(2){background:linear-gradient(#fff,#ecffe2)}
+.era.locked{background:linear-gradient(#e8f5fa,#d9e7ed);filter:saturate(.7)}
+.era h3{font-size:19px}
+.era .progress{height:9px}
+.intro,.quiz-card,.feedback,.complete{border:4px solid #fff;border-radius:26px;background:linear-gradient(#fffdf0,#fff7d8);box-shadow:0 8px 22px #73839429}
+.intro h2{font-size:30px;background:#ffd7e6;border-radius:24px;padding:8px}
+.intro .scroll{background:#fff8dc;border:3px solid #d99b43;border-radius:20px;padding:16px}
+.start-btn,.next-btn{background:linear-gradient(#ff7198,#ff4777);border:3px solid #fff;box-shadow:0 4px 0 #d43868;border-radius:999px;font-size:24px;font-weight:1000}
+.quiz-head{background:#fff8d9;border-radius:20px;padding:9px 12px}
+.quiz-head .bar{height:12px}
+.question{font-size:21px;line-height:1.55;background:#fffdf2;border-radius:18px;padding:15px}
+.choice{font-size:19px;font-weight:850;border:2.5px solid #5ba2dc;background:linear-gradient(#fff,#eef7ff);border-radius:999px;padding:12px 15px;margin:9px 0}
+.feedback.correct{background:linear-gradient(#fff9e8,#fff0f4)}
+.feedback.wrong{background:linear-gradient(#e7f5ff,#dbe9ff)}
+.feedback .big{font-size:46px;font-weight:1000}
+.feedback.correct .big{color:#ff426f}
+.feedback.wrong .big{color:#174b9b}
+.complete{background:linear-gradient(#fff8df,#f2ffcc);text-align:center}
+.complete h2{font-size:37px;color:#ff456f;text-shadow:0 2px #fff}
+img.hero-art,img.character{border-radius:22px}
+</style>
+
+<style id="photo-faithful-v26">
+body{background:
+radial-gradient(circle at 10% 9%,#fff 0 4px,transparent 5px),
+linear-gradient(180deg,#d9f4ff 0 31%,#fff4f6 31% 70%,#eefbcf 70%);min-height:100vh}
+.hero{position:relative;background:linear-gradient(#c9efff,#ffe8f3 58%,#effac9);padding-top:20px}
+.hero:after{content:"🌸　🌸　🏯　🌸　🌸";display:block;font-size:25px;margin-top:8px}
+.chiikawa-banner{background:#fff7db;border:3px solid white;border-radius:24px;padding:8px;box-shadow:0 7px 20px #6d83962b}
+.chiikawa-banner img{width:100%;max-height:185px;object-fit:cover;border-radius:18px}
+.era{padding:7px;border-radius:22px}.era h3{margin:7px 0 4px}.era .art img{height:130px!important}
+.stage-card{background:linear-gradient(#dff7ff,#fff0f5 55%,#efffcf);padding:12px}
+.stage-art{width:100%;height:245px;object-fit:cover;border-radius:24px;border:4px solid #fff}
+.scroll{margin-top:-22px;position:relative;background:#fff4cd!important;border:4px solid #c58c46!important;box-shadow:inset 0 0 0 4px #ffe9a9}
+.scroll h2{font-size:20px!important;background:transparent!important;padding:0!important;margin:0 0 8px}
+.intro-lead{background:#fffdf1;border-radius:15px;padding:11px;font-weight:800;line-height:1.65;margin-bottom:9px}
+.intro-topics{font-weight:850;line-height:1.7}
+.start-btn,.next-btn{width:80%;display:block;margin:14px auto 0;padding:13px;border:0;color:white}
+.progress-big{height:12px;background:#fff;border-radius:99px;margin:0 10px 10px;overflow:hidden;box-shadow:inset 0 0 0 1px #d6d6d6}
+.progress-big i{display:block;height:100%;background:linear-gradient(90deg,#6ccf7c,#a8e66f);border-radius:99px}
+.quiz-card{padding:12px;background:linear-gradient(#fff7d7,#fffdf4)}
+.quiz-friend{display:flex;align-items:center;gap:10px;background:#eaf8ff;border-radius:18px;padding:7px;margin-bottom:8px}
+.quiz-friend img{width:74px;height:74px;object-fit:cover;border-radius:50%;border:3px solid white}
+.quiz-friend b{font-size:15px}
+.question{font-weight:900}
+.choice{position:relative;text-align:left;background:linear-gradient(#fff,#eaf6ff);border:2.5px solid #72aeda!important;box-shadow:0 2px 0 #c7ddec;padding-left:18px!important}
+.choice:before{content:attr(data-num);display:inline-grid;place-items:center;width:25px;height:25px;border:2px solid #70a9d2;border-radius:50%;margin-right:9px;background:white;color:#3977a6}
+.photo-wrap{background:white;border:4px solid white;border-radius:19px;box-shadow:0 4px 14px #74808a30;margin:8px 0 12px;overflow:hidden}
+.photo-wrap img{display:block;width:100%;max-height:245px;object-fit:cover}
+.photo-wrap small{display:block;font-size:9px;padding:4px 7px;color:#667}
+.result-card{min-height:80vh;border:4px solid white;border-radius:28px;padding:16px;text-align:center;box-shadow:0 8px 24px #70809033}
+.result-card.correct{background:linear-gradient(#fff7d7,#fff0f4 60%,#f0ffcf)}
+.result-card.wrong{background:linear-gradient(#d9efff,#e7e7ff 65%,#edf8ff)}
+.result-era{font-weight:1000;font-size:18px}.result-title{font-size:48px;font-weight:1000;margin:7px 0 0}
+.result-card.correct .result-title{color:#ff4776;text-shadow:2px 2px white}
+.result-card.wrong .result-title{color:#285ea5;text-shadow:2px 2px white}
+.sparkles{font-size:26px}.result-art{width:100%;height:220px;object-fit:cover;border-radius:22px;border:4px solid white;margin:8px 0}
+.answer-compare{display:grid;gap:8px;text-align:left;margin:8px 0;font-weight:900}
+.answer-compare .mine{background:#ffe4e8;border:2px solid #ff8ca0;border-radius:15px;padding:10px}
+.answer-compare .right{background:#e5f9e5;border:2px solid #6bc87b;border-radius:15px;padding:10px}
+.result-explain{background:#fffdf1;border:2px solid #ead7a0;border-radius:17px;padding:12px;text-align:left;font-weight:800;line-height:1.7}
+.mnemonic-box{margin-top:9px;background:#fff1a9;border:3px dashed #f1a43c;border-radius:18px;padding:11px;text-align:left;font-weight:900;line-height:1.6}
+ruby rt{font-size:.55em;color:#566}
+</style><style id="v27-reference-ui">
+:root{--ink:#172231;--pink:#ff4d7d;--blue:#55a9df;--cream:#fff6d9}
+*{box-sizing:border-box} body{margin:0;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink)}
+.app{max-width:520px;margin:auto;min-height:100vh;background:white}.screen{display:none;min-height:100vh}.screen.active{display:block}
+.ref-home,.ref-intro,.ref-quiz,.ref-complete{min-height:100vh;background:linear-gradient(#cfeeff 0 30%,#fff4cf 30% 72%,#e9f8c8);padding:12px 12px 24px;overflow:hidden}
+.sakura-row{text-align:right;font-size:25px;height:28px}.home-title{text-align:center;background:rgba(255,255,255,.83);border-radius:26px;padding:9px 8px 12px;border:3px solid white}
+.home-title small{display:block;font-size:20px;font-weight:900}.home-title strong{display:block;font-size:39px;line-height:1.05;font-weight:1000}.home-title span{display:block;font-size:13px;font-weight:800;margin-top:6px}
+.home-cast{height:210px;margin:8px 0 6px;border-radius:25px;overflow:hidden;border:4px solid white;background:#fff}.home-cast img{width:100%;height:100%;object-fit:cover}
+.ref-era-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.ref-era-grid .era{border:3px solid #ff9bb6!important;background:linear-gradient(#fff,#fff2db)!important;border-radius:18px!important;padding:7px!important;min-height:125px!important;box-shadow:none!important}
+.ref-era-grid .era:nth-child(2){border-color:#8fc34d!important;background:linear-gradient(#fff,#f3ffd9)!important}.ref-era-grid .era h3{font-size:21px;margin:3px 0}.ref-era-grid .era .art img{height:75px!important}.ref-era-grid .era .progress,.ref-era-grid .era .bar{display:none}
+.ref-era-grid .era.locked{min-height:78px!important;background:linear-gradient(#dceaf0,#bfd3dc)!important;border-color:#d4e4e9!important;opacity:1!important}.ref-era-grid .era.locked .art{display:none}.ref-era-grid .era.locked h3{font-size:17px;margin:9px 0}.ref-era-grid .era.locked:after{content:"🔒";display:block;font-size:23px}
+.ref-era-grid .era:nth-child(n+7){display:none}
+.ref-top{background:transparent!important;border:0!important}.era-heading{font-size:32px;font-weight:1000;background:#ffcbd9;border-radius:24px;padding:4px 18px}
+.intro-cast{height:230px;margin-top:3px;border-radius:24px;overflow:hidden}.intro-cast img{width:100%;height:100%;object-fit:cover}
+.ref-scroll{position:relative;margin:-16px 10px 0;background:#fff4ce;border:4px solid #a87332;border-radius:12px;padding:27px 16px 14px;box-shadow:inset 0 0 0 3px #ffe5a2}
+.scroll-label{position:absolute;top:-20px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#fff2d4;border:3px solid #a87332;border-radius:12px;padding:5px 17px;font-size:18px;font-weight:1000}
+.ref-scroll .intro-lead{font-size:13px;padding:8px;background:#fffdf4;border-radius:12px;margin-bottom:8px;line-height:1.55}.ref-scroll .intro-topics{font-size:17px;line-height:1.65;font-weight:900}
+.ref-start,.result-next{display:block;width:78%;margin:13px auto 0;border:0;border-radius:35px;padding:14px;color:white;background:linear-gradient(#ff719a,#f8326e);font-size:25px;font-weight:1000;box-shadow:inset 0 0 0 3px #ff9ab5}
+.ref-quiz{background:linear-gradient(#fff8dc,#fff2d7 62%,#e7f6c6);padding:10px 13px 18px}.quiz-head{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:900}.quiz-head img{width:38px;height:38px;border-radius:50%;object-fit:cover}.quiz-head b{flex:1}.quiz-head span{font-weight:900}
+.ref-progress{height:11px;border-radius:99px;background:#d9d9d9;border:1px solid #a7a7a7;overflow:hidden;margin:3px 0 10px}.ref-progress i{display:block;height:100%;background:#39c74f;border-radius:99px}
+.question-sheet{background:rgba(255,255,255,.76);border-radius:14px;padding:10px}.question-label{display:inline-block;background:#ff6f94;color:white;border-radius:5px;padding:4px 12px;font-weight:1000;margin-bottom:6px}.question{font-size:19px!important;line-height:1.55!important;font-weight:900!important;margin:4px 0 8px}
+.choices{display:grid;gap:7px}.choice{font-size:17px!important;min-height:45px!important;padding:7px 11px!important;border:2px solid #6db7e8!important;border-radius:13px!important;background:linear-gradient(#fff,#e7f5ff)!important;box-shadow:none!important;font-weight:900!important;text-align:left!important}
+.choice:before{content:attr(data-num);display:inline-grid;place-items:center;width:27px;height:27px;border:2px solid #5ba5d7;border-radius:50%;margin-right:8px;background:white;color:#2c76ad}
+.quiz-bottom{display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-top:7px}.quiz-bottom img{width:150px;height:120px;object-fit:cover;border-radius:50% 50% 15px 15px}.speech{background:white;border:3px solid #222;border-radius:50%;padding:17px 13px;font-size:15px;font-weight:900;position:relative}
+.photo-wrap{border:3px solid white!important;border-radius:13px!important;margin:2px 0 8px!important}.photo-wrap img{max-height:210px!important}.photo-wrap small{font-size:8px!important}
+.ref-result{min-height:100vh;padding:10px 13px 20px;text-align:center}.ref-result.correct{background:linear-gradient(#fff7dc,#fff0e8 65%,#f2f7cf)}.ref-result.wrong{background:repeating-linear-gradient(90deg,#cbe7ff 0 12px,#b8dcff 12px 22px);position:relative}
+.ref-result.wrong:before{content:"||||||||||||||||||||||||";position:absolute;top:50px;left:0;right:0;color:#5a9ee0;opacity:.35;letter-spacing:8px;font-size:36px;overflow:hidden}
+.result-title{position:relative;font-size:53px!important;font-weight:1000!important;margin:12px 0 0!important}.correct .result-title{color:#f43864!important}.wrong .result-title{color:#154b8a!important}.result-stars{font-size:27px;color:#ffb400;position:relative}
+.result-cast{position:relative;width:100%;height:230px;object-fit:cover;border-radius:20px;margin:5px 0 8px;border:0}
+.answer-compare,.result-explain,.mnemonic-box{position:relative;background:#fff!important;border:0!important;border-radius:14px!important;text-align:left!important;padding:11px!important;line-height:1.55!important;font-weight:800!important}.answer-compare{display:grid;gap:6px}.answer-compare .mine{background:#ffe5e8;border:2px solid #ff8295;border-radius:10px;padding:8px}.answer-compare .right{background:#e7f8e7;border:2px solid #69c67a;border-radius:10px;padding:8px}
+.wrong .result-next{background:linear-gradient(#a27af7,#7444df);box-shadow:inset 0 0 0 3px #b79bff}.mnemonic-box{background:#fff1a7!important;border:3px dashed #efa53d!important;margin-top:8px}
+.ref-complete{text-align:center;background:linear-gradient(#fff7dc,#fff0cf 60%,#e9f6c9)}.ref-complete h1{font-size:29px;margin:14px 0 4px}.ref-complete h1 strong{color:#e72f44;font-size:39px}.complete-cast{width:100%;height:245px;object-fit:cover;border-radius:22px}.master-card{margin:-24px 20px 0;position:relative;background:#fff0bd;border:4px solid #a87332;border-radius:13px;padding:17px 8px 10px;display:grid;gap:4px}.master-card b{font-size:20px}.master-card span{font-weight:900}.ref-complete p{font-weight:900}
+.complete-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.complete-buttons button{border:0;border-radius:25px;padding:13px 5px;color:white;font-size:17px;font-weight:1000}.complete-buttons button:first-child{background:#14b8e8}.complete-buttons button:last-child{background:#ff4b7b}
+ruby rt{font-size:.55em}
+</style><style id="v28-compact-approved">
+/* Approved reference design: only vertical compression, no redesign */
+.ref-home,.ref-intro,.ref-quiz,.ref-complete{padding-top:6px;padding-bottom:8px}
+.home-title{padding:5px 7px 7px}.home-title small{font-size:18px}.home-title strong{font-size:42px}.home-title span{margin-top:2px}
+.home-cast{height:190px;margin:4px 0}.ref-era-grid{gap:6px}.ref-era-grid .era{min-height:105px!important}.ref-era-grid .era .art img{height:62px!important}
+.intro-cast{height:190px}.ref-scroll{padding-top:22px;padding-bottom:7px}.ref-scroll .intro-lead{font-size:12px;line-height:1.35;padding:5px;margin-bottom:4px}.ref-scroll .intro-topics{font-size:15px;line-height:1.42}
+.ref-start{margin-top:7px;padding:10px;font-size:22px}
+.ref-quiz{padding:5px 10px}.quiz-head img{width:31px;height:31px}.quiz-head{font-size:15px}.ref-progress{height:9px;margin-bottom:5px}
+.question-sheet{padding:7px}.question-label{padding:2px 9px;margin-bottom:2px}.question{font-size:17px!important;line-height:1.38!important;margin:2px 0 5px}
+.choices{gap:4px}.choice{font-size:15px!important;min-height:38px!important;padding:4px 8px!important}.choice:before{width:23px;height:23px}
+.quiz-bottom{margin-top:3px}.quiz-bottom img{width:110px;height:82px}.speech{padding:10px;font-size:13px}
+.photo-wrap img{max-height:170px!important}
+.ref-result{padding:5px 10px 7px;min-height:100vh}.result-title{font-size:45px!important;margin:3px 0 0!important}.result-stars{font-size:20px}
+.result-cast{height:155px;margin:1px 0 4px}.answer-compare{padding:6px!important;gap:3px}.answer-compare .mine,.answer-compare .right{padding:5px}
+.result-explain{padding:7px!important;line-height:1.4!important;font-size:14px}.mnemonic-box{padding:6px!important;line-height:1.35!important;font-size:13px;margin-top:4px!important}
+.result-next{margin-top:5px;padding:9px;font-size:20px}
+.complete-cast{height:185px}.ref-complete h1{font-size:25px;margin:5px}.ref-complete h1 strong{font-size:34px}.master-card{padding:10px 5px 6px}.ref-complete p{margin:5px}
+</style><style id="v29-user-final-tuning">
+.home-title{padding:3px 4px 5px!important;border-radius:22px!important}
+.home-title small{font-size:21px!important;line-height:1!important}
+.home-title strong{font-size:52px!important;line-height:.98!important;letter-spacing:-2px!important}
+.home-title span{font-size:12px!important;margin-top:1px!important}
+.home-cast{height:255px!important;margin:2px 0 4px!important;border-radius:22px!important}
+.home-cast img{width:100%!important;height:100%!important;object-fit:cover!important}
+.sakura-row{height:20px!important;font-size:20px!important}
+.ref-home{padding:3px 8px 8px!important}
+.ref-era-grid{gap:4px!important}
+.ref-era-grid .era{padding:3px!important;min-height:94px!important}
+.ref-era-grid .era .art img{height:53px!important}
+.ref-era-grid .era h3{margin:1px 0!important}
+.ref-quiz{padding:3px 7px 5px!important}
+.quiz-head{gap:4px!important}.quiz-head img{width:28px!important;height:28px!important}
+.ref-progress{margin:1px 0 3px!important;height:8px!important}
+.question-sheet{padding:4px!important}
+.question-label{margin:0 0 1px!important;padding:2px 8px!important}
+.question{font-size:18px!important;line-height:1.3!important;margin:1px 0 3px!important}
+.choices{gap:3px!important}
+.choice{font-size:18px!important;line-height:1.2!important;min-height:45px!important;padding:5px 7px!important;border-width:2.5px!important}
+.choice:before{width:27px!important;height:27px!important;margin-right:6px!important;font-size:16px!important}
+.quiz-bottom{margin-top:1px!important;height:76px!important}
+.quiz-bottom img{width:100px!important;height:74px!important}
+.speech{padding:7px 9px!important;font-size:12px!important}
+.photo-wrap{margin:1px 0 3px!important}.photo-wrap img{max-height:145px!important}
+.ref-result{padding:3px 7px 5px!important}.result-title{font-size:43px!important;margin:0!important}
+.result-stars{font-size:17px!important;line-height:1!important}.result-cast{height:135px!important;margin:0 0 2px!important}
+.answer-compare{margin:2px 0!important;padding:4px!important}.result-explain{padding:5px!important;font-size:13px!important;line-height:1.3!important}
+.mnemonic-box{padding:4px!important;font-size:12px!important;margin-top:2px!important}.result-next{margin-top:3px!important;padding:8px!important}
+</style><style id="v30-home-fixed">
+.v30-home{padding:6px 10px 14px!important;background:linear-gradient(#dff7ff 0 60%,#fff1f5 60% 100%)!important}
+.v30-hero{position:relative;overflow:hidden;border:7px solid #fff;border-radius:30px;background:#fff;margin:0 0 8px;box-shadow:0 2px 0 #f3e6c9}
+.v30-hero img{display:block;width:100%;height:420px;object-fit:cover;object-position:center 39%}
+.v30-title{position:absolute;z-index:3;top:3px;left:0;right:0;text-align:center;text-shadow:0 3px 0 #fff,2px 0 0 #fff,-2px 0 0 #fff}
+.v30-ritchan{font-weight:1000;font-size:42px;line-height:.95;color:#ff2681;letter-spacing:1px}
+.v30-history{font-weight:1000;font-size:55px;line-height:.98;color:#9d271f;letter-spacing:-2px;-webkit-text-stroke:1px #fff}
+.v30-history span{font-size:31px}
+.v30-sub{display:inline-block;margin-top:3px;padding:2px 12px;border-radius:20px;background:rgba(255,255,255,.9);font-weight:900;font-size:13px;color:#173a70}
+.v30-home .ref-era-grid{gap:7px!important;margin-top:3px!important}
+.v30-home .ref-era-grid .era{min-height:94px!important}
+
+.v30-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.v30-stats>div{background:#fff;border-radius:25px;text-align:center;padding:11px 5px}
+.v30-stats b{display:block;font-size:16px}.v30-stats strong{display:block;font-size:38px;color:#ff2674;margin-top:3px}
+@media(max-height:760px){.v30-hero img{height:350px}.v30-ritchan{font-size:36px}.v30-history{font-size:48px}}
+</style><style id="v32-two-fixes">
+/* v32: one title only + one era menu only */
+.v30-hero{height:410px!important;background:linear-gradient(#dff7ff,#fff7ec)!important}
+.v30-hero img{
+ position:absolute!important;left:0!important;right:0!important;bottom:0!important;
+ width:100%!important;height:300px!important;object-fit:cover!important;
+ object-position:center 42%!important;
+ clip-path:inset(25% 0 0 0)!important;
+ transform:scale(1.24)!important;transform-origin:center bottom!important;
+}
+.v30-title{top:10px!important;z-index:5!important}
+.v30-ritchan{font-size:43px!important;line-height:.9!important;color:#ff2780!important}
+.v30-history{font-size:57px!important;line-height:1!important;color:#8d251e!important}
+.v30-sub{font-size:13px!important;margin-top:5px!important}
+/* Hide any era buttons that are baked into the hero picture by cropping above them.
+   The actual clickable eraGrid below is the only era menu. */
+.v30-home .ref-era-grid{margin-top:6px!important}
+@media(max-height:760px){.v30-hero{height:360px!important}.v30-hero img{height:265px!important}.v30-ritchan{font-size:38px!important}.v30-history{font-size:51px!important}}
+</style><style id="v33-home-reset">
+.home33{min-height:100dvh;padding:8px 10px 18px;background:linear-gradient(#dff7ff 0 64%,#fff1f5 64%);overflow-x:hidden}
+.home33-title{text-align:center;padding:2px 2px 5px}
+.home33-title .r{font-weight:1000;font-size:46px;line-height:.95;color:#ff247a;text-shadow:0 3px #fff,2px 0 #fff,-2px 0 #fff}
+.home33-title .h{font-weight:1000;font-size:58px;line-height:1;color:#98271f;letter-spacing:-3px;text-shadow:0 4px #fff,3px 0 #fff,-3px 0 #fff}
+.home33-title .h span{font-size:30px}.home33-title .s{display:inline-block;margin-top:5px;padding:3px 13px;border-radius:18px;background:#fff;color:#18477b;font-size:14px;font-weight:900}
+.home33-heroes{height:245px;margin:5px 0 7px;border:6px solid #fff;border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 2px 0 #f0dfbd}
+.home33-heroes img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 53%}
+.home33-label{text-align:center;font-size:21px;font-weight:1000;color:#202d3c;margin:5px 0 7px}
+.home33 .era33{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+.home33 .era33 .era{min-height:86px!important;margin:0!important;padding:8px 6px!important;border-radius:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+.home33 .era33 .era .art,.home33 .era33 .era img{display:none!important}
+.home33 .era33 .era h3{font-size:20px!important;line-height:1.1!important;margin:0!important}
+.home33 .era33 .era .progress,.home33 .era33 .era small{font-size:12px!important}
+.home33 .era33 .era.locked{min-height:72px!important}
+.home33-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.home33-stats>div{background:#fff;border-radius:24px;text-align:center;padding:10px 4px}.home33-stats b{display:block;font-size:15px}.home33-stats strong{display:block;font-size:36px;color:#ff2472}
+@media(max-width:390px){.home33-title .r{font-size:41px}.home33-title .h{font-size:52px}.home33-heroes{height:220px}.home33 .era33 .era h3{font-size:18px}}
+</style></head>
+<body><main class="app">
+<section id="home" class="screen active home33">
+  <header class="home33-title">
+    <div class="r">りっちゃん</div>
+    <div class="h">歴史ドリル <span>📖</span></div>
+    <div class="s">〜いっしょに学ぶ 日本の歴史〜</div>
+  </header>
+  <div class="home33-heroes"><img src="home-three-only.png?v=33" alt="歴史衣装の3人"></div>
+  <div class="home33-label">今日はどの時代へ行く？</div>
+  <div id="eraGrid" class="era33"></div>
+  <div class="home33-stats">
+    <div><b>今日の正解</b><strong id="todayCorrect">0</strong></div>
+    <div><b>集めたカード</b><strong id="cardCount">0</strong></div>
+  </div>
+</section>
+
+<section id="intro" class="screen">
+  <div class="ref-intro">
+    <div class="top ref-top"><button class="back" onclick="goHome()">←</button><div id="introEra" class="era-heading"></div></div>
+    <div class="intro-cast"><img id="introArt" src="" alt=""></div>
+    <div class="ref-scroll">
+      <div class="scroll-label">この時代で出てくる内容</div>
+      <div id="introLead" class="intro-lead"></div>
+      <div id="introTopics" class="intro-topics"></div>
+    </div>
+    <button class="ref-start" onclick="beginEra()">はじめる　›</button>
+  </div>
+</section>
+
+<section id="quiz" class="screen">
+  <div class="ref-quiz">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=33" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
+    <div class="ref-progress"><i id="quizProgress"></i></div>
+    <div class="question-sheet">
+      <div class="question-label">問題</div>
+      <div id="photoWrap" class="photo-wrap" style="display:none"><img id="questionPhoto" alt="歴史資料"><small id="photoCredit"></small></div>
+      <div class="question" id="question"></div>
+      <div id="choices" class="choices"></div>
+    </div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=33" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <span id="qType" style="display:none"></span>
+  </div>
+</section>
+
+<section id="result" class="screen">
+  <div id="resultCard" class="ref-result">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=33" alt=""><b id="resultEra"></b></div>
+    <div id="resultTitle" class="result-title"></div>
+    <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=33" alt="">
+    <div id="answerCompare" class="answer-compare"></div>
+    <div id="resultExplain" class="result-explain"></div>
+    <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
+    <button class="result-next" onclick="nextQuestion()">つぎの問題へ　›</button>
+  </div>
+</section>
+
+<section id="complete" class="screen">
+  <div class="ref-complete">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=33" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
+    <div class="ref-progress"><i style="width:100%"></i></div>
+    <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=33" alt="">
+    <div class="master-card"><b id="rewardTitle"></b><span>よくがんばったね！</span></div>
+    <p id="completeText"></p>
+    <div class="complete-buttons"><button onclick="goHome()">ホームにもどる</button><button onclick="goNextEra()">つぎの時代へ</button></div>
+  </div>
+</section>
+</main>
+<script>
+
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=33","./chiikawa-usagi.jpg?v=33","./chiikawa-friends.jpg?v=33"];
+function setQuizFriend(){
+  const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
+  if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
+  if(txt) txt.innerHTML=(state.pos%3===0?"うーん…<br>だれかな？":state.pos%3===1?"よく見て<br>考えよう！":"つながりを<br>思い出そう！");
+}
+
+const eras=[
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=33",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=33",unlocked:true},
+{id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
+{id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
+{id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
+{id:"edo",name:"江戸時代",art:"🌉🗻",unlocked:false},
+{id:"meiji",name:"明治時代",art:"🚂🏛️",unlocked:false},
+{id:"taisho",name:"大正時代",art:"🎩🌹",unlocked:false},
+{id:"showa",name:"昭和時代",art:"📻🗼",unlocked:false}
+];
+const INTRO={
+asukaNara:{
+ lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
+ topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
+ art:"./chiikawa-usagi.jpg?v=33"},
+heian:{
+ lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
+ topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
+ art:"./chiikawa-hachiware.jpg?v=33"}
+};
+const MNEMONIC={
+"538年":"🌸 ご参拝（538）しよう、仏教伝来！",
+"593年":"🌸 国民（593）まとめる聖徳太子！",
+"603年":"🌸 むれみ（603）んなを冠位で分ける、冠位十二階！",
+"604年":"🌸 群れよ（604）みんな、十七条の憲法！",
+"607年":"🌸 群れな（607）して海へ、遣隋使！",
+"645年":"🌸 むしご（645）ろし…で覚える大化の改新！",
+"663年":"🌸 むむ、惨（663）敗…白村江の戦い！",
+"672年":"🌸 むなに（672）残る壬申の乱！",
+"694年":"🌸 むくよ（694）新しい都、藤原京！",
+"701年":"🌸 なれい（701）い国へ、大宝律令！",
+"708年":"🌸 なれや（708）お金に、和同開珎！",
+"710年":"🌸 なんと（710）きれいな平城京！",
+"723年":"🌸 なにさ（723）、三世一身の法！",
+"743年":"🌸 なしさ（743）私有の期限、墾田永年私財法！",
+"784年":"🌸 なやし（784）い長岡京！",
+"794年":"🌸 なくよ（794）うぐいす平安京！",
+"804年":"🌸 やれよ（804）、唐で学ぼう最澄・空海！",
+"894年":"🌸 白紙（894）に戻そう遣唐使！",
+"1016年":"🌸 遠い昔（1016）、道長が摂政！"
+};
+
+const Q={
+asukaNara:[
+["つながり","710年、都が藤原京から移された先は？",["平城京","平安京","長岡京","大津宮"],0,"710年に都は<ruby>平城京<rt>へいじょうきょう</rt></ruby>へ。奈良時代の中心になるよ。"],
+["年号","平城京に都が移された年は？",["708年","710年","723年","743年"],1,"710年。『なんと（710）きれいな平城京』で覚えよう。"],
+["年号","「和同開珎」が発行された年は？",["701年","708年","710年","712年"],1,"708年に<ruby>和同開珎<rt>わどうかいちん</rt></ruby>が発行されたよ。"],
+["つながり","平城京は、中国のどの都をまねてつくられた？",["洛陽","長安","南京","北京"],1,"唐の都・<ruby>長安<rt>ちょうあん</rt></ruby>を参考にした。"],
+["税","6歳以上の人に口分田を与え、収穫高のおよそ3％を納めた税は？",["租","調","庸","雑徭"],0,"稲の収穫高のおよそ3％を納めるのが「租」。"],
+["税","布や地方の特産物を納める税は？",["租","調","庸","出挙"],1,"地方の特産物などを納めるのが「調」。"],
+["税","都で働く代わりに布を納める税は？",["租","調","庸","租庸調"],2,"都での労役の代わりに布を納めるのが「庸」。"],
+["人物","北九州で3年間、守りにつく兵士を何という？",["衛士","防人","武士","兵衛"],1,"北九州の守りにつく兵士は<ruby>防人<rt>さきもり</rt></ruby>。"],
+["用語","税の荷札や役所の文書などに使われた木の札は？",["竹簡","木簡","石碑","勘合"],1,"奈良時代には<ruby>木簡<rt>もっかん</rt></ruby>が使われた。"],
+["年号","三世一身の法が出された年は？",["718年","723年","729年","743年"],1,"723年に三世一身の法。"],
+["制度","新しく開墾した土地を3代にわたり私有できるとした法は？",["班田収授法","三世一身の法","墾田永年私財法","大宝律令"],1,"723年の<ruby>三世一身<rt>さんぜいっしん</rt></ruby>の法。"],
+["年号","墾田永年私財法が出された年は？",["723年","733年","743年","753年"],2,"743年。開墾した土地の永久私有を認めた。"],
+["制度","新しく開墾した土地の永久私有を認めた法は？",["三世一身の法","墾田永年私財法","班田収授法","御成敗式目"],1,"<ruby>墾田永年私財法<rt>こんでんえいねんしざいほう</rt></ruby>で荘園が増えていった。"],
+["つながり","墾田永年私財法の後、貴族や寺社の私有地として増えたものは？",["口分田","荘園","屯田","御料所"],1,"私有地である「荘園」が増え、公地公民がくずれていく。"],
+["人物","仏教の力で国を治めようとし、国分寺・国分尼寺をつくらせた天皇は？",["天武天皇","聖武天皇","桓武天皇","嵯峨天皇"],1,"<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>は仏教で国を守ろうとした。"],
+["つながり","全国の国分寺の中心として建てられた寺は？",["法隆寺","東大寺","唐招提寺","平等院"],1,"奈良の<ruby>東大寺<rt>とうだいじ</rt></ruby>が全国の国分寺の中心。"],
+["文化","東大寺大仏の造立に協力した、民衆に人気の僧は？",["行基","鑑真","最澄","空海"],0,"<ruby>行基<rt>ぎょうき</rt></ruby>が大仏づくりに協力した。"],
+["外交","唐へ派遣された使節を何という？",["遣隋使","遣唐使","遣明使","勘合使"],1,"唐の制度や文化を学ぶため<ruby>遣唐使<rt>けんとうし</rt></ruby>を送った。"],
+["人物","唐の朝廷に仕え、帰国できず長安で一生を終えた日本人は？",["小野妹子","阿倍仲麻呂","吉備真備","菅原道真"],1,"<ruby>阿倍仲麻呂<rt>あべのなかまろ</rt></ruby>は唐で一生を終えた。"],
+["人物","6回目の渡航で日本に着き、戒律を伝えた唐の僧は？",["玄奘","鑑真","最澄","道元"],1,"<ruby>鑑真<rt>がんじん</rt></ruby>は何度も失敗しながら来日した。"],
+["文化","鑑真が建てた寺は？",["東大寺","唐招提寺","法隆寺","薬師寺"],1,"鑑真は<ruby>唐招提寺<rt>とうしょうだいじ</rt></ruby>を建てた。"],
+["文化","聖武天皇のころ、唐の影響を受けて栄えた文化は？",["飛鳥文化","白鳳文化","天平文化","国風文化"],2,"聖武天皇のころの文化を<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>という。"],
+["文化","東大寺にあり、聖武天皇の愛用品などを納めた建物は？",["正倉院","金堂","夢殿","鳳凰堂"],0,"<ruby>正倉院<rt>しょうそういん</rt></ruby>には国際色豊かな品々も残る。"],
+["建築","正倉院に見られる、三角形の角材を組み合わせるつくりは？",["寝殿造","校倉造","書院造","数寄屋造"],1,"<ruby>校倉造<rt>あぜくらづくり</rt></ruby>。"],
+["写真","この写真の五重塔で知られる寺は？",["法隆寺","東大寺","唐招提寺","平等院"],0,"これは<ruby>法隆寺<rt>ほうりゅうじ</rt></ruby>の五重塔。飛鳥時代の文化を代表する建築として、写真でも見分けられるようにしよう。","https://commons.wikimedia.org/wiki/Special:Redirect/file/Horyu-ji%20Kondo%20and%20Five-story%20Pagoda%202022.jpg","写真：Wikimedia Commons（CC0）"],
+["文化","中国の歴史書を参考にした奈良時代の歴史書は？",["日本書紀","古今和歌集","源氏物語","方丈記"],0,"『<ruby>日本書紀<rt>にほんしょき</rt></ruby>』。"],
+["文化","国ごとの産物・伝説・地名の由来などをまとめたものは？",["風土記","日本書紀","万葉集","古事記"],0,"『<ruby>風土記<rt>ふどき</rt></ruby>』。"],
+["文化","約4500首の和歌を集めた日本最古の歌集は？",["古今和歌集","新古今和歌集","万葉集","小倉百人一首"],2,"『<ruby>万葉集<rt>まんようしゅう</rt></ruby>』には幅広い身分の人の歌が収められた。"],
+["順番","古い順に正しいものは？",["和同開珎→平城京→三世一身の法→墾田永年私財法","平城京→和同開珎→墾田永年私財法→三世一身の法","三世一身の法→平城京→和同開珎→墾田永年私財法","和同開珎→三世一身の法→平城京→墾田永年私財法"],0,"708→710→723→743の順。"],
+["つながり","公地公民がくずれていく大きなきっかけとなった法は？",["十七条の憲法","墾田永年私財法","御成敗式目","武家諸法度"],1,"土地の永久私有を認めたことで荘園が広がった。"]
+,
+["年号", "仏教が日本に伝わった年として覚える年は？", ["538年", "548年", "593年", "603年"], 0, "538年。仏教伝来の重要年号。"],
+["年号", "聖徳太子（厩戸皇子）が政治を助け始めた年は？", ["583年", "593年", "603年", "607年"], 1, "593年。推古天皇の政治を助けた。"],
+["年号", "冠位十二階が定められた年は？", ["593年", "603年", "604年", "607年"], 1, "603年。翌604年の十七条の憲法と混同注意。"],
+["年号", "十七条の憲法が定められた年は？", ["603年", "604年", "607年", "645年"], 1, "604年。603年＝冠位十二階、604年＝十七条の憲法。"],
+["年号", "小野妹子が遣隋使として派遣された年は？", ["604年", "607年", "610年", "618年"], 1, "607年。"],
+["年号", "大化の改新が始まった年は？", ["645年", "646年", "653年", "663年"], 0, "645年。中大兄皇子と中臣鎌足もセットで。"],
+["年号", "白村江の戦いが起こった年は？", ["653年", "663年", "672年", "694年"], 1, "663年。"],
+["年号", "壬申の乱が起こった年は？", ["663年", "668年", "672年", "701年"], 2, "672年。大海人皇子が勝ち、のちの天武天皇となる。"],
+["年号", "藤原京に都が移された年は？", ["684年", "694年", "701年", "710年"], 1, "694年。"],
+["年号", "大宝律令が完成した年は？", ["694年", "700年", "701年", "710年"], 2, "701年。"],
+["漢字", "正しい漢字はどれ？ 唐へ送った使節。", ["遣唐使", "遺唐使", "遣唐史", "遣唐師"], 0, "正しくは「遣唐使」。遣＝つかわす、使＝使者。"],
+["漢字", "正しい漢字はどれ？ 奈良の宝物を納めた建物。", ["正倉院", "正蔵院", "正倉苑", "正創院"], 0, "正しくは「正倉院」。"],
+["漢字", "正しい漢字はどれ？ 三角形の角材を組む建築様式。", ["校倉造", "高倉造", "校蔵造", "交倉造"], 0, "正しくは「校倉造」。"],
+["漢字", "正しい漢字はどれ？ 開墾地の永久私有を認めた法。", ["墾田永年私財法", "懇田永年私財法", "墾田永年私材法", "墾田永年私才法"], 0, "「墾田」「私財」の漢字に注意。"],
+["漢字", "正しい漢字はどれ？ 北九州の守りについた兵士。", ["防人", "坊人", "防士", "訪人"], 0, "正しくは「防人（さきもり）」。"],
+["漢字", "正しい漢字はどれ？ 唐から来日し戒律を伝えた僧。", ["鑑真", "監真", "鑑心", "鑑進"], 0, "正しくは「鑑真」。"],
+["漢字", "正しい漢字はどれ？ 聖武天皇のころの文化。", ["天平文化", "天坪文化", "天兵文化", "天評文化"], 0, "正しくは「天平文化」。"],
+["組合せ", "正しい組み合わせはどれ？", ["行基―東大寺大仏の造立に協力", "鑑真―遣隋使", "阿倍仲麻呂―征夷大将軍", "聖武天皇―遣唐使停止を提案"], 0, "行基は東大寺大仏の造立に協力した。"],
+["順番", "古い順に正しいものは？", ["大化の改新→白村江の戦い→壬申の乱→大宝律令", "白村江の戦い→大化の改新→壬申の乱→大宝律令", "大化の改新→壬申の乱→白村江の戦い→大宝律令", "壬申の乱→大化の改新→白村江の戦い→大宝律令"], 0, "645→663→672→701。"],
+["年号","仏教が伝わったとされる年は？",["538年","593年","645年","710年"],0,"538年に仏教が伝わったとされます。"],
+["つながり","大和政権が力を広げたころ、朝鮮半島などから日本へ移り住んだ人々を何という？",["渡来人","防人","国司","遣唐使"],0,"<ruby>渡来人<rt>とらいじん</rt></ruby>は、大陸の進んだ技術や文化を日本へ伝えました。"],
+["人物","仏教を広めようとした豪族は？",["蘇我氏","物部氏","藤原氏","平氏"],0,"<ruby>蘇我氏<rt>そがし</rt></ruby>は仏教を受け入れ、広めようとしました。"],
+["人物","聖徳太子が政治を助けた天皇は？",["推古天皇","持統天皇","聖武天皇","桓武天皇"],0,"<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>は<ruby>推古天皇<rt>すいこてんのう</rt></ruby>の政治を助けました。"],
+["制度","冠位十二階で役人の位を示すために使われたものは？",["冠の色","刀の長さ","家の大きさ","土地の広さ"],0,"<ruby>冠位十二階<rt>かんいじゅうにかい</rt></ruby>では、冠の色などで役人の位を示しました。"],
+["外交","遣隋使として隋へ派遣された人物は？",["小野妹子","阿倍仲麻呂","鑑真","行基"],0,"<ruby>小野妹子<rt>おののいもこ</rt></ruby>は遣隋使として隋へ派遣されました。"],
+["つながり","乙巳の変で蘇我氏を倒した中心人物の組み合わせは？",["中大兄皇子と中臣鎌足","聖徳太子と小野妹子","天武天皇と持統天皇","聖武天皇と行基"],0,"<ruby>中大兄皇子<rt>なかのおおえのおうじ</rt></ruby>と<ruby>中臣鎌足<rt>なかとみのかまたり</rt></ruby>が中心となりました。"],
+["外交","白村江の戦いで日本が助けようとした国は？",["百済","新羅","唐","隋"],0,"日本は<ruby>百済<rt>くだら</rt></ruby>を助けるために軍を送りました。"],
+["人物","壬申の乱に勝ち、のちに天皇になった人物は？",["大海人皇子","中大兄皇子","厩戸皇子","大友皇子"],0,"<ruby>大海人皇子<rt>おおあまのおうじ</rt></ruby>は壬申の乱に勝ち、<ruby>天武天皇<rt>てんむてんのう</rt></ruby>になりました。"],
+["都","日本で初めて本格的な都としてつくられた都は？",["藤原京","平城京","長岡京","平安京"],0,"<ruby>藤原京<rt>ふじわらきょう</rt></ruby>は本格的な都として整備されました。"],
+["制度","大宝律令によって整えられた国の仕組みを何という？",["律令国家","摂関政治","武家政治","院政"],0,"<ruby>律令<rt>りつりょう</rt></ruby>にもとづいて国を治める仕組みが整いました。"],
+["都","平城京が手本にした唐の都は？",["長安","洛陽","北京","南京"],0,"平城京は唐の都<ruby>長安<rt>ちょうあん</rt></ruby>を手本にしました。"],
+["税","奈良時代、米で納める税を何という？",["租","調","庸","雑徭"],0,"<ruby>租<rt>そ</rt></ruby>は収穫した米の一部を納める税でした。"],
+["税","奈良時代、地方の特産物を納める税を何という？",["調","租","庸","年貢"],0,"<ruby>調<rt>ちょう</rt></ruby>は地方の特産物を納める税でした。"],
+["資料","税の荷札や役所の記録などに使われた木の札は？",["木簡","竹簡","石碑","巻物"],0,"<ruby>木簡<rt>もっかん</rt></ruby>は文字を書いた木の札です。"],
+["制度","九州北部の守りについた兵士を何という？",["防人","衛士","国司","郡司"],0,"<ruby>防人<rt>さきもり</rt></ruby>は九州北部の防衛を担当しました。"],
+["制度","新しく開墾した土地の私有を永久に認めた法は？",["墾田永年私財法","三世一身の法","班田収授法","十七条の憲法"],0,"<ruby>墾田永年私財法<rt>こんでんえいねんしざいほう</rt></ruby>で土地の私有が永久に認められました。"],
+["人物","大仏づくりに協力し、民衆からも信頼された僧は？",["行基","鑑真","最澄","空海"],0,"<ruby>行基<rt>ぎょうき</rt></ruby>は東大寺の大仏づくりに協力しました。"],
+["外交","唐の朝廷に仕え、日本へ帰れないまま長安で亡くなった人物は？",["阿倍仲麻呂","小野妹子","菅原道真","中臣鎌足"],0,"<ruby>阿倍仲麻呂<rt>あべのなかまろ</rt></ruby>は唐で活躍しました。"],
+["文化","正倉院に見られる建築様式は？",["校倉造","寝殿造","書院造","数寄屋造"],0,"<ruby>正倉院<rt>しょうそういん</rt></ruby>は<ruby>校倉造<rt>あぜくらづくり</rt></ruby>で知られます。"],
+["文化","約4500首の和歌を集めた奈良時代の歌集は？",["万葉集","古今和歌集","枕草子","源氏物語"],0,"<ruby>万葉集<rt>まんようしゅう</rt></ruby>には身分の異なる多くの人々の歌が収められています。"]
+],
+heian:[
+["人物","奈良の貴族や寺院の力から離れて政治を立て直そうとした天皇は？",["桓武天皇","聖武天皇","天武天皇","後醍醐天皇"],0,"<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>が都を移し政治改革を進めた。"],
+["年号","都が長岡京へ移された年は？",["774年","784年","794年","804年"],1,"784年に長岡京へ。"],
+["年号","都が平安京へ移された年は？",["784年","794年","804年","894年"],1,"794年。『なくよ（794）うぐいす平安京』。"],
+["順番","都の移動の順番として正しいものは？",["平城京→長岡京→平安京","長岡京→平城京→平安京","平城京→平安京→長岡京","藤原京→平安京→長岡京"],0,"奈良の平城京から長岡京、そして794年に平安京。"],
+["都市","平安京は中国のどの都をまねてつくられた？",["長安","洛陽","開封","南京"],0,"道路を碁盤の目のように区切った長安にならった。"],
+["人物","征夷大将軍となり、東北地方で朝廷に従わない蝦夷を征討した人物は？",["坂上田村麻呂","源頼朝","平清盛","藤原道長"],0,"<ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby>。"],
+["人物","唐で仏教を学び、比叡山延暦寺で天台宗を広めた人物は？",["最澄","空海","鑑真","法然"],0,"<ruby>最澄<rt>さいちょう</rt></ruby>は天台宗。"],
+["宗教","最澄が広めた宗派は？",["真言宗","天台宗","浄土宗","禅宗"],1,"最澄＝天台宗＝比叡山延暦寺、とつなげよう。"],
+["人物","唐で仏教を学び、高野山金剛峯寺で真言宗を広めた人物は？",["最澄","空海","親鸞","日蓮"],1,"<ruby>空海<rt>くうかい</rt></ruby>＝真言宗＝高野山金剛峯寺。"],
+["宗教","空海が広めた宗派は？",["天台宗","真言宗","時宗","浄土真宗"],1,"空海は真言宗を広めた。"],
+["政治","藤原氏が娘を天皇や皇太子と結婚させ、外祖父として権力を握った政治は？",["院政","摂関政治","執権政治","幕藩体制"],1,"<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>。"],
+["人物","894年、遣唐使の停止を提案した人物は？",["菅原道真","藤原道長","坂上田村麻呂","平清盛"],0,"<ruby>菅原道真<rt>すがわらのみちざね</rt></ruby>が遣唐使停止を提案。"],
+["年号","遣唐使の停止が提案された年は？",["794年","804年","894年","904年"],2,"894年。『白紙（894）に戻そう遣唐使』。"],
+["つながり","遣唐使の停止後、日本独自の文化が発達した。この文化は？",["天平文化","国風文化","北山文化","東山文化"],1,"唐との交流が弱まり、日本風の<ruby>国風文化<rt>こくふうぶんか</rt></ruby>が発達。"],
+["文化","漢字の一部を取り出すなどして発達した文字は？",["かな文字","甲骨文字","楔形文字","梵字"],0,"国風文化では<ruby>かな文字<rt>かなもじ</rt></ruby>が発達した。"],
+["宗教","現世の苦しみから逃れ、死後に極楽浄土へ行くことを願う信仰は？",["浄土教","神道","禅宗","修験道"],0,"平安時代には<ruby>浄土教<rt>じょうどきょう</rt></ruby>が流行。"],
+["人物","極楽を表そうとして宇治に平等院鳳凰堂を建てた人物は？",["藤原頼通","藤原道長","藤原良房","藤原基経"],0,"<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が平等院鳳凰堂を建てた。"],
+["写真","この建物は何？",["東大寺大仏殿","平等院鳳凰堂","金閣","唐招提寺"],1,"これは<ruby>宇治<rt>うじ</rt></ruby>の<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>。<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が建て、<ruby>浄土教<rt>じょうどきょう</rt></ruby>の広がりとも深く関係するよ。","https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/By%C5%8Dd%C5%8D-in%2C_Phoenix_Hall.jpg/330px-By%C5%8Dd%C5%8D-in%2C_Phoenix_Hall.jpg","写真：Marco Almbauer / Wikimedia Commons（CC0）"],
+["政治","9世紀、天皇の家臣として初めて摂政となった藤原氏の人物は？",["藤原良房","藤原基経","藤原道長","藤原頼通"],0,"<ruby>藤原良房<rt>ふじわらのよしふさ</rt></ruby>は臣下として初の摂政。"],
+["政治","藤原良房の子・基経が最初に就いた役職は？",["執権","関白","太政大臣","征夷大将軍"],1,"<ruby>藤原基経<rt>ふじわらのもとつね</rt></ruby>は最初の関白。"],
+["人物","4人の娘を天皇や天皇の子と結婚させ、1016年に摂政となった人物は？",["藤原道長","藤原頼通","藤原良房","菅原道真"],0,"<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby>の時代に藤原氏は全盛へ。"],
+["年号","藤原道長が摂政となった年は？",["996年","1006年","1016年","1026年"],2,"1016年に摂政となった。"],
+["政治","天皇が幼い間、天皇に代わって政治を行う役職は？",["関白","摂政","執権","管領"],1,"幼い天皇を補佐するのが<ruby>摂政<rt>せっしょう</rt></ruby>。"],
+["政治","成人した天皇を補佐して政治の実権を握る役職は？",["関白","摂政","老中","執権"],0,"成人した天皇を補佐するのが<ruby>関白<rt>かんぱく</rt></ruby>。"],
+["土地","貴族や寺社の私有地を何という？",["口分田","荘園","公領","屯田"],1,"平安時代、貴族たちは<ruby>荘園<rt>しょうえん</rt></ruby>を持った。"],
+["土地","荘園が税を納めなくてもよい権利は？",["不入の権","不輸の権","守護不入","地頭請"],1,"税を納めなくてよい＝<ruby>不輸の権<rt>ふゆのけん</rt></ruby>。"],
+["土地","国司を荘園に立ち入らせない権利は？",["不輸の権","不入の権","永代私有権","自治権"],1,"立ち入りを拒む＝<ruby>不入の権<rt>ふにゅうのけん</rt></ruby>。"],
+["政治","尾張国の国司・藤原元命の不正を郡司や農民が訴えた文書は？",["御成敗式目","尾張国郡司百姓等解文","十七条の憲法","建武式目"],1,"<ruby>尾張国郡司百姓等解文<rt>おわりのくにぐんじひゃくしょうらのげぶみ</rt></ruby>。"],
+["順番","古い順に正しいものは？",["長岡京→平安京→遣唐使停止→藤原道長が摂政","平安京→長岡京→遣唐使停止→藤原道長が摂政","長岡京→遣唐使停止→平安京→藤原道長が摂政","遣唐使停止→長岡京→平安京→藤原道長が摂政"],0,"784→794→894→1016の順。"],
+["つながり","平安時代、地方政治を国司に任せる傾向が強まった結果として起きたことは？",["地方で国司が勝手な政治をする例が増えた","班田収授法が復活した","遣唐使が増えた","公地公民が強まった"],0,"中央の監督が弱まり、国司の不正を農民らが訴えることもあった。"],
+["年号", "最澄・空海らが遣唐使とともに唐へ渡った年は？", ["794年", "804年", "814年", "894年"], 1, "804年。794年平安京、894年遣唐使停止との混同注意。"],
+["年号","冠位十二階が定められた年は？",["593年","603年","604年","607年"],1,"603年に冠位十二階が定められました。"],
+["年号", "藤原道長が摂政となった年は？", ["1006年", "1016年", "1026年", "1061年"], 1, "1016年。"],
+["漢字", "正しい漢字はどれ？ 東北地方の蝦夷を征討した役職。", ["征夷大将軍", "征異大将軍", "征夷大将郡", "征威大将軍"], 0, "正しくは「征夷大将軍」。"],
+["漢字", "正しい漢字はどれ？ 幼い天皇に代わって政治を行う役職。", ["摂政", "接政", "摂正", "摂征"], 0, "正しくは「摂政」。"],
+["漢字", "正しい漢字はどれ？ 成人した天皇を補佐する役職。", ["関白", "間白", "関伯", "官白"], 0, "正しくは「関白」。"],
+["漢字", "正しい漢字はどれ？ 藤原氏が行った政治。", ["摂関政治", "接関政治", "摂官政治", "摂間政治"], 0, "正しくは「摂関政治」。"],
+["漢字", "正しい漢字はどれ？ 最澄が開いた寺。", ["延暦寺", "延歴寺", "延暦時", "延歴時"], 0, "正しくは「延暦寺」。"],
+["漢字", "正しい漢字はどれ？ 空海が開いた寺。", ["金剛峯寺", "金剛峰寺", "金剛峯時", "金剛蜂寺"], 0, "正しくは「金剛峯寺」。"],
+["漢字", "正しい漢字はどれ？ 宇治にある阿弥陀堂。", ["平等院鳳凰堂", "平等院鳳皇堂", "平等院凰鳳堂", "平等院鳳凰殿"], 0, "正しくは「平等院鳳凰堂」。"],
+["漢字", "正しい漢字はどれ？ 税を納めなくてよい権利。", ["不輸の権", "不輪の権", "不愉の権", "不輸の券"], 0, "正しくは「不輸の権」。"],
+["漢字", "正しい漢字はどれ？ 国司の立ち入りを拒む権利。", ["不入の権", "不人の権", "不納の権", "不輸の権"], 0, "正しくは「不入の権」。不輸との混同注意。"],
+["漢字", "正しい漢字はどれ？ 遣唐使停止を提案した人物。", ["菅原道真", "管原道真", "菅原通真", "菅原道直"], 0, "正しくは「菅原道真」。"],
+["漢字", "正しい漢字はどれ？ 藤原氏全盛期の人物。", ["藤原道長", "藤原道永", "藤原通長", "藤原道良"], 0, "正しくは「藤原道長」。"],
+["組合せ", "正しい組み合わせはどれ？", ["最澄―天台宗―比叡山延暦寺", "空海―天台宗―高野山金剛峯寺", "最澄―真言宗―比叡山延暦寺", "鑑真―真言宗―高野山金剛峯寺"], 0, "最澄＝天台宗＝比叡山延暦寺。"],
+["組合せ", "正しい組み合わせはどれ？", ["藤原良房―臣下として初の摂政", "藤原基経―初の征夷大将軍", "藤原道長―遣唐使停止を提案", "藤原頼通―大宝律令"], 0, "藤原良房は臣下として初の摂政。"],
+["順番", "古い順に正しいものは？", ["長岡京→平安京→遣唐使停止→道長が摂政", "平安京→長岡京→遣唐使停止→道長が摂政", "長岡京→遣唐使停止→平安京→道長が摂政", "遣唐使停止→平安京→長岡京→道長が摂政"], 0, "784→794→894→1016。"],
+["年号","十七条の憲法が定められた年は？",["603年","604年","607年","645年"],1,"604年に十七条の憲法が定められました。"],
+["写真","この肖像で表されている、『源氏物語』を書いた人物は？",["紫式部","清少納言","小野小町","和泉式部"],0,"『<ruby>源氏物語<rt>げんじものがたり</rt></ruby>』を書いたのは<ruby>紫式部<rt>むらさきしきぶ</rt></ruby>。<ruby>国風文化<rt>こくふうぶんか</rt></ruby>を代表する文学とセットで覚えよう。","https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Portrait_of_Murasaki_Shikibu_04_02.jpg/500px-Portrait_of_Murasaki_Shikibu_04_02.jpg","肖像：狩野孝信 / Wikimedia Commons（Public Domain）"],
+["文化", "『枕草子』を書いた人物は？", ["紫式部", "清少納言", "紀貫之", "菅原道真"], 1, "『枕草子』＝清少納言。"],
+["都","桓武天皇が平安京の前に都を移した場所は？",["長岡京","藤原京","平城京","大津宮"],0,"<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>は784年に<ruby>長岡京<rt>ながおかきょう</rt></ruby>へ都を移しました。"],
+["人物","東北地方の蝦夷をおさえるため征夷大将軍に任命された人物は？",["坂上田村麻呂","藤原道長","菅原道真","平将門"],0,"<ruby>坂上田村麻呂<rt>さかのうえのたむらまろ</rt></ruby>は征夷大将軍として東北へ向かいました。"],
+["宗教","最澄が開いた仏教の宗派は？",["天台宗","真言宗","浄土宗","禅宗"],0,"<ruby>最澄<rt>さいちょう</rt></ruby>は<ruby>天台宗<rt>てんだいしゅう</rt></ruby>を開きました。"],
+["宗教","空海が開いた仏教の宗派は？",["真言宗","天台宗","浄土宗","日蓮宗"],0,"<ruby>空海<rt>くうかい</rt></ruby>は<ruby>真言宗<rt>しんごんしゅう</rt></ruby>を開きました。"],
+["寺院","最澄が比叡山に開いた寺は？",["延暦寺","金剛峯寺","東大寺","唐招提寺"],0,"<ruby>延暦寺<rt>えんりゃくじ</rt></ruby>は比叡山にあります。"],
+["寺院","空海が高野山に開いた寺は？",["金剛峯寺","延暦寺","法隆寺","興福寺"],0,"<ruby>金剛峯寺<rt>こんごうぶじ</rt></ruby>は高野山にあります。"],
+["外交","遣唐使の停止を提案した人物は？",["菅原道真","藤原道長","坂上田村麻呂","藤原頼通"],0,"<ruby>菅原道真<rt>すがわらのみちざね</rt></ruby>は894年に遣唐使の停止を提案しました。"],
+["政治","天皇が幼いときに代わって政治を行う役職は？",["摂政","関白","国司","征夷大将軍"],0,"<ruby>摂政<rt>せっしょう</rt></ruby>は幼い天皇を助けて政治を行います。"],
+["政治","成人した天皇を助けて政治を行う役職は？",["関白","摂政","国司","太政大臣"],0,"<ruby>関白<rt>かんぱく</rt></ruby>は成人した天皇を助けます。"],
+["人物","皇族以外で初めて摂政になった藤原氏の人物は？",["藤原良房","藤原基経","藤原道長","藤原頼通"],0,"<ruby>藤原良房<rt>ふじわらのよしふさ</rt></ruby>は皇族以外で初めて摂政になりました。"],
+["人物","初めて関白になった人物は？",["藤原基経","藤原良房","藤原道長","藤原頼通"],0,"<ruby>藤原基経<rt>ふじわらのもとつね</rt></ruby>は初めて関白になりました。"],
+["政治","藤原氏が摂政や関白となって行った政治を何という？",["摂関政治","院政","執権政治","幕府政治"],0,"<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>は藤原氏が摂政・関白として行った政治です。"],
+["文化","平安時代の貴族の住宅様式は？",["寝殿造","校倉造","書院造","合掌造"],0,"<ruby>寝殿造<rt>しんでんづくり</rt></ruby>は平安貴族の住宅様式です。"],
+["文化","遣唐使停止後に発達した日本風の文化を何という？",["国風文化","天平文化","北山文化","東山文化"],0,"<ruby>国風文化<rt>こくふうぶんか</rt></ruby>では日本独自の文化が発達しました。"],
+["文字","平安時代に広く使われるようになった日本独自の文字は？",["かな文字","甲骨文字","楔形文字","ハングル"],0,"ひらがな・カタカナなどの<ruby>かな文字<rt>かなもじ</rt></ruby>が発達しました。"],
+["宗教","阿弥陀仏にすがり極楽浄土を願う信仰を何という？",["浄土教","天台宗","真言宗","禅宗"],0,"<ruby>浄土教<rt>じょうどきょう</rt></ruby>は極楽浄土への往生を願う信仰です。"],
+["人物","平等院鳳凰堂を建てた人物は？",["藤原頼通","藤原道長","菅原道真","藤原良房"],0,"<ruby>藤原頼通<rt>ふじわらのよりみち</rt></ruby>が宇治に平等院鳳凰堂を建てました。"],
+["文化","『枕草子』を書いた人物は？",["清少納言","紫式部","小野小町","和泉式部"],0,"<ruby>清少納言<rt>せいしょうなごん</rt></ruby>が『<ruby>枕草子<rt>まくらのそうし</rt></ruby>』を書きました。"],
+["荘園","荘園で税を納めなくてもよい権利を何という？",["不輸の権","不入の権","守護権","地頭権"],0,"<ruby>不輸の権<rt>ふゆのけん</rt></ruby>は税を免除される権利です。"],
+["荘園","国司などが荘園へ立ち入るのを拒む権利を何という？",["不入の権","不輸の権","関白","摂政"],0,"<ruby>不入の権<rt>ふにゅうのけん</rt></ruby>は役人の立ち入りを拒む権利です。"]
+]};
+
+
+function normalizeYearQuestions(){
+ const fallback={
+ asukaNara:[
+ ["年号","仏教が伝わったとされる年は？",["538年","593年","645年","710年"],0,"538年に仏教が伝わったとされます。"],
+ ["年号","冠位十二階が定められた年は？",["593年","603年","604年","607年"],1,"603年に冠位十二階が定められました。"],
+ ["年号","十七条の憲法が定められた年は？",["603年","604年","607年","645年"],1,"604年に十七条の憲法が定められました。"],
+ ["年号","大化の改新が始まった年は？",["604年","645年","663年","672年"],1,"645年に大化の改新が始まりました。"],
+ ["年号","平城京に都が移された年は？",["694年","701年","710年","743年"],2,"710年に平城京へ都が移されました。"],
+ ["年号","墾田永年私財法が出された年は？",["723年","733年","743年","753年"],2,"743年に墾田永年私財法が出されました。"]],
+ heian:[
+ ["年号","長岡京に都が移された年は？",["774年","784年","794年","804年"],1,"784年に長岡京へ都が移されました。"],
+ ["年号","平安京に都が移された年は？",["784年","794年","804年","894年"],1,"794年に平安京へ都が移されました。"],
+ ["年号","遣唐使の停止が決まった年は？",["804年","864年","894年","904年"],2,"894年に遣唐使の停止が決まりました。"],
+ ["年号","藤原道長が摂政になった年は？",["996年","1006年","1016年","1026年"],2,"1016年に藤原道長が摂政になりました。"]]
+ };
+ for(const id of Object.keys(Q)){
+   let n=0;
+   Q[id]=Q[id].map(q=>{
+     if(q[0]!=="年号") return q;
+     const pair=q[1].includes("組み合わせ")||q[1].includes("組合せ")||q[1].includes("それぞれ")||q[2].some(x=>(x.match(/年/g)||[]).length>1);
+     if(!pair) return q;
+     const a=fallback[id]||fallback.asukaNara; return a[(n++)%a.length];
+   });
+ }
+}
+normalizeYearQuestions();
+
+let state={era:null,queue:[],pos:0,locked:false};
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV33")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV33",JSON.stringify(s));
+function renderHome(){
+ let s=store();
+ const shown=[
+  {id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=33",unlocked:true},
+  {id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=33",unlocked:true},
+  {id:"kamakura",name:"鎌倉時代",unlocked:false},
+  {id:"muromachi",name:"室町時代",unlocked:false},
+  {id:"sengoku",name:"戦国時代",unlocked:false},
+  {id:"edo",name:"江戸時代以降",unlocked:false}
+ ];
+ document.getElementById("eraGrid").innerHTML=shown.map(e=>`<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}>${e.unlocked?`<div class="art"><img src="${e.art}" alt=""></div>`:""}<h3>${e.name}</h3><div class="progress">${e.unlocked?((s.progress&&s.progress[e.id])||0)+"/70":""}</div><div class="bar"></div></button>`).join("");
+}
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
+function startEra(id){
+ state.era=id;
+ const e=eras.find(x=>x.id===id), intro=INTRO[id];
+ document.getElementById("introEra").textContent=e.name;
+ document.getElementById("introArt").src=intro.art;
+ document.getElementById("introLead").innerHTML=intro.lead;
+ document.getElementById("introTopics").innerHTML=intro.topics;
+ show("intro");
+}
+function beginEra(){
+ let id=state.era,pool=Q[id];
+ // Same question text is shown only once. Older topics are prioritized.
+ const seen=new Set();
+ const unique=pool.map((q,i)=>({q,i})).filter(x=>{const k=x.q[1];if(seen.has(k))return false;seen.add(k);return true});
+ unique.sort((a,b)=>chronoRank(a.q)-chronoRank(b.q)||a.i-b.i);
+ state.queue=unique.slice(0,70).map(x=>x.i);
+ state.pos=0;
+ document.getElementById("quizEra").textContent=eras.find(e=>e.id===id).name;
+ document.getElementById("qTotal").textContent=state.queue.length;
+ show("quiz");renderQuestion();
+}
+function addRuby(s){
+ const d=[
+ ["平城京","へいじょうきょう"],["平安京","へいあんきょう"],["長岡京","ながおかきょう"],["藤原京","ふじわらきょう"],
+ ["聖徳太子","しょうとくたいし"],["聖武天皇","しょうむてんのう"],["桓武天皇","かんむてんのう"],
+ ["大化の改新","たいかのかいしん"],["白村江","はくすきのえ"],["壬申の乱","じんしんのらん"],
+ ["大宝律令","たいほうりつりょう"],["三世一身の法","さんぜいっしんのほう"],["墾田永年私財法","こんでんえいねんしざいほう"],
+ ["遣唐使","けんとうし"],["遣隋使","けんずいし"],["鑑真","がんじん"],["正倉院","しょうそういん"],["校倉造","あぜくらづくり"],
+ ["天平文化","てんぴょうぶんか"],["国風文化","こくふうぶんか"],["藤原道長","ふじわらのみちなが"],["藤原頼通","ふじわらのよりみち"],
+ ["摂関政治","せっかんせいじ"],["摂政","せっしょう"],["関白","かんぱく"],["平等院鳳凰堂","びょうどういんほうおうどう"],
+ ["紫式部","むらさきしきぶ"],["源氏物語","げんじものがたり"],["清少納言","せいしょうなごん"],["枕草子","まくらのそうし"],
+ ["最澄","さいちょう"],["空海","くうかい"],["延暦寺","えんりゃくじ"],["金剛峯寺","こんごうぶじ"],["菅原道真","すがわらのみちざね"],
+ ["荘園","しょうえん"],["不輸の権","ふゆのけん"],["不入の権","ふにゅうのけん"],["防人","さきもり"],["木簡","もっかん"]
+ ];
+ if(/<ruby/.test(s)) return s;
+ d.forEach(([w,r])=>{s=s.split(w).join(`<ruby>${w}<rt>${r}</rt></ruby>`)});
+ return s;
+}
+function renderQuestion(){
+ setQuizFriend();state.locked=false;
+ let q=Q[state.era][state.queue[state.pos]];
+ document.getElementById("qNow").textContent=state.pos+1;
+ document.getElementById("quizProgress").style.width=((state.pos+1)/state.queue.length*100)+"%";
+ document.getElementById("qType").textContent=q[0];
+ document.getElementById("question").textContent=q[1];
+ let pw=document.getElementById("photoWrap");
+ if(q[5]){pw.style.display="block";document.getElementById("questionPhoto").src=q[5];document.getElementById("photoCredit").textContent=q[6]||""}
+ else{pw.style.display="none";document.getElementById("questionPhoto").removeAttribute("src")}
+ let c=document.getElementById("choices");c.innerHTML="";
+ q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.dataset.num=["①","②","③","④"][i];b.textContent=x;b.addEventListener("click",()=>answer(i));c.appendChild(b)});
+}
+function answer(i){
+ if(state.locked)return;state.locked=true;
+ let q=Q[state.era][state.queue[state.pos]],ok=i===q[3],card=document.getElementById("resultCard");
+ card.className="result-card "+(ok?"correct":"wrong");
+ document.getElementById("resultEra").textContent=eras.find(e=>e.id===state.era).name+"　"+(state.pos+1)+" / "+state.queue.length;
+ document.getElementById("resultTitle").textContent=ok?"正解！":"ざんねん…";
+ document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=33":"./chiikawa-hachiware.jpg?v=33";
+ let compare=document.getElementById("answerCompare");
+ if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
+ else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
+ document.getElementById("resultExplain").innerHTML="📖 <b>解説</b><br>"+addRuby(q[4]);
+ let mb=document.getElementById("mnemonicBox"),correct=q[2][q[3]],mn="";
+ if(q[0]==="年号"){for(const [yr,m] of Object.entries(MNEMONIC)){if(correct.includes(yr)||q[1].includes(yr)){mn=m;break}}}
+ if(mn){mb.style.display="block";mb.innerHTML="🌸 <b>年号おぼえよう！</b><br>"+mn}else mb.style.display="none";
+ let s=store();if(ok)s.today=(s.today||0)+1;save(s);show("result");
+}
+function nextQuestion(){
+ let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;
+ if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=70;save(s);let en=eras.find(e=>e.id===state.era).name;
+document.getElementById("completeText").textContent="カードをゲットしたよ！";
+document.getElementById("rewardTitle").textContent=en+"マスター！";
+document.getElementById("completeEraHead").textContent=en;
+document.getElementById("completeEraTitle").textContent=en;
+show("complete")}
+ else{show("quiz");renderQuestion()}
+}
+function goNextEra(){if(state.era==="asukaNara")startEra("heian");else goHome()}
+function goHome(){show("home");renderHome()}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV33");renderHome()}}
+renderHome();
+if("serviceWorker"in navigator){window.addEventListener("load",()=>Promise.resolve();
+function chronoRank(q){
+ const t=q[1]+" "+q[2].join(" ")+" "+q[4];
+ for(let i=0;i<CHRONO.length;i++) if(t.includes(CHRONO[i])) return i;
+ return 999;
+}
+
+>
