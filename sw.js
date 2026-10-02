@@ -1,4 +1,4 @@
-const CACHE='ritchan-history-v25';const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
+const CACHE='ritchan-history-v26';const ASSETS=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png',
 "./chiikawa-friends.jpg",
 "./chiikawa-hachiware.jpg",
 "./chiikawa-usagi.jpg",
