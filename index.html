@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=26">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=26">
+<link rel="manifest" href="./manifest.webmanifest?v=27">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=27">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -112,67 +112,116 @@ linear-gradient(180deg,#d9f4ff 0 31%,#fff4f6 31% 70%,#eefbcf 70%);min-height:100
 .result-explain{background:#fffdf1;border:2px solid #ead7a0;border-radius:17px;padding:12px;text-align:left;font-weight:800;line-height:1.7}
 .mnemonic-box{margin-top:9px;background:#fff1a9;border:3px dashed #f1a43c;border-radius:18px;padding:11px;text-align:left;font-weight:900;line-height:1.6}
 ruby rt{font-size:.55em;color:#566}
+</style><style id="v27-reference-ui">
+:root{--ink:#172231;--pink:#ff4d7d;--blue:#55a9df;--cream:#fff6d9}
+*{box-sizing:border-box} body{margin:0;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink)}
+.app{max-width:520px;margin:auto;min-height:100vh;background:white}.screen{display:none;min-height:100vh}.screen.active{display:block}
+.ref-home,.ref-intro,.ref-quiz,.ref-complete{min-height:100vh;background:linear-gradient(#cfeeff 0 30%,#fff4cf 30% 72%,#e9f8c8);padding:12px 12px 24px;overflow:hidden}
+.sakura-row{text-align:right;font-size:25px;height:28px}.home-title{text-align:center;background:rgba(255,255,255,.83);border-radius:26px;padding:9px 8px 12px;border:3px solid white}
+.home-title small{display:block;font-size:20px;font-weight:900}.home-title strong{display:block;font-size:39px;line-height:1.05;font-weight:1000}.home-title span{display:block;font-size:13px;font-weight:800;margin-top:6px}
+.home-cast{height:210px;margin:8px 0 6px;border-radius:25px;overflow:hidden;border:4px solid white;background:#fff}.home-cast img{width:100%;height:100%;object-fit:cover}
+.ref-era-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.ref-era-grid .era{border:3px solid #ff9bb6!important;background:linear-gradient(#fff,#fff2db)!important;border-radius:18px!important;padding:7px!important;min-height:125px!important;box-shadow:none!important}
+.ref-era-grid .era:nth-child(2){border-color:#8fc34d!important;background:linear-gradient(#fff,#f3ffd9)!important}.ref-era-grid .era h3{font-size:21px;margin:3px 0}.ref-era-grid .era .art img{height:75px!important}.ref-era-grid .era .progress,.ref-era-grid .era .bar{display:none}
+.ref-era-grid .era.locked{min-height:78px!important;background:linear-gradient(#dceaf0,#bfd3dc)!important;border-color:#d4e4e9!important;opacity:1!important}.ref-era-grid .era.locked .art{display:none}.ref-era-grid .era.locked h3{font-size:17px;margin:9px 0}.ref-era-grid .era.locked:after{content:"🔒";display:block;font-size:23px}
+.ref-era-grid .era:nth-child(n+7){display:none}
+.ref-top{background:transparent!important;border:0!important}.era-heading{font-size:32px;font-weight:1000;background:#ffcbd9;border-radius:24px;padding:4px 18px}
+.intro-cast{height:230px;margin-top:3px;border-radius:24px;overflow:hidden}.intro-cast img{width:100%;height:100%;object-fit:cover}
+.ref-scroll{position:relative;margin:-16px 10px 0;background:#fff4ce;border:4px solid #a87332;border-radius:12px;padding:27px 16px 14px;box-shadow:inset 0 0 0 3px #ffe5a2}
+.scroll-label{position:absolute;top:-20px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#fff2d4;border:3px solid #a87332;border-radius:12px;padding:5px 17px;font-size:18px;font-weight:1000}
+.ref-scroll .intro-lead{font-size:13px;padding:8px;background:#fffdf4;border-radius:12px;margin-bottom:8px;line-height:1.55}.ref-scroll .intro-topics{font-size:17px;line-height:1.65;font-weight:900}
+.ref-start,.result-next{display:block;width:78%;margin:13px auto 0;border:0;border-radius:35px;padding:14px;color:white;background:linear-gradient(#ff719a,#f8326e);font-size:25px;font-weight:1000;box-shadow:inset 0 0 0 3px #ff9ab5}
+.ref-quiz{background:linear-gradient(#fff8dc,#fff2d7 62%,#e7f6c6);padding:10px 13px 18px}.quiz-head{display:flex;align-items:center;gap:8px;font-size:17px;font-weight:900}.quiz-head img{width:38px;height:38px;border-radius:50%;object-fit:cover}.quiz-head b{flex:1}.quiz-head span{font-weight:900}
+.ref-progress{height:11px;border-radius:99px;background:#d9d9d9;border:1px solid #a7a7a7;overflow:hidden;margin:3px 0 10px}.ref-progress i{display:block;height:100%;background:#39c74f;border-radius:99px}
+.question-sheet{background:rgba(255,255,255,.76);border-radius:14px;padding:10px}.question-label{display:inline-block;background:#ff6f94;color:white;border-radius:5px;padding:4px 12px;font-weight:1000;margin-bottom:6px}.question{font-size:19px!important;line-height:1.55!important;font-weight:900!important;margin:4px 0 8px}
+.choices{display:grid;gap:7px}.choice{font-size:17px!important;min-height:45px!important;padding:7px 11px!important;border:2px solid #6db7e8!important;border-radius:13px!important;background:linear-gradient(#fff,#e7f5ff)!important;box-shadow:none!important;font-weight:900!important;text-align:left!important}
+.choice:before{content:attr(data-num);display:inline-grid;place-items:center;width:27px;height:27px;border:2px solid #5ba5d7;border-radius:50%;margin-right:8px;background:white;color:#2c76ad}
+.quiz-bottom{display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-top:7px}.quiz-bottom img{width:150px;height:120px;object-fit:cover;border-radius:50% 50% 15px 15px}.speech{background:white;border:3px solid #222;border-radius:50%;padding:17px 13px;font-size:15px;font-weight:900;position:relative}
+.photo-wrap{border:3px solid white!important;border-radius:13px!important;margin:2px 0 8px!important}.photo-wrap img{max-height:210px!important}.photo-wrap small{font-size:8px!important}
+.ref-result{min-height:100vh;padding:10px 13px 20px;text-align:center}.ref-result.correct{background:linear-gradient(#fff7dc,#fff0e8 65%,#f2f7cf)}.ref-result.wrong{background:repeating-linear-gradient(90deg,#cbe7ff 0 12px,#b8dcff 12px 22px);position:relative}
+.ref-result.wrong:before{content:"||||||||||||||||||||||||";position:absolute;top:50px;left:0;right:0;color:#5a9ee0;opacity:.35;letter-spacing:8px;font-size:36px;overflow:hidden}
+.result-title{position:relative;font-size:53px!important;font-weight:1000!important;margin:12px 0 0!important}.correct .result-title{color:#f43864!important}.wrong .result-title{color:#154b8a!important}.result-stars{font-size:27px;color:#ffb400;position:relative}
+.result-cast{position:relative;width:100%;height:230px;object-fit:cover;border-radius:20px;margin:5px 0 8px;border:0}
+.answer-compare,.result-explain,.mnemonic-box{position:relative;background:#fff!important;border:0!important;border-radius:14px!important;text-align:left!important;padding:11px!important;line-height:1.55!important;font-weight:800!important}.answer-compare{display:grid;gap:6px}.answer-compare .mine{background:#ffe5e8;border:2px solid #ff8295;border-radius:10px;padding:8px}.answer-compare .right{background:#e7f8e7;border:2px solid #69c67a;border-radius:10px;padding:8px}
+.wrong .result-next{background:linear-gradient(#a27af7,#7444df);box-shadow:inset 0 0 0 3px #b79bff}.mnemonic-box{background:#fff1a7!important;border:3px dashed #efa53d!important;margin-top:8px}
+.ref-complete{text-align:center;background:linear-gradient(#fff7dc,#fff0cf 60%,#e9f6c9)}.ref-complete h1{font-size:29px;margin:14px 0 4px}.ref-complete h1 strong{color:#e72f44;font-size:39px}.complete-cast{width:100%;height:245px;object-fit:cover;border-radius:22px}.master-card{margin:-24px 20px 0;position:relative;background:#fff0bd;border:4px solid #a87332;border-radius:13px;padding:17px 8px 10px;display:grid;gap:4px}.master-card b{font-size:20px}.master-card span{font-weight:900}.ref-complete p{font-weight:900}
+.complete-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}.complete-buttons button{border:0;border-radius:25px;padding:13px 5px;color:white;font-size:17px;font-weight:1000}.complete-buttons button:first-child{background:#14b8e8}.complete-buttons button:last-child{background:#ff4b7b}
+ruby rt{font-size:.55em}
 </style></head>
 <body><main class="app">
 <section id="home" class="screen active">
-<div class="hero"><div class="logo">りっちゃん<br>歴史ドリル 📖</div><div class="sub">～かかわりをえながら 日本の歴史を～</div></div>
-<div class="chiikawa-banner"><img src="./chiikawa-friends.jpg?v=26" alt="ちいかわ・ハチワレ・うさぎ"><div class="bubble">今日はどの時代へ行く？</div></div>
-<div class="panel"><div class="prompt">ちいかわたちと歴史マスターをめざそう！</div><div class="small" style="text-align:center">テキストの流れを「人物→できごと→理由→結果」でつなごう</div></div>
-<div class="stats"><div class="stat">今日の正解<b id="todayCorrect">0</b></div><div class="stat">集めたカード<b id="cardCount">0</b></div></div>
-<div class="section-title">時代問題</div><div id="eraGrid" class="grid"></div>
-<button class="reset" onclick="resetProgress()">進み具合をリセット</button>
+  <div class="ref-home">
+    <div class="sakura-row">🌸　🌸　🌸</div>
+    <div class="home-title"><small>りっちゃん</small><strong>歴史ドリル📖</strong><span>～ちいかわたちと学ぶ 日本の歴史～</span></div>
+    <div class="home-cast"><img src="./chiikawa-friends.jpg?v=27" alt=""></div>
+    <div id="eraGrid" class="ref-era-grid"></div>
+  </div>
 </section>
 
 <section id="intro" class="screen">
-<div class="top"><button class="back" onclick="goHome()">←</button><div id="introEra" style="font-weight:1000;font-size:23px"></div></div>
-<div class="intro stage-card">
-  <img id="introArt" class="stage-art" src="" alt="">
-  <div class="scroll"><h2>📜 この時代で出てくる内容</h2><div id="introLead" class="intro-lead"></div><div id="introTopics" class="intro-topics"></div></div>
-  <button class="start-btn" onclick="beginEra()">はじめる　›</button>
-</div>
+  <div class="ref-intro">
+    <div class="top ref-top"><button class="back" onclick="goHome()">←</button><div id="introEra" class="era-heading"></div></div>
+    <div class="intro-cast"><img id="introArt" src="" alt=""></div>
+    <div class="ref-scroll">
+      <div class="scroll-label">この時代で出てくる内容</div>
+      <div id="introLead" class="intro-lead"></div>
+      <div id="introTopics" class="intro-topics"></div>
+    </div>
+    <button class="ref-start" onclick="beginEra()">はじめる　›</button>
+  </div>
 </section>
 
 <section id="quiz" class="screen">
-<div class="top"><button class="back" onclick="goHome()">←</button><div id="quizEra" style="font-weight:1000;font-size:21px"></div><div class="pill"><span id="qNow">1</span>/<span id="qTotal">50</span></div></div>
-<div class="progress-big"><i id="quizProgress"></i></div>
-<div class="quiz-card">
- <div class="quiz-friend"><img id="quizFriendImg" src="./chiikawa-hachiware.jpg?v=26" alt=""><b id="quizFriendText">うーん…だれかな？</b></div>
- <span class="tag" id="qType">つながり</span><div class="qnum">問題</div>
- <div id="photoWrap" class="photo-wrap" style="display:none"><img id="questionPhoto" alt="歴史資料"><small id="photoCredit"></small></div>
- <div class="question" id="question"></div><div id="choices" class="choices"></div>
-</div>
+  <div class="ref-quiz">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">50</b></span></div>
+    <div class="ref-progress"><i id="quizProgress"></i></div>
+    <div class="question-sheet">
+      <div class="question-label">問題</div>
+      <div id="photoWrap" class="photo-wrap" style="display:none"><img id="questionPhoto" alt="歴史資料"><small id="photoCredit"></small></div>
+      <div class="question" id="question"></div>
+      <div id="choices" class="choices"></div>
+    </div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=27" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <span id="qType" style="display:none"></span>
+  </div>
 </section>
 
 <section id="result" class="screen">
-<div id="resultCard" class="result-card">
-  <div id="resultEra" class="result-era"></div>
-  <div id="resultTitle" class="result-title"></div>
-  <div class="sparkles">✦ 🌸 ✨ 🌸 ✦</div>
-  <img id="resultArt" class="result-art" src="./chiikawa-friends.jpg?v=26" alt="">
-  <div id="answerCompare" class="answer-compare"></div>
-  <div id="resultExplain" class="result-explain"></div>
-  <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
-  <button class="next-btn" onclick="nextQuestion()">つぎの問題へ　›</button>
-</div>
+  <div id="resultCard" class="ref-result">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="resultEra"></b></div>
+    <div id="resultTitle" class="result-title"></div>
+    <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=27" alt="">
+    <div id="answerCompare" class="answer-compare"></div>
+    <div id="resultExplain" class="result-explain"></div>
+    <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
+    <button class="result-next" onclick="nextQuestion()">つぎの問題へ　›</button>
+  </div>
 </section>
 
 <section id="complete" class="screen">
-<div class="top"><button class="back" onclick="goHome()">←</button></div>
-<div class="panel complete"><div style="font-size:44px">🎆✨🎉</div><h1>コンプリート！</h1><p id="completeText"></p><div class="card-reward"><img class="reward-photo" src="./chiikawa-reward.jpg?v=26" alt="ごほうび"><div class="big">🏯📜</div><h2 id="rewardTitle"></h2><b>MASTER CARD</b><div>りっちゃん歴史</div></div><button class="choice" style="text-align:center;width:100%" onclick="goHome()">時代選択へ戻る</button></div>
+  <div class="ref-complete">
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=27" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>50 / 50</span></div>
+    <div class="ref-progress"><i style="width:100%"></i></div>
+    <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=27" alt="">
+    <div class="master-card"><b id="rewardTitle"></b><span>よくがんばったね！</span></div>
+    <p id="completeText"></p>
+    <div class="complete-buttons"><button onclick="goHome()">ホームにもどる</button><button onclick="goNextEra()">つぎの時代へ</button></div>
+  </div>
 </section>
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=26","./chiikawa-usagi.jpg?v=26","./chiikawa-friends.jpg?v=26"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=27","./chiikawa-usagi.jpg?v=27","./chiikawa-friends.jpg?v=27"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
-  if(txt) txt.textContent="よく考えて！前後のつながりを思い出そう♪";
+  if(txt) txt.innerHTML=(state.pos%3===0?"うーん…<br>だれかな？":state.pos%3===1?"よく見て<br>考えよう！":"つながりを<br>思い出そう！");
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=26",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=26",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=27",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=27",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -185,11 +234,11 @@ const INTRO={
 asukaNara:{
  lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
  topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
- art:"./chiikawa-usagi.jpg?v=26"},
+ art:"./chiikawa-usagi.jpg?v=27"},
 heian:{
  lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
  topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
- art:"./chiikawa-hachiware.jpg?v=26"}
+ art:"./chiikawa-hachiware.jpg?v=27"}
 };
 const MNEMONIC={
 "538年":"🌸 ご参拝（538）しよう、仏教伝来！",
@@ -321,10 +370,20 @@ heian:[
 ]};
 
 let state={era:null,queue:[],pos:0,locked:false};
-const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV26")||'{"progress":{},"cards":{},"today":0}');
-const save=s=>localStorage.setItem("ritchanHistoryV26",JSON.stringify(s));
-function renderHome(){let s=store();document.getElementById("todayCorrect").textContent=s.today||0;document.getElementById("cardCount").textContent=Object.keys(s.cards||{}).length;
-document.getElementById("eraGrid").innerHTML=eras.map(e=>{let p=(s.progress&&s.progress[e.id])||0;let pct=Math.min(100,p/50*100);return `<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}><div class="art">${e.unlocked?`<img src="${e.art}" alt="" style="width:100%;height:115px;object-fit:cover;border-radius:18px">`:e.art}</div><h3>${e.name}</h3><div class="progress">${e.unlocked?Math.min(p,50)+"問 / 50問":"これから追加"}</div><div class="bar"><i style="width:${pct}%"></i></div></button>`}).join("")}
+const store=()=>JSON.parse(localStorage.getItem("ritchanHistoryV27")||'{"progress":{},"cards":{},"today":0}');
+const save=s=>localStorage.setItem("ritchanHistoryV27",JSON.stringify(s));
+function renderHome(){
+ let s=store();
+ const shown=[
+  {id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=27",unlocked:true},
+  {id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=27",unlocked:true},
+  {id:"kamakura",name:"鎌倉時代",unlocked:false},
+  {id:"muromachi",name:"室町時代",unlocked:false},
+  {id:"sengoku",name:"戦国時代",unlocked:false},
+  {id:"edo",name:"江戸時代以降",unlocked:false}
+ ];
+ document.getElementById("eraGrid").innerHTML=shown.map(e=>`<button class="era ${e.unlocked?"":"locked"}" ${e.unlocked?`onclick="startEra('${e.id}')"`:"disabled"}>${e.unlocked?`<div class="art"><img src="${e.art}" alt=""></div>`:""}<h3>${e.name}</h3><div class="progress">${e.unlocked?((s.progress&&s.progress[e.id])||0)+"/50":""}</div><div class="bar"></div></button>`).join("");
+}
 function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
 function startEra(id){
  state.era=id;
@@ -367,12 +426,12 @@ function renderQuestion(){
  document.getElementById("qNow").textContent=state.pos+1;
  document.getElementById("quizProgress").style.width=((state.pos+1)/state.queue.length*100)+"%";
  document.getElementById("qType").textContent=q[0];
- document.getElementById("question").innerHTML=addRuby(q[1]);
+ document.getElementById("question").textContent=q[1];
  let pw=document.getElementById("photoWrap");
  if(q[5]){pw.style.display="block";document.getElementById("questionPhoto").src=q[5];document.getElementById("photoCredit").textContent=q[6]||""}
  else{pw.style.display="none";document.getElementById("questionPhoto").removeAttribute("src")}
  let c=document.getElementById("choices");c.innerHTML="";
- q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.dataset.num=["①","②","③","④"][i];b.innerHTML=addRuby(x);b.addEventListener("click",()=>answer(i));c.appendChild(b)});
+ q[2].forEach((x,i)=>{let b=document.createElement("button");b.className="choice";b.dataset.num=["①","②","③","④"][i];b.textContent=x;b.addEventListener("click",()=>answer(i));c.appendChild(b)});
 }
 function answer(i){
  if(state.locked)return;state.locked=true;
@@ -380,7 +439,7 @@ function answer(i){
  card.className="result-card "+(ok?"correct":"wrong");
  document.getElementById("resultEra").textContent=eras.find(e=>e.id===state.era).name+"　"+(state.pos+1)+" / "+state.queue.length;
  document.getElementById("resultTitle").textContent=ok?"正解！":"ざんねん…";
- document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=26":"./chiikawa-hachiware.jpg?v=26";
+ document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=27":"./chiikawa-hachiware.jpg?v=27";
  let compare=document.getElementById("answerCompare");
  if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
  else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
@@ -392,11 +451,17 @@ function answer(i){
 }
 function nextQuestion(){
  let s=store();s.progress=s.progress||{};s.progress[state.era]=Math.max(s.progress[state.era]||0,state.pos+1);save(s);state.pos++;
- if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);document.getElementById("completeText").textContent=eras.find(e=>e.id===state.era).name+" 50問達成おめでとう！";document.getElementById("rewardTitle").textContent=eras.find(e=>e.id===state.era).name+"マスターカード GET！";show("complete")}
+ if(state.pos>=state.queue.length){s=store();s.cards=s.cards||{};s.cards[state.era]=true;s.progress[state.era]=50;save(s);let en=eras.find(e=>e.id===state.era).name;
+document.getElementById("completeText").textContent="カードをゲットしたよ！";
+document.getElementById("rewardTitle").textContent=en+"マスター！";
+document.getElementById("completeEraHead").textContent=en;
+document.getElementById("completeEraTitle").textContent=en;
+show("complete")}
  else{show("quiz");renderQuestion()}
 }
+function goNextEra(){if(state.era==="asukaNara")startEra("heian");else goHome()}
 function goHome(){show("home");renderHome()}
-function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV26");renderHome()}}
+function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV27");renderHome()}}
 renderHome();
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=26").catch(()=>{}))}
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=27").catch(()=>{}))}
 </script></body></html>
