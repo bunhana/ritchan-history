@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=36">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=36">
+<link rel="manifest" href="./manifest.webmanifest?v=37">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=37">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -273,7 +273,7 @@ ruby rt{font-size:.55em}
 
 <section id="quiz" class="screen">
   <div class="ref-quiz">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=36" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=37" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
     <div class="ref-progress"><i id="quizProgress"></i></div>
     <div class="question-sheet">
       <div class="question-label">問題</div>
@@ -281,17 +281,17 @@ ruby rt{font-size:.55em}
       <div class="question" id="question"></div>
       <div id="choices" class="choices"></div>
     </div>
-    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=36" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=37" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
     <span id="qType" style="display:none"></span>
   </div>
 </section>
 
 <section id="result" class="screen">
   <div id="resultCard" class="ref-result">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=36" alt=""><b id="resultEra"></b></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=37" alt=""><b id="resultEra"></b></div>
     <div id="resultTitle" class="result-title"></div>
     <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
-    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=36" alt="">
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=37" alt="">
     <div id="answerCompare" class="answer-compare"></div>
     <div id="resultExplain" class="result-explain"></div>
     <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
@@ -301,10 +301,10 @@ ruby rt{font-size:.55em}
 
 <section id="complete" class="screen">
   <div class="ref-complete">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=36" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=37" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
     <div class="ref-progress"><i style="width:100%"></i></div>
     <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
-    <img class="complete-cast" src="./chiikawa-reward.jpg?v=36" alt="">
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=37" alt="">
     <div class="master-card"><b id="rewardTitle"></b><span>よくがんばったね！</span></div>
     <p id="completeText"></p>
     <div class="complete-buttons"><button onclick="goHome()">ホームにもどる</button><button onclick="goNextEra()">つぎの時代へ</button></div>
@@ -313,7 +313,7 @@ ruby rt{font-size:.55em}
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=36","./chiikawa-usagi.jpg?v=36","./chiikawa-friends.jpg?v=36"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=37","./chiikawa-usagi.jpg?v=37","./chiikawa-friends.jpg?v=37"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
@@ -321,8 +321,8 @@ function setQuizFriend(){
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=36",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=36",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=37",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=37",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -335,11 +335,11 @@ const INTRO={
 asukaNara:{
  lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
  topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
- art:"./chiikawa-usagi.jpg?v=36"},
+ art:"./chiikawa-usagi.jpg?v=37"},
 heian:{
  lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
  topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
- art:"./chiikawa-hachiware.jpg?v=36"}
+ art:"./chiikawa-hachiware.jpg?v=37"}
 };
 const MNEMONIC={
 "538年":"🌸 ご参拝（538）しよう、仏教伝来！",
@@ -557,6 +557,17 @@ function startEra(id){
  document.getElementById("introTopics").innerHTML=intro.topics;
  show("intro");
 }
+const CHRONO=[
+"大和政権","渡来人","仏教","推古","聖徳","冠位十二階","十七条","遣隋","小野妹子","乙巳","大化","白村江","壬申","天武","藤原京","大宝律令",
+"和同開珎","平城京","長安","租","調","庸","木簡","防人","三世一身","墾田永年","聖武","国分寺","東大寺","大仏","行基","遣唐使","阿倍仲麻呂","鑑真","天平","正倉院","唐招提寺","古事記","日本書紀","風土記","万葉集",
+"長岡京","桓武","平安京","坂上田村麻呂","最澄","空海","延暦寺","金剛峯寺","菅原道真","894","藤原良房","藤原基経","摂政","関白","摂関","藤原道長","1016","藤原頼通","寝殿造","かな","国風","紫式部","源氏物語","清少納言","枕草子","浄土教","平等院鳳凰堂","荘園","不輸","不入"
+];
+function chronoRank(q){
+ const t=q[1]+" "+q[2].join(" ")+" "+q[4];
+ for(let i=0;i<CHRONO.length;i++) if(t.includes(CHRONO[i])) return i;
+ return 999;
+}
+
 function beginEra(){
  let id=state.era,pool=Q[id];
  // Same question text is shown only once. Older topics are prioritized.
@@ -605,7 +616,7 @@ function answer(i){
  card.className="result-card "+(ok?"correct":"wrong");
  document.getElementById("resultEra").textContent=eras.find(e=>e.id===state.era).name+"　"+(state.pos+1)+" / "+state.queue.length;
  document.getElementById("resultTitle").textContent=ok?"正解！":"ざんねん…";
- document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=36":"./chiikawa-hachiware.jpg?v=36";
+ document.getElementById("resultArt").src=ok?"./chiikawa-friends.jpg?v=37":"./chiikawa-hachiware.jpg?v=37";
  let compare=document.getElementById("answerCompare");
  if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
  else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
@@ -629,17 +640,6 @@ function goNextEra(){if(state.era==="asukaNara")startEra("heian");else goHome()}
 function goHome(){show("home");renderHome()}
 function resetProgress(){if(confirm("進み具合とカードをリセットしますか？")){localStorage.removeItem("ritchanHistoryV33");renderHome()}}
 renderHome();
-if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=36").catch(()=>{}))}
-</script></body></html
-const CHRONO=[
-"大和政権","渡来人","仏教","推古","聖徳","冠位十二階","十七条","遣隋","小野妹子","乙巳","大化","白村江","壬申","天武","藤原京","大宝律令",
-"和同開珎","平城京","長安","租","調","庸","木簡","防人","三世一身","墾田永年","聖武","国分寺","東大寺","大仏","行基","遣唐使","阿倍仲麻呂","鑑真","天平","正倉院","唐招提寺","古事記","日本書紀","風土記","万葉集",
-"長岡京","桓武","平安京","坂上田村麻呂","最澄","空海","延暦寺","金剛峯寺","菅原道真","894","藤原良房","藤原基経","摂政","関白","摂関","藤原道長","1016","藤原頼通","寝殿造","かな","国風","紫式部","源氏物語","清少納言","枕草子","浄土教","平等院鳳凰堂","荘園","不輸","不入"
-];
-function chronoRank(q){
- const t=q[1]+" "+q[2].join(" ")+" "+q[4];
- for(let i=0;i<CHRONO.length;i++) if(t.includes(CHRONO[i])) return i;
- return 999;
-}
-
->
+if("serviceWorker"in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js?v=37").catch(()=>{}))}
+</script></body>
+</script></body></html>
