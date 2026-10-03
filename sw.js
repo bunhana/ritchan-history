@@ -4,8 +4,7 @@ self.addEventListener('activate',e=>{
     caches.keys()
       .then(keys=>Promise.all(keys.map(k=>caches.delete(k))))
       .then(()=>self.registration.unregister())
-      .then(()=>self.clients.matchAll({type:'window'}))
-      .then(clients=>Promise.all(clients.map(c=>c.navigate(c.url))))
+      .then(()=>self.clients.claim())
   );
 });
 self.addEventListener('fetch',()=>{});
