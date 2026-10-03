@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>りっちゃん歴史ドリル 更新</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;background:#fff5f8;margin:0;min-height:100vh;display:grid;place-items:center}
+main{padding:28px;text-align:center}
+h1{color:#ff3d78;font-size:28px}
+p{font-size:18px;font-weight:700}
+</style>
+</head>
+<body>
+<main><h1>更新しています…</h1><p>数秒で最新版を開きます。</p></main>
+<script>
+(async()=>{
+  try{
+    if("serviceWorker" in navigator){
+      const regs=await navigator.serviceWorker.getRegistrations();
+      for(const r of regs) await r.unregister();
+    }
+    if("caches" in window){
+      const keys=await caches.keys();
+      await Promise.all(keys.map(k=>caches.delete(k)));
+    }
+  }catch(e){}
+  location.replace("./index.html?v=53-force-"+Date.now());
+})();
+</script>
+</body>
+</html>
