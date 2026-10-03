@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=49">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=49">
+<link rel="manifest" href="./manifest.webmanifest?v=50">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=50">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -1229,6 +1229,147 @@ ruby rt{font-size:.55em}
 }
 </style>
 
+
+<style id="v50-result-fill">
+/* 回答・解説ページだけ調整。ホーム/問題画面は固定。 */
+#result .ref-result{
+  width:100%!important;
+  min-height:100dvh!important;
+  height:100dvh!important;
+  max-height:100dvh!important;
+  margin:0!important;
+  padding:0 0 56px!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  background:linear-gradient(#fff7f9,#fffdf5)!important;
+}
+#result .quiz-head{
+  margin:0!important;
+  padding:0 6px!important;
+  min-height:22px!important;
+}
+
+/* 正解/残念の画像：1.5倍。切らず、文字と重ねない */
+#result .result-mini-illust{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+#result .result-mini-illust.is-wrong{
+  object-fit:contain!important;
+}
+
+/* 左右余白をほぼゼロに */
+#result .answer-compare,
+#result .result-explain,
+#result .mnemonic-box{
+  width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+#result .answer-compare{
+  margin-top:2px!important;
+  margin-bottom:2px!important;
+  padding:0 3px!important;
+}
+#result .answer-compare .right{
+  border-radius:12px!important;
+  padding:7px 8px!important;
+  font-size:24px!important;
+  line-height:1.24!important;
+}
+
+/* 「くわしい解説」タイトルを今の半分くらい */
+#result .explain-label{
+  font-size:9px!important;
+  line-height:1.05!important;
+  padding:2px 6px!important;
+  border-radius:8px!important;
+  margin-bottom:3px!important;
+}
+#result .explain-label b{
+  font-size:9px!important;
+}
+
+/* 解説本文は見やすさ維持 */
+#result .result-explain{
+  border-radius:14px!important;
+  padding:8px 8px 7px!important;
+  margin-top:2px!important;
+  margin-bottom:2px!important;
+  font-size:23px!important;
+  line-height:1.38!important;
+}
+#result .explain-extra{
+  margin-top:4px!important;
+  padding-top:4px!important;
+}
+#result .mnemonic-box{
+  border-radius:12px!important;
+  padding:5px 7px!important;
+  margin-top:2px!important;
+  margin-bottom:2px!important;
+  font-size:15px!important;
+  line-height:1.25!important;
+}
+
+/* ボタンの外形はそのまま。中の文字だけ1.5倍 */
+#result .result-actions40{
+  width:min(500px,100%)!important;
+  left:50%!important;
+  bottom:max(0px,env(safe-area-inset-bottom))!important;
+  padding:4px!important;
+  gap:5px!important;
+  border-radius:14px!important;
+}
+#result .result-stop40{
+  min-height:34px!important;
+  font-size:19.5px!important;
+  line-height:1!important;
+  padding:4px 6px!important;
+}
+#result .result-next{
+  min-height:36px!important;
+  font-size:24px!important;
+  line-height:1!important;
+  padding:4px 8px!important;
+}
+
+/* 一画面を最大限使う */
+#result .result-card,
+#result .ref-result{
+  box-sizing:border-box!important;
+}
+#result .result-title,
+#result .result-stars,
+#result .result-cast,
+#result .result-art{
+  display:none!important;
+}
+
+@media(max-width:390px){
+  #result .result-explain{
+    font-size:21px!important;
+    line-height:1.34!important;
+  }
+  #result .answer-compare .right{
+    font-size:22px!important;
+  }
+  #result .result-stop40{font-size:18px!important}
+  #result .result-next{font-size:22.5px!important}
+}
+</style>
+
 </head>
 <body><main class="app">
 <section id="home" class="screen active home35">
@@ -1259,7 +1400,7 @@ ruby rt{font-size:.55em}
 
 <section id="quiz" class="screen">
   <div class="ref-quiz">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=49" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=50" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
     <div class="ref-progress"><i id="quizProgress"></i></div>
     <div class="quiz-nav41">
       <button id="prevBtnTop" onclick="prevQuestion()">← 前へ</button>
@@ -1272,7 +1413,7 @@ ruby rt{font-size:.55em}
       <div class="question" id="question"></div>
       <div id="choices" class="choices"></div>
     </div>
-    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=49" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=50" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
     <div class="quiz-nav40">
       <button id="prevBtn" onclick="prevQuestion()">← 前の問題</button>
       <button class="quit40" onclick="quitQuiz()">ここでやめる</button>
@@ -1284,14 +1425,14 @@ ruby rt{font-size:.55em}
 
 <section id="result" class="screen">
   <div id="resultCard" class="ref-result">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=49" alt=""><b id="resultEra"></b></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=50" alt=""><b id="resultEra"></b></div>
     <div id="resultTitle" class="result-title"></div>
     <div class="result-hero49" id="resultHero49">
       <div class="result-copy49"><b id="resultMain49"></b><span id="resultSub49"></span></div>
       <img id="resultHeroImg49" src="" alt="">
     </div>
     <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
-    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=49" alt="">
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=50" alt="">
     <div id="answerCompare" class="answer-compare"></div>
     <div id="resultExplain" class="result-explain"></div>
     <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
@@ -1301,10 +1442,10 @@ ruby rt{font-size:.55em}
 
 <section id="complete" class="screen">
   <div class="ref-complete">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=49" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=50" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
     <div class="ref-progress"><i style="width:100%"></i></div>
     <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
-    <img class="complete-cast" src="./chiikawa-reward.jpg?v=49" alt="">
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=50" alt="">
     <div class="master-card completion-card">
       <div class="completion-card-get">✨ コンプリートカード GET! ✨</div>
       <div class="completion-card-body">
@@ -1323,7 +1464,7 @@ ruby rt{font-size:.55em}
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=49","./chiikawa-usagi.jpg?v=49","./chiikawa-friends.jpg?v=49"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=50","./chiikawa-usagi.jpg?v=50","./chiikawa-friends.jpg?v=50"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
@@ -1331,8 +1472,8 @@ function setQuizFriend(){
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=49",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=49",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=50",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=50",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -1345,11 +1486,11 @@ const INTRO={
 asukaNara:{
  lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
  topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
- art:"./chiikawa-usagi.jpg?v=49"},
+ art:"./chiikawa-usagi.jpg?v=50"},
 heian:{
  lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
  topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
- art:"./chiikawa-hachiware.jpg?v=49"}
+ art:"./chiikawa-hachiware.jpg?v=50"}
 };
 const MNEMONIC={
 "538年":"🌸 ご参拝（538）しよう、仏教伝来！",
@@ -1764,7 +1905,7 @@ if("serviceWorker"in navigator){
  window.addEventListener("load",async()=>{
   try{
    if("caches"in window){for(const k of await caches.keys())await caches.delete(k)}
-   await navigator.serviceWorker.register("./sw.js?v=49",{updateViaCache:"none"});
+   await navigator.serviceWorker.register("./sw.js?v=50",{updateViaCache:"none"});
   }catch(e){}
  })
 }
