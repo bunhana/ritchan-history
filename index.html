@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="りっちゃん歴史">
 <title>りっちゃん歴史</title>
-<link rel="manifest" href="./manifest.webmanifest?v=47">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=47">
+<link rel="manifest" href="./manifest.webmanifest?v=48">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=48">
 <style>
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;color:#594651;background:linear-gradient(#c8f4ff 0,#f4dcff 36%,#ffd3e2 100%);min-height:100vh}
 button{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding:18px 16px 90px}.hero{text-align:center;padding:20px 10px 14px}
@@ -865,13 +865,13 @@ ruby rt{font-size:.55em}
   max-height:none!important;
   overflow-y:auto!important;
   overflow-x:hidden!important;
-  padding:4px 8px 74px!important;
+  padding:2px 8px 62px!important;
   display:block!important;
   background:linear-gradient(#fff7f9,#fffdf5)!important;
 }
 #result .quiz-head{
-  min-height:28px!important;
-  margin:0 0 3px!important;
+  min-height:24px!important;
+  margin:0 0 1px!important;
 }
 #result .result-title{
   display:none!important;
@@ -881,14 +881,14 @@ ruby rt{font-size:.55em}
 #result .result-mini-illust{
   display:block!important;
   width:100%!important;
-  height:auto!important;
-  max-height:none!important;
-  object-fit:contain!important;
+  height:124px!important;
+  max-height:124px!important;
+  object-fit:cover!important;
   object-position:center!important;
-  margin:0 auto 7px!important;
+  margin:0 auto 4px!important;
   border:0!important;
-  border-radius:20px!important;
-  box-shadow:0 4px 14px #0000001a!important;
+  border-radius:18px!important;
+  box-shadow:none!important;
   background:none!important;
 }
 #result .result-mini-illust.is-wrong{
@@ -898,17 +898,17 @@ ruby rt{font-size:.55em}
 /* Answer panel */
 #result .answer-compare{
   display:grid!important;
-  gap:5px!important;
-  margin:5px 2px!important;
+  gap:4px!important;
+  margin:3px 2px!important;
   text-align:left!important;
 }
 #result .answer-compare .right{
   background:#fff0f3!important;
   border:2px solid #ff9ab2!important;
-  border-radius:17px!important;
-  padding:9px 11px!important;
-  font-size:25px!important;
-  line-height:1.32!important;
+  border-radius:16px!important;
+  padding:8px 10px!important;
+  font-size:24px!important;
+  line-height:1.28!important;
   font-weight:1000!important;
   color:#4a2b2b!important;
 }
@@ -927,32 +927,32 @@ ruby rt{font-size:.55em}
 #result .result-explain{
   background:#fffaf0!important;
   border:2px solid #f0d59d!important;
-  border-radius:20px!important;
-  padding:11px 12px 12px!important;
-  margin:6px 2px!important;
+  border-radius:18px!important;
+  padding:10px 11px 10px!important;
+  margin:4px 2px!important;
   max-height:none!important;
   overflow:visible!important;
   text-align:left!important;
   color:#362a23!important;
-  font-size:25px!important;
-  line-height:1.52!important;
+  font-size:24px!important;
+  line-height:1.45!important;
 }
 #result .explain-label{
   display:inline-block!important;
   background:#f06a93!important;
   color:white!important;
-  border-radius:15px!important;
-  padding:4px 11px!important;
-  font-size:20px!important;
+  border-radius:14px!important;
+  padding:3px 10px!important;
+  font-size:18px!important;
   font-weight:1000!important;
-  margin-bottom:7px!important;
+  margin-bottom:5px!important;
 }
 #result .explain-main{
   font-weight:900!important;
 }
 #result .explain-extra{
-  margin-top:8px!important;
-  padding-top:8px!important;
+  margin-top:6px!important;
+  padding-top:6px!important;
   border-top:2px dashed #efd6ae!important;
   font-weight:800!important;
 }
@@ -962,13 +962,13 @@ ruby rt{font-size:.55em}
 
 /* Mnemonic remains visible but compact */
 #result .mnemonic-box{
-  margin:6px 2px!important;
+  margin:4px 2px!important;
   background:#fff3b9!important;
   border:2px dashed #eba643!important;
-  border-radius:17px!important;
-  padding:8px 10px!important;
-  font-size:18px!important;
-  line-height:1.35!important;
+  border-radius:15px!important;
+  padding:6px 9px!important;
+  font-size:16px!important;
+  line-height:1.3!important;
   max-height:none!important;
   overflow:visible!important;
 }
@@ -977,34 +977,34 @@ ruby rt{font-size:.55em}
 #result .result-actions40{
   position:fixed!important;
   left:50%!important;
-  bottom:max(6px,env(safe-area-inset-bottom))!important;
+  bottom:max(4px,env(safe-area-inset-bottom))!important;
   transform:translateX(-50%)!important;
-  width:min(500px,calc(100% - 18px))!important;
+  width:min(500px,calc(100% - 16px))!important;
   z-index:10000!important;
   display:grid!important;
-  grid-template-columns:.78fr 1.35fr!important;
-  gap:7px!important;
+  grid-template-columns:.72fr 1.45fr!important;
+  gap:6px!important;
   margin:0!important;
-  padding:6px!important;
-  border-radius:18px!important;
+  padding:5px!important;
+  border-radius:16px!important;
   background:#fff9f5f2!important;
-  box-shadow:0 4px 18px #0002!important;
+  box-shadow:0 3px 12px #0002!important;
   backdrop-filter:blur(8px)!important;
 }
 #result .result-stop40{
-  min-height:39px!important;
-  border-radius:13px!important;
-  font-size:14px!important;
-  padding:5px 7px!important;
+  min-height:34px!important;
+  border-radius:12px!important;
+  font-size:13px!important;
+  padding:4px 6px!important;
   background:white!important;
   border:2px solid #c9d9e7!important;
   color:#315e88!important;
 }
 #result .result-next{
-  min-height:41px!important;
-  border-radius:13px!important;
-  font-size:18px!important;
-  padding:5px 8px!important;
+  min-height:36px!important;
+  border-radius:12px!important;
+  font-size:16px!important;
+  padding:4px 8px!important;
   margin:0!important;
 }
 
@@ -1016,13 +1016,14 @@ ruby rt{font-size:.55em}
 }
 
 @media(max-width:390px){
-  #result .answer-compare .right{font-size:23px!important}
-  #result .answer-compare .mine{font-size:19px!important}
-  #result .result-explain{font-size:23px!important;line-height:1.48!important}
-  #result .explain-label{font-size:19px!important}
-  #result .mnemonic-box{font-size:17px!important}
-  #result .result-stop40{font-size:13px!important}
-  #result .result-next{font-size:17px!important}
+  #result .result-mini-illust{height:112px!important;max-height:112px!important}
+  #result .answer-compare .right{font-size:22px!important}
+  #result .answer-compare .mine{font-size:18px!important}
+  #result .result-explain{font-size:21px!important;line-height:1.4!important}
+  #result .explain-label{font-size:17px!important}
+  #result .mnemonic-box{font-size:15px!important}
+  #result .result-stop40{font-size:12px!important}
+  #result .result-next{font-size:15px!important}
 }
 </style>
 
@@ -1056,7 +1057,7 @@ ruby rt{font-size:.55em}
 
 <section id="quiz" class="screen">
   <div class="ref-quiz">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=47" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=48" alt=""><b id="quizEra"></b><span><b id="qNow">1</b> / <b id="qTotal">70</b></span></div>
     <div class="ref-progress"><i id="quizProgress"></i></div>
     <div class="quiz-nav41">
       <button id="prevBtnTop" onclick="prevQuestion()">← 前へ</button>
@@ -1069,7 +1070,7 @@ ruby rt{font-size:.55em}
       <div class="question" id="question"></div>
       <div id="choices" class="choices"></div>
     </div>
-    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=47" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
+    <div class="quiz-bottom"><img id="quizFriendImg" src="./chiikawa-usagi.jpg?v=48" alt=""><div id="quizFriendText" class="speech">うーん…<br>だれかな？</div></div>
     <div class="quiz-nav40">
       <button id="prevBtn" onclick="prevQuestion()">← 前の問題</button>
       <button class="quit40" onclick="quitQuiz()">ここでやめる</button>
@@ -1081,11 +1082,11 @@ ruby rt{font-size:.55em}
 
 <section id="result" class="screen">
   <div id="resultCard" class="ref-result">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=47" alt=""><b id="resultEra"></b></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=48" alt=""><b id="resultEra"></b></div>
     <div id="resultTitle" class="result-title"></div>
     <img class="result-mini-illust" src="" alt="">
     <div class="result-stars">☆ ✨ ☆ ✨ ☆</div>
-    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=47" alt="">
+    <img id="resultArt" class="result-cast" src="./chiikawa-friends.jpg?v=48" alt="">
     <div id="answerCompare" class="answer-compare"></div>
     <div id="resultExplain" class="result-explain"></div>
     <div id="mnemonicBox" class="mnemonic-box" style="display:none"></div>
@@ -1095,10 +1096,10 @@ ruby rt{font-size:.55em}
 
 <section id="complete" class="screen">
   <div class="ref-complete">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=47" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=48" alt=""><b id="completeEraHead">飛鳥・奈良時代</b><span>70 / 70</span></div>
     <div class="ref-progress"><i style="width:100%"></i></div>
     <h1><span id="completeEraTitle">飛鳥・奈良時代</span><br><strong>コンプリート！</strong></h1>
-    <img class="complete-cast" src="./chiikawa-reward.jpg?v=47" alt="">
+    <img class="complete-cast" src="./chiikawa-reward.jpg?v=48" alt="">
     <div class="master-card completion-card">
       <div class="completion-card-get">✨ コンプリートカード GET! ✨</div>
       <div class="completion-card-body">
@@ -1117,7 +1118,7 @@ ruby rt{font-size:.55em}
 </main>
 <script>
 
-const chiikawaFriends=["./chiikawa-hachiware.jpg?v=47","./chiikawa-usagi.jpg?v=47","./chiikawa-friends.jpg?v=47"];
+const chiikawaFriends=["./chiikawa-hachiware.jpg?v=48","./chiikawa-usagi.jpg?v=48","./chiikawa-friends.jpg?v=48"];
 function setQuizFriend(){
   const img=document.getElementById("quizFriendImg"), txt=document.getElementById("quizFriendText");
   if(img) img.src=chiikawaFriends[(state.pos||0)%chiikawaFriends.length];
@@ -1125,8 +1126,8 @@ function setQuizFriend(){
 }
 
 const eras=[
-{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=47",unlocked:true},
-{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=47",unlocked:true},
+{id:"asukaNara",name:"飛鳥・奈良時代",art:"./chiikawa-usagi.jpg?v=48",unlocked:true},
+{id:"heian",name:"平安時代",art:"./chiikawa-hachiware.jpg?v=48",unlocked:true},
 {id:"kamakura",name:"鎌倉時代",art:"⚔️🌊",unlocked:false},
 {id:"muromachi",name:"室町時代",art:"🏯🍵",unlocked:false},
 {id:"azuchi",name:"安土・桃山",art:"🏯✨",unlocked:false},
@@ -1139,11 +1140,11 @@ const INTRO={
 asukaNara:{
  lead:"🌸 <ruby>天皇<rt>てんのう</rt></ruby>を中心とした国づくりが進み、中国の制度や文化を取り入れた時代だよ。人物とできごとを『なぜ？→そのあとどうなった？』でつなげよう！",
  topics:"・<ruby>聖徳太子<rt>しょうとくたいし</rt></ruby>と国づくり<br>・<ruby>大化<rt>たいか</rt></ruby>の<ruby>改新<rt>かいしん</rt></ruby>／<ruby>律令<rt>りつりょう</rt></ruby><br>・<ruby>平城京<rt>へいじょうきょう</rt></ruby>と税<br>・<ruby>聖武天皇<rt>しょうむてんのう</rt></ruby>と仏教<br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>／<ruby>鑑真<rt>がんじん</rt></ruby><br>・<ruby>天平文化<rt>てんぴょうぶんか</rt></ruby>／<ruby>正倉院<rt>しょうそういん</rt></ruby>",
- art:"./chiikawa-usagi.jpg?v=47"},
+ art:"./chiikawa-usagi.jpg?v=48"},
 heian:{
  lead:"🌸 <ruby>平安京<rt>へいあんきょう</rt></ruby>に都が移り、<ruby>藤原氏<rt>ふじわらし</rt></ruby>が力をのばした時代。唐の文化を取り入れる時代から、日本らしい文化へ変わっていく流れをつかもう！",
  topics:"・<ruby>桓武天皇<rt>かんむてんのう</rt></ruby>と<ruby>平安京<rt>へいあんきょう</rt></ruby><br>・<ruby>最澄<rt>さいちょう</rt></ruby>／<ruby>空海<rt>くうかい</rt></ruby><br>・<ruby>遣唐使<rt>けんとうし</rt></ruby>の停止<br>・<ruby>摂関政治<rt>せっかんせいじ</rt></ruby>と<ruby>藤原道長<rt>ふじわらのみちなが</rt></ruby><br>・かな文字と<ruby>国風文化<rt>こくふうぶんか</rt></ruby><br>・<ruby>平等院鳳凰堂<rt>びょうどういんほうおうどう</rt></ruby>／<ruby>浄土教<rt>じょうどきょう</rt></ruby>",
- art:"./chiikawa-hachiware.jpg?v=47"}
+ art:"./chiikawa-hachiware.jpg?v=48"}
 };
 const MNEMONIC={
 "538年":"🌸 ご参拝（538）しよう、仏教伝来！",
@@ -1493,7 +1494,7 @@ function answer(i){
  }
  let compare=document.getElementById("answerCompare");
  if(ok) compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
- else compare.innerHTML=`<div class="mine">✕ あなたの答え：${["①","②","③","④"][i]} ${addRuby(q[2][i])}</div><div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
+ else compare.innerHTML=`<div class="right">⭕ 正解：${["①","②","③","④"][q[3]]} ${addRuby(q[2][q[3]])}</div>`;
  const extra=getExtraDetail(q);
  document.getElementById("resultExplain").innerHTML=
    '<div class="explain-label">📖 <b>くわしい解説</b></div>'+
@@ -1553,7 +1554,7 @@ if("serviceWorker"in navigator){
  window.addEventListener("load",async()=>{
   try{
    if("caches"in window){for(const k of await caches.keys())await caches.delete(k)}
-   await navigator.serviceWorker.register("./sw.js?v=47",{updateViaCache:"none"});
+   await navigator.serviceWorker.register("./sw.js?v=48",{updateViaCache:"none"});
   }catch(e){}
  })
 }
