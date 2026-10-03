@@ -2426,6 +2426,40 @@ opacity:.9}
 }
 </style>
 
+
+<style id="v75-one-screen-final">
+/* 決定版: 問題・正解・不正解はスクロールなしの1画面 */
+#quiz.screen.active,#result.screen.active{display:block!important;height:100dvh!important;min-height:0!important;overflow:hidden!important;padding:0!important}
+#quiz .ref-quiz,#result .ref-result{height:100dvh!important;max-height:100dvh!important;padding:4px 7px 5px!important;overflow:hidden!important}
+.quiz-shell,.result-shell{height:100%!important;display:flex!important;flex-direction:column!important;gap:4px!important}
+.quiz-hero,.result-hero-top{flex:0 0 auto!important;border-radius:18px!important;padding:5px 8px!important;border-width:3px!important}
+.quiz-title{font-size:clamp(22px,4.4vh,32px)!important;margin-bottom:4px!important}
+.quiz-subbar{gap:5px!important;grid-template-columns:104px 1fr 52px!important}
+.quiz-era-pill{padding:3px 6px!important;border-radius:13px!important;gap:5px!important}
+.quiz-era-pill .icon{font-size:20px!important}.quiz-era-pill small{font-size:9px!important}.quiz-era-pill b{font-size:12px!important}
+.quiz-progress-wrap{gap:2px!important}.quiz-progress-track{padding:4px 6px!important;gap:4px!important;border-width:2px!important}.quiz-progress-track .dot{width:9px!important;height:9px!important}
+.quiz-progress-text{font-size:10px!important;padding:2px 7px!important}.quiz-subbar .ratio{font-size:20px!important;min-width:50px!important}
+.quiz-main,.result-main-card{flex:1 1 auto!important;min-height:0!important;margin-top:0!important;border-radius:18px!important;padding:5px 6px!important;border-width:3px!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}
+.question-card{flex:1 1 auto!important;min-height:0!important;padding:5px 7px!important;border-radius:17px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+.question-badge{padding:3px 8px!important;border-radius:13px!important;min-width:62px!important;font-size:10px!important;align-self:flex-start!important}.question-badge span{font-size:16px!important}
+.question-text{font-size:clamp(17px,3.25vh,25px)!important;line-height:1.18!important;margin:4px 0 3px!important;min-height:0!important}
+.choice-list{display:grid!important;grid-template-rows:repeat(4,minmax(0,1fr))!important;gap:4px!important;margin-top:3px!important;flex:1 1 auto!important;min-height:0!important}
+.choice{grid-template-columns:34px 1fr 18px!important;gap:5px!important;min-height:0!important;height:100%!important;padding:3px 7px!important;border-radius:14px!important;border-width:2px!important;box-shadow:none!important}
+.choice .num{width:29px!important;height:29px!important;font-size:18px!important;box-shadow:none!important}.choice .choice-text{font-size:clamp(14px,2.45vh,19px)!important;line-height:1.02!important}.choice .choice-text .furi{font-size:9px!important;margin-bottom:1px!important}.choice .petal{font-size:15px!important}
+.choice ruby rt{font-size:.42em!important}
+.quiz-actions-top{flex:0 0 auto!important;grid-template-columns:1fr 1.35fr 1fr!important;gap:5px!important;margin-top:4px!important}.quiz-actions-bottom{flex:0 0 auto!important;grid-template-columns:repeat(4,1fr)!important;gap:4px!important;margin-top:4px!important}
+.nav-btn,.answer-btn,.quit-btn,.weak-btn,.homefirst-btn{min-height:36px!important;padding:3px 4px!important;border-radius:13px!important;font-size:12px!important;box-shadow:none!important}.answer-btn{font-size:17px!important;border-width:2px!important}.action-label-small{font-size:8px!important}
+/* 正解・不正解 */
+.result-headerline{margin-top:3px!important}.result-headerline b{font-size:12px!important}.result-headerline span{font-size:11px!important}
+.result-title-big{font-size:clamp(34px,6.5vh,48px)!important;margin:2px 0!important}
+.result-copy{padding:4px 7px!important;border-radius:15px!important;border-width:2px!important;gap:7px!important}.result-copy .mark{font-size:32px!important}.result-copy .text b{font-size:21px!important}.result-copy .text span{font-size:12px!important}
+.result-answerbox{gap:4px!important;margin-top:4px!important}.result-answer{padding:4px 7px!important;border-radius:14px!important;border-width:2px!important}.result-answer .label{font-size:9px!important;padding:2px 7px!important;margin-bottom:2px!important}.result-answer .ansline{font-size:15px!important;line-height:1.05!important}
+.result-explain{flex:1 1 auto!important;min-height:0!important;overflow:hidden!important;margin-top:4px!important;padding:5px 7px!important;border-radius:14px!important;border-width:2px!important;line-height:1.18!important}.result-explain .label{font-size:9px!important;padding:2px 7px!important;margin-bottom:2px!important}.result-explain .main{font-size:13px!important;margin-bottom:2px!important}.result-explain .extra{font-size:10px!important;line-height:1.16!important}
+.result-actions{flex:0 0 auto!important;grid-template-columns:1fr 1.4fr 1fr!important;gap:5px!important;margin-top:4px!important}.result-next-btn,.result-back-btn{min-height:36px!important;border-radius:13px!important;font-size:13px!important;padding:3px!important;box-shadow:none!important}.result-next-btn{font-size:17px!important;border-width:2px!important}
+.small-chiikawa{display:none!important}
+@media(max-height:700px){.quiz-title{font-size:24px!important}.question-text{font-size:18px!important}.choice .choice-text{font-size:14px!important}.result-title-big{font-size:34px!important}.result-explain .extra{font-size:9px!important}}
+</style>
+
 </head>
 <body><main class="app">
 <section id="home" class="screen active home35">
@@ -2473,9 +2507,9 @@ opacity:.9}
           <div class="quiz-era-pill"><div class="icon">🏯</div><div><small id="quizEraKana">じだい</small><b id="quizEra"></b></div></div>
           <div class="quiz-progress-wrap">
             <div id="quizDots" class="quiz-progress-track"></div>
-            <div class="quiz-progress-text"><span id="qTotalText">70問中</span> <span id="qNowText" style="color:#ff3176">1</span>問目</div>
+            <div class="quiz-progress-text"><span id="qTotalText">50問中</span> <span id="qNowText" style="color:#ff3176">1</span>問目</div>
           </div>
-          <div class="ratio"><b id="qNow">1</b>/<b id="qTotal">70</b></div>
+          <div class="ratio"><b id="qNow">1</b>/<b id="qTotal">50</b></div>
         </div>
       </div>
       <div class="quiz-main">
@@ -2483,7 +2517,7 @@ opacity:.9}
           <div class="question-badge">もんだい<br><span id="qBadge">1</span></div>
           <div class="question-text" id="question"></div>
           <div id="choices" class="choice-list"></div>
-          <img class="small-chiikawa" src="./chiikawa_small.png" alt="ちいかわ">
+          
         </div>
         <div class="quiz-actions-top">
           <button id="prevBtn" class="nav-btn" onclick="prevQuestion()">＜ 前へ</button>
@@ -2514,7 +2548,7 @@ opacity:.9}
         <div id="resultCopy" class="result-copy correct">
           <div id="resultMark" class="mark">◯</div>
           <div class="text"><b id="resultMain49">せいかい！</b><span id="resultSub49">やったね！</span></div>
-          <img class="small-chiikawa" src="./chiikawa_small.png" alt="ちいかわ">
+          
         </div>
         <div class="result-answerbox">
           <div class="result-answer user"><div class="label">あなたのこたえ</div><div id="resultUserAnswer" class="ansline"></div></div>
@@ -2533,7 +2567,7 @@ opacity:.9}
 
 <section id="complete" class="screen">
   <div class="ref-complete">
-    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=72" alt=""><b id="completeEraHead">古墳・飛鳥時代</b><span>70 / 70</span></div>
+    <div class="quiz-head"><img src="./chiikawa-hachiware.jpg?v=72" alt=""><b id="completeEraHead">古墳・飛鳥時代</b><span>50 / 50</span></div>
     <div class="ref-progress"><i style="width:100%"></i></div>
     <h1><span id="completeEraTitle">古墳・飛鳥時代</span><br><strong>コンプリート！</strong></h1>
     <img class="complete-cast" src="./chiikawa-reward.jpg?v=72" alt="">
@@ -2557,12 +2591,7 @@ opacity:.9}
 
 const ERA_KANA={asukaNara:"こふん・あすか",nara:"なら",heian:"へいあん"};
 function setQuizFriend(){return;}
-function optionToRubyHtml(text){
-  const html=addRuby(text);
-  const m=html.match(/^<ruby>(.*?)<rt>(.*?)<\/rt><\/ruby>$/);
-  if(m){return `<span class="furi">${m[2]}</span>${m[1]}`;}
-  return html;
-}
+function optionToRubyHtml(text){ return addRuby(text); }
 function buildProgressDots(){
   const box=document.getElementById("quizDots"); if(!box) return;
   const total=state.queue.length||0, now=state.pos||0; box.innerHTML="";
@@ -2668,7 +2697,7 @@ normalizeYearQuestions();
     const seen=new Set(),out=[];
     for(const q of Q[id]){if(seen.has(q[1]))continue;seen.add(q[1]);out.push(q)}
     for(const q of (extras[id]||[])){if(out.length>=70)break;if(seen.has(q[1]))continue;seen.add(q[1]);out.push(q)}
-    Q[id]=out.slice(0,70);
+    Q[id]=out.slice(0,50);
   }
 })();
 
@@ -2765,7 +2794,7 @@ function beginEra(){
  s.sessions=s.sessions||{};
  const sess=s.sessions[id];
 
- const validQueue=sess&&Array.isArray(sess.queue)&&sess.queue.length===70&&
+ const validQueue=sess&&Array.isArray(sess.queue)&&sess.queue.length===50&&
    sess.queue.every(i=>Number.isInteger(i)&&i>=0&&i<pool.length);
 
  if(validQueue){
@@ -2849,22 +2878,21 @@ function goFirstQuestion(){
  window.scrollTo({top:0,behavior:"smooth"});
 }
 
+const FULL_RUBY_PAIRS=[["尾張国郡司百姓等解文", "おわりのくにぐんじひゃくしょうらのげぶみ"], ["墾田永年私財法", "こんでんえいねんしざいほう"], ["承平・天慶の乱", "じょうへい・てんぎょうのらん"], ["懇田永年私財法", "こんでんえいねんしざいほう"], ["墾田永年私材法", "こんでんえいねんしざいほう"], ["墾田永年私才法", "こんでんえいねんしざいほう"], ["平等院鳳凰堂", "びょうどういんほうおうどう"], ["十七条の憲法", "じゅうしちじょうのけんぽう"], ["三世一身の法", "さんぜいっしんのほう"], ["坂上田村麻呂", "さかのうえのたむらまろ"], ["白村江の戦い", "はくすきのえのたたかい"], ["阿弥陀如来像", "あみだにょらいぞう"], ["江田船山古墳", "えたふなやまこふん"], ["何とよばれた", "なんとよばれた"], ["何と呼ばれた", "なんとよばれた"], ["平等院鳳皇堂", "びょうどういんほうおうどう"], ["平等院凰鳳堂", "びょうどういんほうおうどう"], ["平等院鳳凰殿", "びょうどういんほうおうどう"], ["前方後円墳", "ぜんぽうこうえんふん"], ["冠位十二階", "かんいじゅうにかい"], ["大化の改新", "たいかのかいしん"], ["班田収授法", "はんでんしゅうじゅほう"], ["中大兄皇子", "なかのおおえのおうじ"], ["阿倍仲麻呂", "あべのなかまろ"], ["大海人皇子", "おおあまのおうじ"], ["征夷大将軍", "せいいたいしょうぐん"], ["釈迦三尊像", "しゃかさんぞんぞう"], ["金剛力士像", "こんごうりきしぞう"], ["古今和歌集", "こきんわかしゅう"], ["稲荷山古墳", "いなりやまこふん"], ["高松塚古墳", "たかまつづかこふん"], ["上円下方墳", "じょうえんかほうふん"], ["大阪府堺市", "おおさかふさかいし"], ["派遣された", "はけんされた"], ["定められた", "さだめられた"], ["受け入れる", "うけいれる"], ["組み合わせ", "くみあわせ"], ["世界最古級", "せかいさいこきゅう"], ["仏・法・僧", "ぶつ・ほう・そう"], ["征異大将軍", "せいいたいしょうぐん"], ["征夷大将郡", "せいいたいしょうぐん"], ["征威大将軍", "せいいたいしょうぐん"], ["正しい漢字", "ただしいかんじ"], ["中臣鎌足", "なかとみのかまたり"], ["藤原良房", "ふじわらのよしふさ"], ["藤原基経", "ふじわらのもとつね"], ["藤原道長", "ふじわらのみちなが"], ["藤原頼通", "ふじわらのよりみち"], ["菅原道真", "すがわらのみちざね"], ["清少納言", "せいしょうなごん"], ["聖徳太子", "しょうとくたいし"], ["推古天皇", "すいこてんのう"], ["持統天皇", "じとうてんのう"], ["聖武天皇", "しょうむてんのう"], ["桓武天皇", "かんむてんのう"], ["天武天皇", "てんむてんのう"], ["天智天皇", "てんじてんのう"], ["元明天皇", "げんめいてんのう"], ["厩戸皇子", "うまやどのおうじ"], ["大友皇子", "おおとものおうじ"], ["仁徳天皇", "にんとくてんのう"], ["舎人親王", "とねりしんのう"], ["太安万侶", "おおのやすまろ"], ["稗田阿礼", "ひえだのあれ"], ["小野妹子", "おののいもこ"], ["吉備真備", "きびのまきび"], ["藤原純友", "ふじわらのすみとも"], ["和泉式部", "いずみしきぶ"], ["小野小町", "おののこまち"], ["壬申の乱", "じんしんのらん"], ["乙巳の変", "いっしのへん"], ["大宝律令", "たいほうりつりょう"], ["養老律令", "ようろうりつりょう"], ["改新の詔", "かいしんのみことのり"], ["公地公民", "こうちこうみん"], ["律令国家", "りつりょうこっか"], ["摂関政治", "せっかんせいじ"], ["国風文化", "こくふうぶんか"], ["天平文化", "てんぴょうぶんか"], ["飛鳥文化", "あすかぶんか"], ["白鳳文化", "はくほうぶんか"], ["浄土真宗", "じょうどしんしゅう"], ["金剛峯寺", "こんごうぶじ"], ["唐招提寺", "とうしょうだいじ"], ["玉虫厨子", "たまむしのずし"], ["盧舎那仏", "るしゃなぶつ"], ["源氏物語", "げんじものがたり"], ["日本書紀", "にほんしょき"], ["不輸の権", "ふゆのけん"], ["不入の権", "ふにゅうのけん"], ["大和政権", "やまとせいけん"], ["好太王碑", "こうたいおうひ"], ["朝鮮半島", "ちょうせんはんとう"], ["大仙古墳", "だいせんこふん"], ["環濠集落", "かんごうしゅうらく"], ["国分尼寺", "こくぶんにじ"], ["東北地方", "とうほくちほう"], ["何という", "なんという"], ["軍記物語", "ぐんきものがたり"], ["住宅様式", "じゅうたくようしき"], ["日本独自", "にほんどくじ"], ["極楽浄土", "ごくらくじょうど"], ["阿弥陀仏", "あみだぶつ"], ["碁盤の目", "ごばんのめ"], ["移された", "うつされた"], ["広めよう", "ひろめよう"], ["伝わった", "つたわった"], ["反対した", "はんたいした"], ["賛成した", "さんせいした"], ["勝利した", "しょうりした"], ["使われた", "つかわれた"], ["発達した", "はったつした"], ["最も適切", "もっともてきせつ"], ["木造建築", "もくぞうけんちく"], ["天坪文化", "てんぴょうぶんか"], ["天兵文化", "てんぴょうぶんか"], ["天評文化", "てんぴょうぶんか"], ["接関政治", "せっかんせいじ"], ["摂官政治", "せっかんせいじ"], ["摂間政治", "せっかんせいじ"], ["金剛峰寺", "こんごうぶじ"], ["金剛峯時", "こんごうぶじ"], ["金剛蜂寺", "こんごうぶじ"], ["不輪の権", "ふゆのけん"], ["不愉の権", "ふゆのけん"], ["不輸の券", "ふゆのけん"], ["不人の権", "ふにゅうのけん"], ["不納の権", "ふにゅうのけん"], ["管原道真", "すがわらのみちざね"], ["菅原通真", "すがわらのみちざね"], ["菅原道直", "すがわらのみちざね"], ["藤原道永", "ふじわらのみちなが"], ["藤原通長", "ふじわらのみちなが"], ["藤原道良", "ふじわらのみちなが"], ["紫式部", "むらさきしきぶ"], ["平将門", "たいらのまさかど"], ["紀貫之", "きのつらゆき"], ["遣隋使", "けんずいし"], ["遣唐使", "けんとうし"], ["遣明使", "けんみんし"], ["浄土教", "じょうどきょう"], ["天台宗", "てんだいしゅう"], ["真言宗", "しんごんしゅう"], ["浄土宗", "じょうどしゅう"], ["比叡山", "ひえいざん"], ["高野山", "こうやさん"], ["延暦寺", "えんりゃくじ"], ["法隆寺", "ほうりゅうじ"], ["東大寺", "とうだいじ"], ["薬師寺", "やくしじ"], ["興福寺", "こうふくじ"], ["平城宮", "へいじょうきゅう"], ["藤原宮", "ふじわらきゅう"], ["平城京", "へいじょうきょう"], ["平安京", "へいあんきょう"], ["長岡京", "ながおかきょう"], ["藤原京", "ふじわらきょう"], ["大津宮", "おおつのみや"], ["大宰府", "だざいふ"], ["正倉院", "しょうそういん"], ["校倉造", "あぜくらづくり"], ["寝殿造", "しんでんづくり"], ["書院造", "しょいんづくり"], ["合掌造", "がっしょうづくり"], ["枕草子", "まくらのそうし"], ["古事記", "こじき"], ["風土記", "ふどき"], ["万葉集", "まんようしゅう"], ["渡来人", "とらいじん"], ["蘇我氏", "そがし"], ["物部氏", "もののべし"], ["藤原氏", "ふじわらし"], ["高句麗", "こうくり"], ["租庸調", "そようちょう"], ["口分田", "くぶんでん"], ["国分寺", "こくぶんじ"], ["北九州", "きたきゅうしゅう"], ["埼玉県", "さいたまけん"], ["熊本県", "くまもとけん"], ["北海道", "ほっかいどう"], ["尾張国", "おわりのくに"], ["何世紀", "なんせいき"], ["何天皇", "なんてんのう"], ["皇太子", "こうたいし"], ["私有地", "しゆうち"], ["私有民", "しゆうみん"], ["歴史書", "れきししょ"], ["収穫高", "しゅうかくだか"], ["特産物", "とくさんぶつ"], ["移した", "うつした"], ["広めた", "ひろめた"], ["伝えた", "つたえた"], ["倒した", "たおした"], ["戦った", "たたかった"], ["納める", "おさめる"], ["認めた", "みとめた"], ["行った", "おこなった"], ["建てた", "たてた"], ["書いた", "かいた"], ["開いた", "ひらいた"], ["栄えた", "さかえた"], ["正しい", "ただしい"], ["古い順", "ふるいじゅん"], ["組合せ", "くみあわせ"], ["出来事", "できごと"], ["代表的", "だいひょうてき"], ["大きな", "おおきな"], ["初めて", "はじめて"], ["美術品", "びじゅつひん"], ["第一条", "だいいちじょう"], ["遺唐使", "けんとうし"], ["遣唐史", "けんとうし"], ["遣唐師", "けんとうし"], ["正蔵院", "しょうそういん"], ["正倉苑", "しょうそういん"], ["正創院", "しょうそういん"], ["高倉造", "あぜくらづくり"], ["校蔵造", "あぜくらづくり"], ["交倉造", "あぜくらづくり"], ["延歴寺", "えんりゃくじ"], ["延暦時", "えんりゃくじ"], ["延歴時", "えんりゃくじ"], ["論語", "ろんご"], ["儒教", "じゅきょう"], ["仏教", "ぶっきょう"], ["防人", "さきもり"], ["国司", "こくし"], ["郡司", "ぐんじ"], ["木簡", "もっかん"], ["荘園", "しょうえん"], ["摂政", "せっしょう"], ["関白", "かんぱく"], ["大王", "おおきみ"], ["源氏", "げんじ"], ["平氏", "へいし"], ["百済", "くだら"], ["新羅", "しらぎ"], ["古墳", "こふん"], ["貝塚", "かいづか"], ["条坊", "じょうぼう"], ["方墳", "ほうふん"], ["円墳", "えんぷん"], ["雑徭", "ぞうよう"], ["出挙", "すいこ"], ["戒律", "かいりつ"], ["行基", "ぎょうき"], ["鑑真", "がんじん"], ["最澄", "さいちょう"], ["空海", "くうかい"], ["玄奘", "げんじょう"], ["法然", "ほうねん"], ["親鸞", "しんらん"], ["日蓮", "にちれん"], ["道元", "どうげん"], ["日本", "にほん"], ["中国", "ちゅうごく"], ["長安", "ちょうあん"], ["洛陽", "らくよう"], ["南京", "なんきん"], ["北京", "ぺきん"], ["開封", "かいほう"], ["琉球", "りゅうきゅう"], ["樺太", "からふと"], ["宇治", "うじ"], ["何年", "なんねん"], ["世紀", "せいき"], ["時代", "じだい"], ["人物", "じんぶつ"], ["政治", "せいじ"], ["文化", "ぶんか"], ["制度", "せいど"], ["外交", "がいこう"], ["宗教", "しゅうきょう"], ["寺院", "じいん"], ["建築", "けんちく"], ["土地", "とち"], ["役人", "やくにん"], ["豪族", "ごうぞく"], ["天皇", "てんのう"], ["皇族", "こうぞく"], ["貴族", "きぞく"], ["農民", "のうみん"], ["地方", "ちほう"], ["中央", "ちゅうおう"], ["国家", "こっか"], ["私有", "しゆう"], ["権利", "けんり"], ["役職", "やくしょく"], ["使節", "しせつ"], ["文字", "もじ"], ["書物", "しょもつ"], ["作品", "さくひん"], ["随筆", "ずいひつ"], ["道路", "どうろ"], ["開墾", "かいこん"], ["永久", "えいきゅう"], ["労役", "ろうえき"], ["兵士", "へいし"], ["守り", "まもり"], ["戒律", "かいりつ"], ["朝廷", "ちょうてい"], ["帰国", "きこく"], ["停止", "ていし"], ["提案", "ていあん"], ["征討", "せいとう"], ["補佐", "ほさ"], ["幼い", "おさない"], ["成人", "せいじん"], ["建立", "こんりゅう"], ["完成", "かんせい"], ["派遣", "はけん"], ["拒む", "こばむ"], ["行う", "おこなう"], ["最も", "もっとも"], ["適切", "てきせつ"], ["順番", "じゅんばん"], ["流れ", "ながれ"], ["関係", "かんけい"], ["中心", "ちゅうしん"], ["大切", "たいせつ"], ["一生", "いっしょう"], ["一番", "いちばん"], ["全国", "ぜんこく"], ["仏像", "ぶつぞう"], ["三宝", "さんぼう"], ["刑罰", "けいばつ"], ["行政", "ぎょうせい"], ["法律", "ほうりつ"], ["坊人", "さきもり"], ["防士", "さきもり"], ["訪人", "さきもり"], ["監真", "がんじん"], ["鑑心", "がんじん"], ["鑑進", "がんじん"], ["接政", "せっしょう"], ["摂正", "せっしょう"], ["摂征", "せっしょう"], ["間白", "かんぱく"], ["関伯", "かんぱく"], ["官白", "かんぱく"], ["何を", "なにを"], ["どれ", "どれ"], ["唐", "とう"], ["隋", "ずい"], ["何", "なに"], ["年", "ねん"], ["税", "ぜい"], ["都", "みやこ"], ["僧", "そう"], ["国", "くに"], ["詔", "みことのり"], ["律", "りつ"], ["令", "りょう"]];
 function addRuby(s){
- const d=[
- ["平城京","へいじょうきょう"],["平安京","へいあんきょう"],["長岡京","ながおかきょう"],["藤原京","ふじわらきょう"],
- ["聖徳太子","しょうとくたいし"],["聖武天皇","しょうむてんのう"],["桓武天皇","かんむてんのう"],
- ["大化の改新","たいかのかいしん"],["白村江","はくすきのえ"],["壬申の乱","じんしんのらん"],
- ["大宝律令","たいほうりつりょう"],["三世一身の法","さんぜいっしんのほう"],["墾田永年私財法","こんでんえいねんしざいほう"],
- ["遣唐使","けんとうし"],["遣隋使","けんずいし"],["鑑真","がんじん"],["正倉院","しょうそういん"],["校倉造","あぜくらづくり"],
- ["天平文化","てんぴょうぶんか"],["国風文化","こくふうぶんか"],["藤原道長","ふじわらのみちなが"],["藤原頼通","ふじわらのよりみち"],
- ["摂関政治","せっかんせいじ"],["摂政","せっしょう"],["関白","かんぱく"],["平等院鳳凰堂","びょうどういんほうおうどう"],
- ["紫式部","むらさきしきぶ"],["源氏物語","げんじものがたり"],["清少納言","せいしょうなごん"],["枕草子","まくらのそうし"],
- ["最澄","さいちょう"],["空海","くうかい"],["延暦寺","えんりゃくじ"],["金剛峯寺","こんごうぶじ"],["菅原道真","すがわらのみちざね"],
- ["荘園","しょうえん"],["不輸の権","ふゆのけん"],["不入の権","ふにゅうのけん"],["防人","さきもり"],["木簡","もっかん"]
- ];
+ if(s==null)return "";
+ s=String(s);
  if(/<ruby/.test(s)) return s;
- d.forEach(([w,r])=>{s=s.split(w).join(`<ruby>${w}<rt>${r}</rt></ruby>`)});
- return s;
+ let out="",i=0;
+ while(i<s.length){
+   let hit=null;
+   for(const [w,r] of FULL_RUBY_PAIRS){
+     if(w && s.startsWith(w,i)){ hit=[w,r]; break; }
+   }
+   if(hit){ out+=`<ruby>${hit[0]}<rt>${hit[1]}</rt></ruby>`; i+=hit[0].length; }
+   else { out+=s[i]; i++; }
+ }
+ return out;
 }
 function renderQuestion(){
  setQuizFriend();state.locked=false;state.selectedChoice=null;
@@ -3076,7 +3104,7 @@ function nextQuestion(){
 
  if(answered>=state.queue.length){
    s=store();s.cards=s.cards||{};s.sessions=s.sessions||{};
-   s.cards[state.era]=true;s.progress[state.era]=70;delete s.sessions[state.era];save(s);
+   s.cards[state.era]=true;s.progress[state.era]=50;delete s.sessions[state.era];save(s);
    let en=eras.find(e=>e.id===state.era).name;
    document.getElementById("completeText").textContent="カードをゲットしたよ！";
    const cardInfo={
@@ -3128,4 +3156,4 @@ if("serviceWorker" in navigator){
     }catch(e){}
   });
 }
-</script><div id="buildMarker" style="display:none">V74-QUIZ-RESULT-REFINED</div></body></html>
+</script><div id="buildMarker" style="display:none">V75-ONE-SCREEN-50-FURIGANA-NO-CHARACTER</div></body></html>
