@@ -2400,11 +2400,15 @@ opacity:.9}
 .result-title-big{text-align:center;font-weight:1000;font-size:56px;line-height:1;color:#ff357b;text-shadow:0 3px 0 #fff;margin:6px 0 8px}
 .result-title-big.wrong{color:#ff4f74}
 .result-copy{display:flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(180deg,#fff,#fff6fa);border:3px solid #ffd7e5;border-radius:24px;padding:10px 12px;position:relative;overflow:hidden}
-.result-copy .mark{font-size:54px;line-height:1}
+.result-copy .mark{font-size:54px;line-height:1;flex:0 0 auto}
 .result-copy.correct .mark{color:var(--green)}
 .result-copy.wrong .mark{color:var(--wrong)}
-.result-copy .text b{display:block;font-size:34px;color:#542215}
-.result-copy .text span{display:block;font-weight:1000;color:#9a6070;font-size:18px}
+.result-copy .text{display:flex;align-items:center;justify-content:center;min-height:40px}
+.result-copy .text b{display:block;font-size:34px;color:#542215;line-height:1.15}
+.result-copy.correct .text b{color:#e6465f}
+.result-copy.wrong .text b{color:#37a85d}
+.result-copy .text span{display:none;font-weight:1000;color:#9a6070;font-size:18px}
+.result-mini-illust-inline{display:block;width:auto;max-width:63%;height:87px;object-fit:contain;margin:6px auto 2px}
 .result-answerbox{margin-top:12px;display:grid;gap:10px}
 .result-answer{border-radius:22px;padding:10px 14px;border:3px solid #ffd2e1;background:#fff}
 .result-answer.user{background:#fff1f6}
@@ -3626,6 +3630,105 @@ opacity:.9}
 }
 </style>
 
+
+<style id="v101-result-one-line-final">
+#result .result-title-big{display:none!important}
+#result .result-copy{
+  margin-top:4px!important;
+  min-height:64px!important;
+  padding:7px 10px!important;
+  gap:8px!important;
+}
+#result .result-copy .mark{font-size:40px!important}
+#result .result-copy .text{min-height:0!important}
+#result .result-copy .text b{
+  font-size:clamp(24px,6.5vw,32px)!important;
+  line-height:1.08!important;
+  white-space:nowrap!important;
+}
+#result .result-copy .text span{display:none!important}
+#result .result-mini-illust-inline{
+  display:block!important;
+  width:auto!important;
+  max-width:63%!important;
+  height:87px!important;
+  object-fit:contain!important;
+  margin:5px auto 2px!important;
+  border-radius:12px!important;
+}
+@media(max-width:420px){
+  #result .result-copy{min-height:58px!important}
+  #result .result-copy .mark{font-size:34px!important}
+  #result .result-copy .text b{font-size:24px!important}
+  #result .result-mini-illust-inline{height:78px!important;max-width:69%!important}
+}
+
+/* v104: タイトル1行固定 & 正解答え拡大 */
+#quiz .quiz-title,
+#result .quiz-title{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  white-space:nowrap!important;
+  gap:4px!important;
+  line-height:1!important;
+}
+#quiz .quiz-title span,
+#result .quiz-title span{white-space:nowrap!important;}
+#quiz .quiz-title{font-size:clamp(16px,3.1vh,22px)!important;}
+#result .quiz-title{font-size:clamp(16px,3.2vh,22px)!important;}
+#result .result-answer.correct .ansline{font-size:18px!important;line-height:1.08!important;}
+#result .result-bottom-art-space{
+  flex:0 0 auto!important;
+  min-height:56px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  padding:0!important;
+  margin-top:4px!important;
+  margin-bottom:2px!important;
+  overflow:hidden!important;
+}
+#result .result-bottom-art-space .result-mini-illust-inline{
+  display:block!important;
+  width:auto!important;
+  height:58px!important;
+  max-width:58%!important;
+  object-fit:contain!important;
+  margin:0 auto!important;
+  border-radius:12px!important;
+}
+@media (max-width:420px){
+  #quiz .quiz-title{font-size:17px!important;}
+  #result .quiz-title{font-size:17px!important;}
+  #result .result-answer.correct .ansline{font-size:19px!important;}
+  #result .result-bottom-art-space{min-height:50px!important;margin-top:3px!important;margin-bottom:0!important;}
+  #result .result-bottom-art-space .result-mini-illust-inline{height:54px!important;max-width:62%!important;margin:0 auto!important;}
+}
+
+
+/* v110: 問題画面は変更しない。結果画面のみ右切れ修正 */
+#quiz .quiz-shell{transform:none!important;}
+#result .ref-result{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+#result .result-shell{
+  width:100%!important;
+  max-width:100%!important;
+  transform:none!important;
+  box-sizing:border-box!important;
+}
+#result .result-hero-top,
+#result .result-main-card{
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+</style>
+
 </head>
 <body><main class="app">
 <section id="home" class="screen active home35">
@@ -3713,8 +3816,7 @@ opacity:.9}
         <div id="resultTitleBig" class="result-title-big">正解！</div>
         <div id="resultCopy" class="result-copy correct">
           <div id="resultMark" class="mark">◯</div>
-          <div class="text"><b id="resultMain49">せいかい！</b><span id="resultSub49">やったね！</span></div>
-          
+          <div class="text"><b id="resultMain49">正解！やったね</b><span id="resultSub49"></span></div>
         </div>
         <div class="result-answerbox">
           <div class="result-answer user"><div class="label">あなたのこたえ</div><div id="resultUserAnswer" class="ansline"></div></div>
@@ -3725,6 +3827,9 @@ opacity:.9}
           <button class="result-back-btn" onclick="goHome()">⌂ ホーム</button>
           <button class="result-next-btn" onclick="nextQuestion()">つぎへ ＞</button>
           <button class="result-back-btn" onclick="quitQuiz()">✕ やめる</button>
+        </div>
+        <div class="result-bottom-art-space" aria-hidden="true">
+          <img id="resultMiniIllust" class="result-mini-illust-inline" src="result_asuka_haniwa.png" alt="時代イラスト">
         </div>
       </div>
     </div>
@@ -4294,8 +4399,19 @@ function answer(i){
  const titleBig=document.getElementById("resultTitleBig"); titleBig.textContent=ok?"正解！":"残念"; titleBig.classList.toggle('wrong',!ok);
  const copy=document.getElementById("resultCopy"); copy.classList.toggle('correct',ok); copy.classList.toggle('wrong',!ok);
  document.getElementById("resultMark").textContent=ok?"◯":"✕";
- document.getElementById("resultMain49").textContent=ok?"せいかい！":"まちがい";
- document.getElementById("resultSub49").textContent=ok?"やったね！":"つぎもがんばろう！";
+ document.getElementById("resultMain49").textContent=ok?"正解！やったね":"残念！がんばって";
+ document.getElementById("resultSub49").textContent="";
+ const resultMiniIllust=document.getElementById("resultMiniIllust");
+ if(resultMiniIllust){
+   const eraResultArt={
+     asukaNara:{src:"result_asuka_haniwa.png",alt:"古墳・飛鳥時代の埴輪イラスト"},
+     nara:{src:"result_nara_deer.png",alt:"奈良時代の鹿イラスト"},
+     heian:{src:"result_heian_princess.png",alt:"平安時代の貴族の姫イラスト"}
+   };
+   const art=eraResultArt[state.era]||eraResultArt.asukaNara;
+   resultMiniIllust.src=art.src;
+   resultMiniIllust.alt=art.alt;
+ }
  const choiceOrder=getChoiceOrderForCurrent();
  const userDisplayIndex=choiceOrder.indexOf(i);
  const correctDisplayIndex=choiceOrder.indexOf(q[3]);
@@ -4410,4 +4526,4 @@ if("serviceWorker" in navigator){
     }catch(e){}
   });
 }
-</script><div id="buildMarker" style="display:none">FINAL-APPROVED-20261004-V99-ORIGINAL-TOP-CENTERED-ART</div></body></html>
+</script><div id="buildMarker" style="display:none">FINAL-APPROVED-20261004-V102-ERA-RESULT-ART</div></body></html>
